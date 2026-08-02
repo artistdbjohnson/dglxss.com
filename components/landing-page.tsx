@@ -206,7 +206,15 @@ export function LandingPage() {
           >
             {BRAND}
           </p>
-          <p className="text-white/42 text-sm tracking-wide">{STUDIO}</p>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <Link
+              href="/access"
+              className="text-white/42 text-sm tracking-wide hover:text-white/70 transition-colors"
+            >
+              access
+            </Link>
+            <p className="text-white/42 text-sm tracking-wide">{STUDIO}</p>
+          </div>
         </div>
       </footer>
     </div>
