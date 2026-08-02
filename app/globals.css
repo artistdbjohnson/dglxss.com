@@ -44,6 +44,17 @@
   }
 }
 
+/* Hidden scrollbar — scroll still works via wheel / trackpad / touch */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 /* ─── Liquid glass ─── */
 .liquid-glass {
   background: rgba(255, 255, 255, 0.05);

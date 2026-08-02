@@ -119,8 +119,8 @@ export function AccessMaterials() {
             </button>
           </header>
 
-          {/* Scrollable body */}
-          <div className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 py-4 sm:py-5 space-y-5 sm:space-y-6">
+          {/* Scrollable body — no visible scrollbar; wheel / trackpad / touch still work */}
+          <div className="flex-1 overflow-y-auto overscroll-contain scrollbar-none px-4 sm:px-6 py-4 sm:py-5 space-y-5 sm:space-y-6">
             {build.sections.map((section) => (
               <section key={section.id}>
                 <h2 className="text-[0.625rem] sm:text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-white/40 mb-1.5">
