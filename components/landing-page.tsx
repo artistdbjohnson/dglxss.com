@@ -34,6 +34,7 @@ export function LandingPage() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.style.scrollBehavior = "auto";
+      document.documentElement.style.scrollSnapType = "none";
     }
 
     const hash = window.location.hash.replace("#", "");
@@ -45,7 +46,8 @@ export function LandingPage() {
 
   return (
     <div className="bg-black text-white">
-      <section className="relative min-h-dvh h-dvh w-full bg-black overflow-hidden flex flex-col">
+      {/* ── Panel 1: Hero ── */}
+      <section className="snap-panel relative w-full bg-black flex flex-col">
         <div className="absolute inset-0 z-0">
           <HeroParticles />
         </div>
@@ -117,15 +119,17 @@ export function LandingPage() {
         </div>
       </section>
 
+      {/* ── Panel 2: Portfolio (exact viewport, centered, no page scroll) ── */}
       <section
         id="portfolio"
-        className="glass-field relative z-10 border-t border-white/[0.06] px-5 sm:px-6 lg:px-10 py-16 sm:py-20 md:py-28"
+        className="snap-panel glass-field relative z-10 flex flex-col border-t border-white/[0.06]"
       >
-        <div className="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+        <div className="flex-1 min-h-0 flex flex-col max-w-3xl lg:max-w-5xl xl:max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-10 pt-5 sm:pt-7 pb-3">
+          {/* Tabs */}
           <div
             role="tablist"
             aria-label="Portfolio"
-            className="liquid-glass-card rounded-full p-1.5 flex gap-1 mb-10 sm:mb-12 max-w-sm sm:max-w-md mx-auto lg:max-w-lg"
+            className="liquid-glass-card rounded-full p-1.5 flex gap-1 mb-5 sm:mb-6 max-w-sm sm:max-w-md mx-auto w-full shrink-0"
           >
             {PORTFOLIO_TABS.map((t) => {
               const active = tab === t.id;
@@ -138,7 +142,7 @@ export function LandingPage() {
                   aria-selected={active}
                   aria-controls={`panel-${t.id}`}
                   onClick={() => setTab(t.id)}
-                  className={`flex-1 rounded-full py-3 text-sm font-medium min-h-11 transition-colors duration-200 ${
+                  className={`flex-1 rounded-full py-2.5 sm:py-3 text-sm font-medium min-h-10 transition-colors duration-200 ${
                     active
                       ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
                       : "text-white/55 hover:text-white"
@@ -150,33 +154,35 @@ export function LandingPage() {
             })}
           </div>
 
-          <div className="mb-8 sm:mb-10 lg:mb-12 text-center lg:text-left">
-            <p className="text-[0.6875rem] sm:text-xs font-medium tracking-[0.2em] uppercase text-white/42 mb-2.5">
+          {/* Eyebrow + title — compact */}
+          <div className="mb-4 sm:mb-5 text-center shrink-0">
+            <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.2em] uppercase text-white/42 mb-1">
               {tabMeta.eyebrow}
             </p>
             <h2
-              className="text-[1.75rem] sm:text-3xl lg:text-4xl text-white tracking-tight"
+              className="text-2xl sm:text-3xl text-white tracking-tight"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
               {tabMeta.label}
             </h2>
           </div>
 
+          {/* Cards region — fills remaining height, internal scroll if needed */}
           <div
             role="tabpanel"
             id={`panel-${tab}`}
             aria-labelledby={`tab-${tab}`}
-            className="space-y-3.5 sm:space-y-4"
+            className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-none space-y-3"
           >
             {projects.length === 0 ? (
-              <div className="liquid-glass-card rounded-2xl sm:rounded-3xl px-6 sm:px-8 py-12 sm:py-14 text-center">
+              <div className="liquid-glass-card rounded-2xl sm:rounded-3xl px-6 py-10 text-center">
                 <p
-                  className="text-white/80 text-base sm:text-lg tracking-tight lowercase mb-2"
+                  className="text-white/80 text-base tracking-tight lowercase mb-2"
                   style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
                 >
                   soon
                 </p>
-                <p className="text-white/60 text-sm sm:text-[0.9375rem] leading-relaxed max-w-sm mx-auto">
+                <p className="text-white/60 text-sm leading-relaxed max-w-sm mx-auto">
                   {tabMeta.empty}
                 </p>
               </div>
@@ -195,28 +201,31 @@ export function LandingPage() {
               ))
             )}
           </div>
+
+          {/* Footer strip inside panel */}
+          <footer className="shrink-0 pt-3 sm:pt-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-white/[0.06] mt-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-4">
+              <p
+                className="text-white/80 lowercase tracking-tight text-sm sm:text-base text-center sm:text-left"
+                style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+              >
+                {BRAND}
+              </p>
+              <div className="flex justify-center">
+                <Link
+                  href="/clients"
+                  className="text-white/40 text-sm tracking-wide hover:text-white/70 transition-colors"
+                >
+                  clients
+                </Link>
+              </div>
+              <p className="text-white/40 text-sm tracking-wide text-center sm:text-right">
+                {STUDIO}
+              </p>
+            </div>
+          </footer>
         </div>
       </section>
-
-      <footer className="glass-field border-t border-white/[0.06] px-5 sm:px-6 lg:px-10 py-10 sm:py-12">
-        <div className="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 items-center gap-4 sm:gap-6">
-          <p
-            className="text-white/85 lowercase tracking-tight text-base sm:text-lg text-center sm:text-left"
-            style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-          >
-            {BRAND}
-          </p>
-          <div className="flex justify-center">
-            <Link
-              href="/clients"
-              className="text-white/42 text-sm tracking-wide hover:text-white/70 transition-colors"
-            >
-              clients
-            </Link>
-          </div>
-          <p className="text-white/42 text-sm tracking-wide text-center sm:text-right">{STUDIO}</p>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -233,7 +242,7 @@ function ProjectBlock({
   return (
     <article
       id={project.id}
-      className={`liquid-glass-card rounded-2xl sm:rounded-[1.35rem] lg:rounded-3xl ${
+      className={`liquid-glass-card rounded-2xl sm:rounded-[1.35rem] ${
         open ? "ring-1 ring-white/15" : ""
       }`}
     >
@@ -241,30 +250,30 @@ function ProjectBlock({
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="w-full text-left px-5 sm:px-6 lg:px-8 py-5 lg:py-6 min-h-14 flex items-start gap-4"
+        className="w-full text-left px-4 sm:px-5 lg:px-6 py-4 min-h-12 flex items-start gap-3"
       >
         <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 mb-1.5">
-            <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white tracking-tight">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+            <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
               {project.name}
             </h3>
             <span className="text-white/42 text-xs tabular-nums tracking-wide">
               {project.year}
             </span>
             {project.status === "in-progress" && (
-              <span className="liquid-glass rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold text-white/80">
+              <span className="liquid-glass rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider font-semibold text-white/80">
                 In progress
               </span>
             )}
           </div>
-          <p className="text-sm lg:text-[0.95rem] text-white/60 leading-relaxed">
+          <p className="text-[13px] sm:text-sm text-white/60 leading-snug">
             {project.line}
           </p>
-          <div className="flex flex-wrap gap-1.5 mt-3.5">
+          <div className="flex flex-wrap gap-1.5 mt-2.5">
             {project.kind.map((k) => (
               <span
                 key={k}
-                className="liquid-glass rounded-full px-2.5 py-1 text-[11px] font-medium tracking-wide text-white/70"
+                className="liquid-glass rounded-full px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-white/70"
               >
                 {KIND_LABEL[k]}
               </span>
@@ -272,7 +281,7 @@ function ProjectBlock({
           </div>
         </div>
         <ChevronDown
-          size={18}
+          size={17}
           className={`shrink-0 mt-1 text-white/40 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
@@ -280,40 +289,40 @@ function ProjectBlock({
       </button>
 
       {open && (
-        <div className="border-t border-white/[0.08] px-5 sm:px-6 lg:px-8 pb-6 lg:pb-8 pt-1 space-y-5">
+        <div className="border-t border-white/[0.08] px-4 sm:px-5 lg:px-6 pb-5 pt-1 space-y-4">
           {project.sections.map((section) => (
             <section
               key={section.id}
               id={`${project.id}-${section.id}`}
-              className="pt-4"
+              className="pt-3"
             >
-              <h4 className="text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-white/42 mb-2">
+              <h4 className="text-[0.625rem] font-medium uppercase tracking-[0.16em] text-white/40 mb-1.5">
                 {section.title}
               </h4>
-              <p className="text-sm lg:text-[0.95rem] text-white/60 leading-relaxed">
+              <p className="text-[13px] sm:text-sm text-white/60 leading-relaxed">
                 {section.body}
               </p>
             </section>
           ))}
 
           {(project.buildId || project.external || project.original) && (
-            <div className="pt-1 flex flex-wrap items-center gap-3">
+            <div className="pt-1 flex flex-wrap items-center gap-2.5">
               {project.buildId ? (
                 <>
                   <Link
                     href={`/builds/${project.buildId}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium min-h-11 hover:bg-white/90 transition-colors"
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-sm font-medium min-h-10 hover:bg-white/90 transition-colors"
                   >
                     Open build
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={15} />
                   </Link>
                   <Link
                     href={`/access#${project.buildId}`}
-                    className="inline-flex items-center gap-2 rounded-full liquid-glass px-5 py-2.5 text-sm font-medium min-h-11 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+                    className="inline-flex items-center gap-2 rounded-full liquid-glass px-4 py-2 text-sm font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     aria-label="Client materials"
                   >
                     Client materials
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={15} />
                   </Link>
                 </>
               ) : (
@@ -323,10 +332,10 @@ function ProjectBlock({
                       href={project.external}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium min-h-11 hover:bg-white/90 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-sm font-medium min-h-10 hover:bg-white/90 transition-colors"
                     >
                       Visit
-                      <ArrowUpRight size={16} />
+                      <ArrowUpRight size={15} />
                     </a>
                   )}
                   {project.original && (
@@ -334,10 +343,10 @@ function ProjectBlock({
                       href={project.original}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full liquid-glass px-5 py-2.5 text-sm font-medium min-h-11 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+                      className="inline-flex items-center gap-2 rounded-full liquid-glass px-4 py-2 text-sm font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     >
                       Original
-                      <ArrowUpRight size={16} />
+                      <ArrowUpRight size={15} />
                     </a>
                   )}
                 </>

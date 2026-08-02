@@ -18,13 +18,18 @@
 
   html {
     color-scheme: dark;
-    scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   body {
     margin: 0;
-    min-height: 100dvh;
+    min-height: 100%;
+    height: 100%;
     font-family: var(--font-sans);
     background: #000;
     color: #fff;
@@ -44,7 +49,7 @@
   }
 }
 
-/* Hidden scrollbar — scroll still works via wheel / trackpad / touch */
+/* Hidden scrollbar — wheel / trackpad / touch still work */
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -53,6 +58,16 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+/* Snap panels — exact viewport height, hard stop */
+.snap-panel {
+  height: 100dvh;
+  max-height: 100dvh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
 }
 
 /* ─── Liquid glass ─── */
@@ -342,6 +357,7 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-snap-type: none;
   }
   *,
   *::before,
