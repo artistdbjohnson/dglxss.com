@@ -16,7 +16,10 @@ export type PortfolioProject = {
   year: string;
   status: "shipped" | "in-progress";
   buildId?: string;
+  /** Live / rebuild URL */
   external?: string;
+  /** Pre-rebuild original site (before/after) */
+  original?: string;
   sections: {
     id: string;
     title: string;
@@ -57,6 +60,7 @@ export const PROJECTS: PortfolioProject[] = [
     year: "2026",
     status: "shipped",
     external: "https://txdiepflap.vercel.app/",
+    original: "https://txdiepflap.com/",
     sections: [
       {
         id: "brief",
