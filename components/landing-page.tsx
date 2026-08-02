@@ -208,10 +208,10 @@ export function LandingPage() {
           </p>
           <div className="flex items-center gap-4 sm:gap-5">
             <Link
-              href="/access"
+              href="/clients"
               className="text-white/42 text-sm tracking-wide hover:text-white/70 transition-colors"
             >
-              access
+              clients
             </Link>
             <p className="text-white/42 text-sm tracking-wide">{STUDIO}</p>
           </div>
