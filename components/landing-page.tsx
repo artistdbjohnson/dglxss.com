@@ -46,7 +46,7 @@ export function LandingPage() {
 
   return (
     <div className="bg-black text-white">
-      {/* ── Panel 1: Hero ── */}
+      {/* Panel 1: Hero */}
       <section className="snap-panel relative w-full bg-black flex flex-col">
         <div className="absolute inset-0 z-0">
           <HeroParticles />
@@ -119,17 +119,17 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* ── Panel 2: Portfolio (exact viewport, centered, no page scroll) ── */}
+      {/* Panel 2: Portfolio */}
       <section
         id="portfolio"
         className="snap-panel glass-field relative z-10 flex flex-col border-t border-white/[0.06]"
       >
-        <div className="flex-1 min-h-0 flex flex-col max-w-3xl lg:max-w-5xl xl:max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-10 pt-5 sm:pt-7 pb-3">
+        <div className="flex-1 min-h-0 flex flex-col max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-4 sm:px-5 pt-4 sm:pt-5 pb-2">
           {/* Tabs */}
           <div
             role="tablist"
             aria-label="Portfolio"
-            className="liquid-glass-card rounded-full p-1.5 flex gap-1 mb-5 sm:mb-6 max-w-sm sm:max-w-md mx-auto w-full shrink-0"
+            className="liquid-glass-card rounded-full p-1 flex gap-1 mb-3 sm:mb-4 max-w-xs sm:max-w-sm mx-auto w-full shrink-0"
           >
             {PORTFOLIO_TABS.map((t) => {
               const active = tab === t.id;
@@ -142,7 +142,7 @@ export function LandingPage() {
                   aria-selected={active}
                   aria-controls={`panel-${t.id}`}
                   onClick={() => setTab(t.id)}
-                  className={`flex-1 rounded-full py-2.5 sm:py-3 text-sm font-medium min-h-10 transition-colors duration-200 ${
+                  className={`flex-1 rounded-full py-2 text-sm font-medium min-h-9 transition-colors duration-200 ${
                     active
                       ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
                       : "text-white/55 hover:text-white"
@@ -154,35 +154,35 @@ export function LandingPage() {
             })}
           </div>
 
-          {/* Eyebrow + title — compact */}
-          <div className="mb-4 sm:mb-5 text-center shrink-0">
-            <p className="text-[0.625rem] sm:text-[0.6875rem] font-medium tracking-[0.2em] uppercase text-white/42 mb-1">
+          {/* Title — compact */}
+          <div className="mb-3 text-center shrink-0">
+            <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-0.5">
               {tabMeta.eyebrow}
             </p>
             <h2
-              className="text-2xl sm:text-3xl text-white tracking-tight"
+              className="text-xl sm:text-2xl text-white tracking-tight"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
               {tabMeta.label}
             </h2>
           </div>
 
-          {/* Cards region — fills remaining height, internal scroll if needed */}
+          {/* Cards */}
           <div
             role="tabpanel"
             id={`panel-${tab}`}
             aria-labelledby={`tab-${tab}`}
-            className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-none space-y-3"
+            className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-none"
           >
             {projects.length === 0 ? (
-              <div className="liquid-glass-card rounded-2xl sm:rounded-3xl px-6 py-10 text-center">
+              <div className="liquid-glass-card rounded-2xl px-5 py-8 text-center">
                 <p
-                  className="text-white/80 text-base tracking-tight lowercase mb-2"
+                  className="text-white/80 text-base tracking-tight lowercase mb-1.5"
                   style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
                 >
                   soon
                 </p>
-                <p className="text-white/60 text-sm leading-relaxed max-w-sm mx-auto">
+                <p className="text-white/55 text-sm leading-relaxed max-w-sm mx-auto">
                   {tabMeta.empty}
                 </p>
               </div>
@@ -202,11 +202,11 @@ export function LandingPage() {
             )}
           </div>
 
-          {/* Footer strip inside panel */}
-          <footer className="shrink-0 pt-3 sm:pt-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-white/[0.06] mt-3">
-            <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-4">
+          {/* Footer */}
+          <footer className="shrink-0 pt-2.5 pb-[max(0.5rem,env(safe-area-inset-bottom))] border-t border-white/[0.06] mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-1.5 sm:gap-3">
               <p
-                className="text-white/80 lowercase tracking-tight text-sm sm:text-base text-center sm:text-left"
+                className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
                 {BRAND}
@@ -242,38 +242,39 @@ function ProjectBlock({
   return (
     <article
       id={project.id}
-      className={`liquid-glass-card rounded-2xl sm:rounded-[1.35rem] ${
+      className={`liquid-glass-card rounded-2xl flex flex-col max-h-full ${
         open ? "ring-1 ring-white/15" : ""
       }`}
     >
+      {/* Header — always visible */}
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="w-full text-left px-4 sm:px-5 lg:px-6 py-4 min-h-12 flex items-start gap-3"
+        className="w-full text-left px-4 sm:px-5 py-3.5 min-h-11 flex items-start gap-3 shrink-0"
       >
         <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
-            <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-0.5">
+            <h3 className="text-[0.95rem] sm:text-base font-semibold text-white tracking-tight">
               {project.name}
             </h3>
-            <span className="text-white/42 text-xs tabular-nums tracking-wide">
+            <span className="text-white/42 text-[11px] tabular-nums tracking-wide">
               {project.year}
             </span>
             {project.status === "in-progress" && (
-              <span className="liquid-glass rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider font-semibold text-white/80">
+              <span className="liquid-glass rounded-full px-2 py-0.5 text-[9px] uppercase tracking-wider font-semibold text-white/80">
                 In progress
               </span>
             )}
           </div>
-          <p className="text-[13px] sm:text-sm text-white/60 leading-snug">
+          <p className="text-[12.5px] sm:text-[13px] text-white/55 leading-snug">
             {project.line}
           </p>
-          <div className="flex flex-wrap gap-1.5 mt-2.5">
+          <div className="flex flex-wrap gap-1.5 mt-2">
             {project.kind.map((k) => (
               <span
                 key={k}
-                className="liquid-glass rounded-full px-2.5 py-0.5 text-[11px] font-medium tracking-wide text-white/70"
+                className="liquid-glass rounded-full px-2 py-0.5 text-[10px] font-medium tracking-wide text-white/65"
               >
                 {KIND_LABEL[k]}
               </span>
@@ -281,48 +282,52 @@ function ProjectBlock({
           </div>
         </div>
         <ChevronDown
-          size={17}
-          className={`shrink-0 mt-1 text-white/40 transition-transform duration-200 ${
+          size={16}
+          className={`shrink-0 mt-0.5 text-white/40 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />
       </button>
 
       {open && (
-        <div className="border-t border-white/[0.08] px-4 sm:px-5 lg:px-6 pb-5 pt-1 space-y-4">
-          {project.sections.map((section) => (
-            <section
-              key={section.id}
-              id={`${project.id}-${section.id}`}
-              className="pt-3"
-            >
-              <h4 className="text-[0.625rem] font-medium uppercase tracking-[0.16em] text-white/40 mb-1.5">
-                {section.title}
-              </h4>
-              <p className="text-[13px] sm:text-sm text-white/60 leading-relaxed">
-                {section.body}
-              </p>
-            </section>
-          ))}
+        <>
+          {/* Body scrolls inside card; actions stay pinned */}
+          <div className="border-t border-white/[0.08] px-4 sm:px-5 pt-1 pb-2 space-y-3 overflow-y-auto overscroll-contain scrollbar-none max-h-[min(42vh,360px)]">
+            {project.sections.map((section) => (
+              <section
+                key={section.id}
+                id={`${project.id}-${section.id}`}
+                className="pt-2.5"
+              >
+                <h4 className="text-[0.6rem] font-medium uppercase tracking-[0.15em] text-white/40 mb-1">
+                  {section.title}
+                </h4>
+                <p className="text-[12.5px] sm:text-[13px] text-white/60 leading-relaxed">
+                  {section.body}
+                </p>
+              </section>
+            ))}
+          </div>
 
+          {/* Actions — always fully visible */}
           {(project.buildId || project.external || project.original) && (
-            <div className="pt-1 flex flex-wrap items-center gap-2.5">
+            <div className="shrink-0 border-t border-white/[0.08] px-4 sm:px-5 py-3 flex flex-wrap items-center gap-2">
               {project.buildId ? (
                 <>
                   <Link
                     href={`/builds/${project.buildId}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-sm font-medium min-h-10 hover:bg-white/90 transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-3.5 py-2 text-[13px] font-medium min-h-9 hover:bg-white/90 transition-colors"
                   >
                     Open build
-                    <ArrowUpRight size={15} />
+                    <ArrowUpRight size={14} />
                   </Link>
                   <Link
                     href={`/access#${project.buildId}`}
-                    className="inline-flex items-center gap-2 rounded-full liquid-glass px-4 py-2 text-sm font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+                    className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-3.5 py-2 text-[13px] font-medium min-h-9 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     aria-label="Client materials"
                   >
                     Client materials
-                    <ArrowUpRight size={15} />
+                    <ArrowUpRight size={14} />
                   </Link>
                 </>
               ) : (
@@ -332,10 +337,10 @@ function ProjectBlock({
                       href={project.external}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 py-2 text-sm font-medium min-h-10 hover:bg-white/90 transition-colors"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-3.5 py-2 text-[13px] font-medium min-h-9 hover:bg-white/90 transition-colors"
                     >
                       Visit
-                      <ArrowUpRight size={15} />
+                      <ArrowUpRight size={14} />
                     </a>
                   )}
                   {project.original && (
@@ -343,17 +348,17 @@ function ProjectBlock({
                       href={project.original}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full liquid-glass px-4 py-2 text-sm font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+                      className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-3.5 py-2 text-[13px] font-medium min-h-9 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     >
                       Original
-                      <ArrowUpRight size={15} />
+                      <ArrowUpRight size={14} />
                     </a>
                   )}
                 </>
               )}
             </div>
           )}
-        </div>
+        </>
       )}
     </article>
   );
