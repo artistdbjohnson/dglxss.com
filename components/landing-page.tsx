@@ -199,22 +199,22 @@ export function LandingPage() {
       </section>
 
       <footer className="glass-field border-t border-white/[0.06] px-5 sm:px-6 lg:px-10 py-10 sm:py-12">
-        <div className="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 items-center gap-4 sm:gap-6">
           <p
-            className="text-white/85 lowercase tracking-tight text-base sm:text-lg"
+            className="text-white/85 lowercase tracking-tight text-base sm:text-lg text-center sm:text-left"
             style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
           >
             {BRAND}
           </p>
-          <div className="flex items-center gap-4 sm:gap-5">
+          <div className="flex justify-center">
             <Link
               href="/clients"
               className="text-white/42 text-sm tracking-wide hover:text-white/70 transition-colors"
             >
               clients
             </Link>
-            <p className="text-white/42 text-sm tracking-wide">{STUDIO}</p>
           </div>
+          <p className="text-white/42 text-sm tracking-wide text-center sm:text-right">{STUDIO}</p>
         </div>
       </footer>
     </div>
