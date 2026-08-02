@@ -51,13 +51,13 @@ export type PortfolioTabId = (typeof PORTFOLIO_TABS)[number]["id"];
 /** Shipped work left empty until real projects are provided. */
 export const PROJECTS: PortfolioProject[] = [
   {
-    id: "dockproof-kit",
-    name: "DockProof Kit",
-    line: "Physical detention evidence kit — arrival window display.",
+    id: "checkclock",
+    name: "CheckClock",
+    line: "Physical detention evidence kit — check-in / check-out window display.",
     kind: ["hardware", "product"],
     year: "2026",
     status: "in-progress",
-    buildId: "dockproof-kit",
+    buildId: "checkclock",
     sections: [
       {
         id: "status",
@@ -67,7 +67,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "focus",
         title: "Focus",
-        body: "Offline-first documentation tool for owner-operators. No dock app required.",
+        body: "Answers the only two questions that matter at the dock: what time did you check in, and what time did you check out. Offline-first. No dock app required.",
       },
       {
         id: "open",
