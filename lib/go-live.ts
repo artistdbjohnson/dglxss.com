@@ -1,6 +1,6 @@
 /**
- * Client-access / go-live materials.
- * Quiet route: /access — not in main nav.
+ * CheckClock product materials (build detail / internal).
+ * Client website go-live portal lives at /clients.
  */
 
 export type GoLiveSection = {
@@ -21,9 +21,9 @@ export type GoLiveBuild = {
 
 export const GO_LIVE_BUILDS: GoLiveBuild[] = [
   {
-    id: "dockproof-kit",
-    name: "DockProof Kit",
-    line: "Physical detention evidence kit with arrival window display.",
+    id: "checkclock",
+    name: "CheckClock",
+    line: "Physical detention evidence kit with check-in / check-out window display.",
     status: "Prototyping",
     year: "2026",
     phases: [
@@ -37,12 +37,12 @@ export const GO_LIVE_BUILDS: GoLiveBuild[] = [
       {
         id: "brief",
         title: "Idea brief",
-        body: "DockProof is a physical detention evidence kit for owner-operators. A visible arrival-window clock plus a standardized claim package documents when a driver arrived, how long they waited, and what was due — without relying on a dock app, carrier portal, or verbal agreement. Built for the cab, the yard, and the claim file.",
+        body: "CheckClock is a physical detention evidence kit for owner-operators. A visible check-in / check-out window clock plus a standardized claim package documents when a driver arrived, how long they waited, and what was due — without relying on a dock app, carrier portal, or verbal agreement. Built for the cab, the yard, and the claim file.",
       },
       {
         id: "why",
         title: "Why it works",
-        body: "Detention pay disputes are still mostly paper, photos, and memory. Drivers lose hours they cannot prove. Carriers and shippers reject incomplete claims. DockProof gives both sides the same clock and the same packet: arrival time in view, claim fields standardized, offline by default. No account required to start a record.",
+        body: "Detention pay disputes are still mostly paper, photos, and memory. Drivers lose hours they cannot prove. Carriers and shippers reject incomplete claims. CheckClock answers the two questions every dispatcher asks: what time did you check in, and what time did you check out. Same clock. Same packet. Offline by default.",
       },
       {
         id: "revenue",
@@ -52,7 +52,7 @@ export const GO_LIVE_BUILDS: GoLiveBuild[] = [
       {
         id: "pitch",
         title: "Pitch",
-        body: "Detention is real money. Proof is still fragile. DockProof turns arrival and wait into a visible, portable record that fits the way owner-operators already work — offline, physical, and claim-ready. One kit per truck. One standard packet per event. Built by someone who runs the same routes.",
+        body: "Detention is real money. Proof is still fragile. CheckClock turns check-in and check-out into a visible, portable record that fits the way owner-operators already work — offline, physical, and claim-ready. One kit per truck. One standard packet per event. Built by someone who runs the same routes.",
       },
       {
         id: "scaling",
