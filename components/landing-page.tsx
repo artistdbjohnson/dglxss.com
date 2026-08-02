@@ -289,15 +289,25 @@ function ProjectBlock({
           ))}
 
           {(project.buildId || project.external) && (
-            <div className="pt-1">
+            <div className="pt-1 flex flex-wrap items-center gap-3">
               {project.buildId ? (
-                <Link
-                  href={`/builds/${project.buildId}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium min-h-11 hover:bg-white/90 transition-colors"
-                >
-                  Open build
-                  <ArrowUpRight size={16} />
-                </Link>
+                <>
+                  <Link
+                    href={`/builds/${project.buildId}`}
+                    className="inline-flex items-center gap-2 rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium min-h-11 hover:bg-white/90 transition-colors"
+                  >
+                    Open build
+                    <ArrowUpRight size={16} />
+                  </Link>
+                  <Link
+                    href={`/access#${project.buildId}`}
+                    className="inline-flex items-center gap-2 rounded-full liquid-glass px-5 py-2.5 text-sm font-medium min-h-11 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+                    aria-label="Client materials"
+                  >
+                    Client materials
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </>
               ) : (
                 <a
                   href={project.external}
