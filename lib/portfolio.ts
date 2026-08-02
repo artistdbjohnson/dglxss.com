@@ -2,7 +2,7 @@
  * Studio portfolio — web / SaaS / hardware product design.
  *
  * Tab labels:
- *   Work         → shipped projects (awaiting owner-provided entries)
+ *   Work         → shipped projects
  *   In Progress  → active builds
  */
 
@@ -48,8 +48,38 @@ export const PORTFOLIO_TABS = [
 
 export type PortfolioTabId = (typeof PORTFOLIO_TABS)[number]["id"];
 
-/** Shipped work left empty until real projects are provided. */
 export const PROJECTS: PortfolioProject[] = [
+  {
+    id: "txdiepflap",
+    name: "TX DIEP Flap",
+    line: "Full rebuild for Breast Reconstruction Associates — multi-location microsurgical practice.",
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://txdiepflap.vercel.app/",
+    sections: [
+      {
+        id: "brief",
+        title: "Brief",
+        body: "Bottom-up rebuild of the patient-facing site for a multi-location DIEP flap and natural-tissue breast reconstruction practice. Keep clinical authority and the core tagline. Replace a dated CMS template with a modern, conversion-focused experience that matches the quality of the surgery itself.",
+      },
+      {
+        id: "before",
+        title: "Before",
+        body: "Stock-photo carousel, generic medical CMS layout, phone-number header strip, uneven content loading, and template-era navigation. Functional for staff. Weak as a brand asset for patients deciding where to trust their reconstruction.",
+      },
+      {
+        id: "elevation",
+        title: "Elevation",
+        body: "Cinematic entry sequence with editorial photography. Frosted glass navigation. Clear hierarchy: Schedule Consultation as primary CTA, Explore DIEP Flap as secondary. Hero trust chips — Natural tissue, Muscle-sparing, Two surgeons every case. Procedure-led IA: Surgery, Gallery, Testimonials, FAQs, Locations, Resources. Soft clinical palette with the magenta brand mark retained. Typography and spacing tuned for calm confidence, not clinic noise.",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body: "An A-tier patient site that reads as premium specialty care on first glance. Live at txdiepflap.vercel.app. Built as a case study any practice can point to when they need to stop looking like a 2014 WordPress template.",
+      },
+    ],
+  },
   {
     id: "checkclock",
     name: "CheckClock",
