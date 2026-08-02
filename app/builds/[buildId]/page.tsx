@@ -72,6 +72,16 @@ export default async function BuildPage({
               ))}
             </ul>
           </section>
+
+          <div className="pt-3">
+            <Link
+              href={`/access#${project.buildId || project.id}`}
+              className="inline-flex items-center gap-2 rounded-full liquid-glass px-5 py-2.5 text-sm font-medium min-h-11 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
+              aria-label="Open client materials for this build"
+            >
+              Client materials
+            </Link>
+          </div>
         </div>
       </div>
     </div>
