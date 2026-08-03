@@ -70,7 +70,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "before",
         title: "Before",
-        body: "Stock photos cycling through a carousel. A medical template that could have belonged to almost any clinic. Phone number fixed in the header strip, pages that loaded at different speeds, navigation that felt like 2014. It worked fine if you already knew the office. It did not work if you were a patient trying to decide whether to trust them.",
+        body: "Stock photos cycling through a carousel. A medical template that could have belonged to almost any clinic. Phone number fixed in the header strip, pages that loaded at different speeds, navigation that was functional but not doing much for first-time patients. It worked fine if you already knew the office. It did not work if you were trying to decide whether to trust them.",
       },
       {
         id: "elevation",
@@ -80,7 +80,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "outcome",
         title: "Outcome",
-        body: "Reads as specialty care when you land on it. Live at txdiepflap.vercel.app. Other practices can use it as a reference when they are tired of looking like a WordPress theme from ten years ago.",
+        body: "Reads as specialty care when you land on it. Live at txdiepflap.vercel.app. A clean reference for practices that want their site to carry the same weight as the work they do.",
       },
     ],
   },
