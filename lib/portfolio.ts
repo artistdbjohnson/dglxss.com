@@ -1,9 +1,9 @@
 /**
- * Studio portfolio — web / SaaS / hardware product design.
+ * Studio portfolio - web / SaaS / hardware product design.
  *
  * Tab labels:
- *   Work         → shipped projects
- *   In Progress  → active builds
+ *   Work         -> shipped projects
+ *   In Progress  -> active builds
  */
 
 export type ProjectKind = "web" | "saas" | "hardware" | "product";
@@ -55,7 +55,7 @@ export const PROJECTS: PortfolioProject[] = [
   {
     id: "txdiepflap",
     name: "TX DIEP Flap",
-    line: "Full rebuild for Breast Reconstruction Associates — multi-location microsurgical practice.",
+    line: "Full rebuild for Breast Reconstruction Associates, multi-location microsurgical practice.",
     kind: ["web"],
     year: "2026",
     status: "shipped",
@@ -75,7 +75,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "elevation",
         title: "What I built",
-        body: "Opened on real photography, not stock. Frosted glass nav. Schedule Consultation sits as the primary action, Explore DIEP Flap under it. Hero carries three trust lines — Natural tissue, Muscle-sparing, Two surgeons every case. The rest of the site follows the procedure itself: Surgery, Gallery, Testimonials, FAQs, Locations, Resources. Kept their magenta. Soft colors, quieter type, spacing that does not feel like a waiting room.",
+        body: "Opened on real photography, not stock. Frosted glass nav. Schedule Consultation sits as the primary action, Explore DIEP Flap under it. Hero carries three trust lines: Natural tissue, Muscle-sparing, Two surgeons every case. The rest of the site follows the procedure itself: Surgery, Gallery, Testimonials, FAQs, Locations, Resources. Kept their magenta. Soft colors, quieter type, spacing that does not feel like a waiting room.",
       },
       {
         id: "outcome",
@@ -87,7 +87,7 @@ export const PROJECTS: PortfolioProject[] = [
   {
     id: "checkclock",
     name: "CheckClock",
-    line: "Physical detention evidence kit — check-in / check-out window display.",
+    line: "Physical detention evidence kit, check-in / check-out window display.",
     kind: ["hardware", "product"],
     year: "2026",
     status: "in-progress",
@@ -96,7 +96,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "status",
         title: "Status",
-        body: "Prototyping. Design & source → first units → self-test → friend pilots → company pilot.",
+        body: "Prototyping. Design & source -> first units -> self-test -> friend pilots -> company pilot.",
       },
       {
         id: "focus",
