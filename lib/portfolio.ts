@@ -65,7 +65,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "Client needed a patient site that actually matched the surgery. Multi-location DIEP flap and natural-tissue reconstruction practice. I kept their clinical voice and the core tagline, threw out the old CMS template, and built the whole thing from the ground up so it feels as deliberate as the work they do.",
+        body: "Client needed a patient site that actually matched their practice. Multi-location DIEP flap and natural-tissue reconstruction. I kept their clinical voice and the core tagline, threw out the old CMS template, and built the whole thing from the ground up so it feels as deliberate as the work they do.",
       },
       {
         id: "before",
