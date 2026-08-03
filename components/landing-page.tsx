@@ -154,7 +154,7 @@ export function LandingPage() {
             })}
           </div>
 
-          {/* Title — compact */}
+          {/* Title - compact */}
           <div className="mb-3 text-center shrink-0">
             <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-0.5">
               {tabMeta.eyebrow}
@@ -246,7 +246,7 @@ function ProjectBlock({
         open ? "ring-1 ring-white/15" : ""
       }`}
     >
-      {/* Header — always visible */}
+      {/* Header - always visible */}
       <button
         type="button"
         onClick={onToggle}
@@ -309,7 +309,7 @@ function ProjectBlock({
             ))}
           </div>
 
-          {/* Actions — always fully visible */}
+          {/* Actions - always fully visible */}
           {(project.buildId || project.external || project.original) && (
             <div className="shrink-0 border-t border-white/[0.08] px-4 sm:px-5 py-3 flex flex-wrap items-center gap-2">
               {project.buildId ? (
@@ -339,7 +339,7 @@ function ProjectBlock({
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-3.5 py-2 text-[13px] font-medium min-h-9 hover:bg-white/90 transition-colors"
                     >
-                      Visit
+                      View rebuild
                       <ArrowUpRight size={14} />
                     </a>
                   )}
@@ -350,7 +350,7 @@ function ProjectBlock({
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-3.5 py-2 text-[13px] font-medium min-h-9 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     >
-                      Original
+                      View original
                       <ArrowUpRight size={14} />
                     </a>
                   )}
