@@ -65,22 +65,22 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "Client needed a patient site that actually matched their practice. Multi-location DIEP flap work, natural-tissue reconstruction, the kind of surgery people research for months before they pick a surgeon. I kept their voice and the tagline they already had, and I threw the old CMS out instead of trying to dress it up.",
+        body: "The client needed a patient site that actually matched their practice. Multi-location DIEP flap work, natural-tissue reconstruction, the kind of surgery people research for months before they pick a surgeon. So I kept their voice and the tagline they already had, and I threw the old CMS out instead of trying to dress it up.",
       },
       {
         id: "before",
         title: "Before",
-        body: "Stock photos cycling through a carousel. A medical template that could have belonged to almost any clinic. Phone number fixed in the header strip, pages that loaded at different speeds, navigation that was functional but not doing much for first-time patients. It worked fine if you already knew the office. It did not work if you were trying to decide whether to trust them.",
+        body: "We had stock photos cycling through a carousel, and a medical template that could have belonged to almost any clinic. A phone number fixed in the header strip. Pages that loaded at different speeds. Navigation that was functional but not doing much for first-time patients. It worked fine if you already knew the office, but it did not work if you were trying to decide whether to trust them.",
       },
       {
         id: "elevation",
         title: "What I built",
-        body: "Opened on real photography, not stock. Frosted glass nav. Schedule Consultation sits as the primary action, Explore DIEP Flap under it. Hero carries three trust lines: Natural tissue, Muscle-sparing, Two surgeons every case. The rest of the site follows the procedure itself: Surgery, Gallery, Testimonials, FAQs, Locations, Resources. Kept their magenta. Soft colors, quieter type, spacing that does not feel like a waiting room.",
+        body: "The rebuild opens on real photography, not stock. The frosted glass nav was added so the bar stays light and out of the way. Schedule Consultation sits as the primary action, and Explore DIEP Flap sits under it. Our hero now carries three trust lines: Natural tissue, Muscle-sparing, and two surgeons for every case. Then the rest of the site follows the procedure itself: Surgery, Gallery, Testimonials, FAQs, Locations, Resources. We kept their magenta. Soft colors, quieter type, and spacing that does not feel like a waiting room.",
       },
       {
         id: "outcome",
         title: "Outcome",
-        body: "Reads as specialty care when you land on it. Live at txdiepflap.vercel.app. A clean reference for practices that want their site to carry the same weight as the work they do.",
+        body: "The new build reads as specialty care when you land on it. Live at txdiepflap.vercel.app. A clean reference for practices that want their site to carry the same weight as the work they do.",
       },
     ],
   },
