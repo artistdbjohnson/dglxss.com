@@ -86,7 +86,7 @@ export const PROJECTS: PortfolioProject[] = [
   },
   {
     id: "seanfalyon",
-    name: "Sean Falyon",
+    name: "DJ Sean Falyon",
     line: "Full rebuild for a cultural curator and party rocker DJ. Be Everywhere.",
     kind: ["web"],
     year: "2026",
