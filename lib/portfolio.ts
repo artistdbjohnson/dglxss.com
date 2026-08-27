@@ -54,7 +54,7 @@ export type PortfolioTabId = (typeof PORTFOLIO_TABS)[number]["id"];
 export const PROJECTS: PortfolioProject[] = [
   {
     id: "txdiepflap",
-    name: "TX DIEP Flap",
+    name: "Reconstruction Associates",
     line: "Full rebuild for Breast Reconstruction Associates, multi-location microsurgical practice.",
     kind: ["web"],
     year: "2026",
