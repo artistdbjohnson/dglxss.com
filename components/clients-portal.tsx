@@ -105,10 +105,14 @@ export function ClientsPortal() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const resetAll = () => {
-    if (!confirm("Start over from the beginning?")) return;
+  const goToPathCards = () => {
     localStorage.removeItem(STORAGE_KEY);
     setState(defaultState());
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const resetAll = () => {
+    goToPathCards();
   };
 
   const copyText = async (text: string, label: string) => {
@@ -116,14 +120,14 @@ export function ClientsPortal() {
       await navigator.clipboard.writeText(text);
       showToast(`Copied ${label}`);
     } catch {
-      showToast("Could not copy — long-press to select");
+      showToast("Could not copy. Long-press to select");
     }
   };
 
   if (!hydrated) {
     return (
       <div className="min-h-dvh bg-black text-white flex items-center justify-center">
-        <p className="text-white/40 text-sm tracking-wide">Loading…</p>
+        <p className="text-white/40 text-sm tracking-wide">Loading...</p>
       </div>
     );
   }
@@ -145,7 +149,7 @@ export function ClientsPortal() {
         </header>
         <div className="flex-1 flex flex-col justify-center px-5 sm:px-8 py-12 max-w-3xl mx-auto w-full">
           <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-white/42 mb-3">
-            Go live — by dglxss
+            Go live by dglxss
           </p>
           <h1
             className="text-[2rem] sm:text-4xl md:text-5xl text-white tracking-tight lowercase"
@@ -167,7 +171,7 @@ export function ClientsPortal() {
               </span>
               <h2 className="mt-4 text-lg font-semibold text-white">{PATHS.self.title}</h2>
               <p className="mt-2 text-sm text-white/55 leading-relaxed">{PATHS.self.subtitle}</p>
-              <span className="mt-5 inline-block text-sm font-medium text-white/80">Choose this path →</span>
+              <span className="mt-5 inline-block text-sm font-medium text-white/80">Choose this path</span>
             </button>
             <button
               type="button"
@@ -179,7 +183,7 @@ export function ClientsPortal() {
               </span>
               <h2 className="mt-4 text-lg font-semibold">{PATHS.managed.title}</h2>
               <p className="mt-2 text-sm text-black/60 leading-relaxed">{PATHS.managed.subtitle}</p>
-              <span className="mt-5 inline-block text-sm font-medium">Choose this path →</span>
+              <span className="mt-5 inline-block text-sm font-medium">Choose this path</span>
             </button>
           </div>
           <p className="mt-8 text-center text-xs text-white/40">
@@ -221,7 +225,7 @@ export function ClientsPortal() {
           </button>
         </div>
         <Link href="/" className="mt-10 text-sm text-white/40 hover:text-white/70">
-          ← Back to dglxss
+          Back to dglxss
         </Link>
       </div>
     );
@@ -230,26 +234,39 @@ export function ClientsPortal() {
   if (!pathMeta || !step) return null;
 
   return (
-    <Wizard
-      pathMeta={pathMeta}
-      steps={steps}
-      step={step}
-      stepIndex={state.stepIndex}
-      completed={state.completed}
-      completedCount={completedCount}
-      pct={pct}
-      state={state}
-      setState={setState}
-      onComplete={markCompleteAndNext}
-      onBack={() =>
-        setState((s) => (s.stepIndex > 0 ? { ...s, stepIndex: s.stepIndex - 1 } : s))
-      }
-      onGoToStep={(i) => {
-        if (i < 0 || i >= steps.length || i > completedCount) return;
-        setState((s) => ({ ...s, stepIndex: i }));
-      }}
-      copyText={copyText}
-    />
+    <>
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-white px-4 py-2 text-sm text-black">
+          {toast}
+        </div>
+      )}
+      <Wizard
+        pathMeta={pathMeta}
+        steps={steps}
+        step={step}
+        stepIndex={state.stepIndex}
+        completed={state.completed}
+        completedCount={completedCount}
+        pct={pct}
+        state={state}
+        setState={setState}
+        onComplete={markCompleteAndNext}
+        onBack={() => {
+          if (state.stepIndex > 0) {
+            setState((s) => ({ ...s, stepIndex: s.stepIndex - 1 }));
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+          }
+          goToPathCards();
+        }}
+        onStartOver={goToPathCards}
+        onGoToStep={(i) => {
+          if (i < 0 || i >= steps.length || i > completedCount) return;
+          setState((s) => ({ ...s, stepIndex: i }));
+        }}
+        copyText={copyText}
+      />
+    </>
   );
 }
 
@@ -265,6 +282,7 @@ function Wizard({
   setState,
   onComplete,
   onBack,
+  onStartOver,
   onGoToStep,
   copyText,
 }: {
@@ -279,6 +297,7 @@ function Wizard({
   setState: React.Dispatch<React.SetStateAction<PortalState>>;
   onComplete: () => void;
   onBack: () => void;
+  onStartOver: () => void;
   onGoToStep: (i: number) => void;
   copyText: (text: string, label: string) => void;
 }) {
@@ -291,13 +310,22 @@ function Wizard({
   return (
     <div className="min-h-dvh flex flex-col lg:flex-row bg-black text-white">
       <aside className="hidden lg:flex w-[40%] shrink-0 flex-col border-r border-white/[0.08] bg-[#0a0a0a] p-8 xl:p-10">
-        <Link
-          href="/"
-          className="mb-12 text-sm tracking-tight lowercase text-white/80 hover:text-white"
-          style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-        >
-          dglxss
-        </Link>
+        <div className="mb-12 flex items-center justify-between gap-3">
+          <Link
+            href="/"
+            className="text-sm tracking-tight lowercase text-white/80 hover:text-white"
+            style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+          >
+            dglxss
+          </Link>
+          <button
+            type="button"
+            onClick={onStartOver}
+            className="text-xs text-white/45 hover:text-white/80"
+          >
+            Change path
+          </button>
+        </div>
         <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-white/40">{pathMeta.phaseLabel}</p>
         <h1
           className="mt-3 text-2xl xl:text-3xl text-white tracking-tight lowercase"
@@ -360,15 +388,21 @@ function Wizard({
 
       <main className="flex-1 overflow-y-auto px-5 sm:px-8 py-8 max-w-xl mx-auto w-full lg:max-w-none lg:mx-0 lg:px-12 lg:py-10">
         <div className="lg:hidden mb-6 flex items-center justify-between">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white"
+          <button
+            type="button"
+            onClick={onBack}
+            className="inline-flex items-center gap-1.5 text-sm text-white/70 hover:text-white min-h-11"
           >
-            <ArrowLeft size={16} /> dglxss
-          </Link>
-          <span className="text-xs text-white/40">
-            {stepIndex + 1}/{steps.length}
-          </span>
+            <ArrowLeft size={16} />
+            {stepIndex > 0 ? "Back" : "Paths"}
+          </button>
+          <button
+            type="button"
+            onClick={onStartOver}
+            className="text-xs text-white/40 hover:text-white/70"
+          >
+            Start over
+          </button>
         </div>
         <div className="lg:hidden mb-6 h-1 rounded-full bg-white/10 overflow-hidden">
           <div
@@ -439,7 +473,7 @@ function Wizard({
           <div className="mt-6 liquid-glass-card rounded-2xl p-5">
             {host ? (
               <>
-                <p className="text-sm font-semibold text-white">{host.label} — exact clicks</p>
+                <p className="text-sm font-semibold text-white">{host.label} exact clicks</p>
                 {host.portalUrl && (
                   <a
                     href={host.portalUrl}
@@ -447,7 +481,7 @@ function Wizard({
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex h-12 items-center rounded-full bg-white px-5 text-sm font-semibold text-black hover:bg-white/90"
                   >
-                    {host.portalLabel} →
+                    {host.portalLabel}
                   </a>
                 )}
                 <ol className="mt-4 space-y-2 list-none pl-0">
@@ -564,8 +598,8 @@ function Wizard({
             <p>
               Plan: <strong className="text-white">{plan.name}</strong> ${plan.price}/mo
             </p>
-            <p>Email: {state.contact.email || "—"}</p>
-            <p>Domain: {state.contact.domain || "—"}</p>
+            <p>Email: {state.contact.email || "-"}</p>
+            <p>Domain: {state.contact.domain || "-"}</p>
             <p className="text-xs text-white/40 pt-1">Hosting: dglxss (our Vercel)</p>
           </div>
         )}
@@ -591,15 +625,13 @@ function Wizard({
           >
             {step.actionLabel}
           </button>
-          {stepIndex > 0 && (
-            <button
-              type="button"
-              onClick={onBack}
-              className="h-14 px-5 rounded-full liquid-glass text-sm text-white/70 hover:text-white transition-colors"
-            >
-              Back
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={onBack}
+            className="h-14 px-5 rounded-full liquid-glass text-sm text-white/70 hover:text-white transition-colors"
+          >
+            {stepIndex > 0 ? "Back" : "Back to paths"}
+          </button>
         </div>
       </main>
     </div>
