@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { HeroParticles } from "@/components/hero-particles";
 import {
@@ -351,6 +351,15 @@ function ProjectBlock({
               )}
             </div>
           )}
+
+          <button
+            type="button"
+            onClick={onToggle}
+            aria-label="Collapse card"
+            className="w-full flex items-center justify-center pb-3.5 pt-1 min-h-10 text-white/40 hover:text-white/70 transition-colors"
+          >
+            <ChevronUp size={16} strokeWidth={2} />
+          </button>
         </>
       )}
     </article>
