@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const SOLO = ["maker", "builder", "dreamer"] as const;
-const FINAL = ["maker", "dreamer", "builder"] as const;
+const FINAL = ["maker", "builder", "dreamer"] as const;
 
 const FADE_IN = 480;
 const HOLD = 720;
@@ -85,7 +85,7 @@ export function AboutTitle() {
     <p
       className="about-title text-white lowercase tracking-tight flex flex-wrap items-baseline justify-center gap-x-[0.45em]"
       style={serif}
-      aria-label="maker dreamer builder"
+      aria-label="maker builder dreamer"
     >
       {FINAL.map((word, i) => (
         <span key={word} className="inline-flex items-baseline gap-x-[0.45em]">
