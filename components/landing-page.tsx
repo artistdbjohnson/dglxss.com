@@ -187,18 +187,20 @@ export function LandingPage() {
                 </p>
               </div>
             ) : (
-              projects.map((project) => (
-                <ProjectBlock
-                  key={project.id}
-                  project={project}
-                  open={openId === project.id}
-                  onToggle={() =>
-                    setOpenId((id) =>
-                      id === project.id ? null : project.id,
-                    )
-                  }
-                />
-              ))
+              <div className="flex flex-col gap-3 sm:gap-4 pb-1">
+                {projects.map((project) => (
+                  <ProjectBlock
+                    key={project.id}
+                    project={project}
+                    open={openId === project.id}
+                    onToggle={() =>
+                      setOpenId((id) =>
+                        id === project.id ? null : project.id,
+                      )
+                    }
+                  />
+                ))}
+              </div>
             )}
           </div>
 
