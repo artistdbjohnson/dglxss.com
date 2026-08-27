@@ -65,7 +65,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "The client needed a patient site that actually matched their practice. Multi-location DIEP flap work, natural-tissue reconstruction, the kind of surgery people research for months before they pick a surgeon. So I kept their voice and the tagline they already had, and I threw the old CMS out instead of trying to dress it up.",
+        body: "The client needed a patient site that actually matched their practice. Multi-location DIEP flap work, natural-tissue reconstruction, the kind of surgery people sit with for months before they pick a surgeon. So I kept their voice and the tagline they already had, and I built the pages from scratch instead of polishing the old CMS.",
       },
       {
         id: "before",
@@ -80,7 +80,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "outcome",
         title: "Outcome",
-        body: "The new build reads as specialty care when you land on it. Live at txdiepflap.vercel.app. A clean reference for practices that want their site to carry the same weight as the work they do.",
+        body: "You get specialty care on first look. Live at txdiepflap.vercel.app. A clean reference for practices that want their site to carry the same weight as the work they do.",
       },
     ],
   },
@@ -97,12 +97,12 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "The client needed a site that actually matched the rooms he builds. Sean Falyon, cultural curator and party rocker DJ, rooted in Black music, twenty-plus years across stages and cities. So I kept Be Everywhere and the booking path he already had, and I threw the Wix build out instead of trying to dress it up.",
+        body: "The client needed a site that actually matched the rooms he builds. Sean Falyon, cultural curator and party rocker DJ, rooted in Black music, twenty-plus years across stages and cities. So I kept Be Everywhere and the booking path he already had, and I moved him off Wix onto a stack we could control.",
       },
       {
         id: "before",
         title: "Before",
-        body: "We had a Wix site doing the job. Photo hero, gold type, lists of residencies and mixes, a Book Sean button up top. It worked fine if you already knew his calendar, but it did not work if you were a brand or a promoter landing cold and trying to feel the weight of the night.",
+        body: "We had a Wix site doing the job. Photo hero, gold type, lists of residencies and mixes, a Book Sean button up top. Fine if you already had him in the rotation. Less fine if you were a brand or a promoter landing cold and trying to feel the night.",
       },
       {
         id: "elevation",
@@ -117,7 +117,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "outcome",
         title: "Outcome",
-        body: "The new build reads as a working artist site when you land on it. Live at seanfalyon.vercel.app. A clean reference for DJs and curators who want their site to carry the same weight as the night.",
+        body: "You land on an artist site that is actually working. Live at seanfalyon.vercel.app. Built so a promoter can send it in a booking thread and not have to apologize for the page.",
       },
     ],
   },
