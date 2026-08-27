@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AboutParticles } from "@/components/about-particles";
+import { AboutTitle } from "@/components/about-title";
 
 export const metadata = {
   title: "dglxss — maker",
@@ -44,13 +45,8 @@ export default function AboutPage() {
         </div>
       </nav>
 
-      <main className="relative z-10 flex-1 flex items-center justify-center px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-        <p
-          className="about-title hero-enter text-white lowercase tracking-tight"
-          style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-        >
-          maker
-        </p>
+      <main className="relative z-10 flex-1 flex items-center justify-center px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center">
+        <AboutTitle />
       </main>
     </div>
   );
