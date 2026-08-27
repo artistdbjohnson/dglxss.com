@@ -85,6 +85,43 @@ export const PROJECTS: PortfolioProject[] = [
     ],
   },
   {
+    id: "seanfalyon",
+    name: "Sean Falyon",
+    line: "Full rebuild for a cultural curator and party rocker DJ. Be Everywhere.",
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://seanfalyon.vercel.app/",
+    original: "https://www.seanfalyon.com/",
+    sections: [
+      {
+        id: "brief",
+        title: "Brief",
+        body: "The client needed a site that actually matched the rooms he builds. Sean Falyon, cultural curator and party rocker DJ, rooted in Black music, twenty-plus years across stages and cities. So I kept Be Everywhere and the booking path he already had, and I threw the Wix build out instead of trying to dress it up.",
+      },
+      {
+        id: "before",
+        title: "Before",
+        body: "We had a Wix site doing the job. Photo hero, gold type, lists of residencies and mixes, a Book Sean button up top. It worked fine if you already knew his calendar, but it did not work if you were a brand or a promoter landing cold and trying to feel the weight of the night.",
+      },
+      {
+        id: "elevation",
+        title: "What I built",
+        body: "The rebuild opens on a black field and a 3D portrait, gold wordmark under it, and Book Sean as the main move. Then a ticker carries the lines he already uses: Cultural curator + party rocker DJ, Rooted in Black music, Be Everywhere. Nav is EPK, Mixes, Bulletin, Events, Shop. SoundCloud sits on the page, and HoneyBook handles the booking. The rest follows how he actually works: radio every Friday, residencies, live rooms, press kit.",
+      },
+      {
+        id: "stack",
+        title: "Stack",
+        body: "Vite and React on the front. Tailwind for the system. Framer Motion on the motion. SoundCloud for the edits. HoneyBook for booking. Shop wired for merch. Deployed on Vercel.",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body: "The new build reads as a working artist site when you land on it. Live at seanfalyon.vercel.app. A clean reference for DJs and curators who want their site to carry the same weight as the night.",
+      },
+    ],
+  },
+  {
     id: "checkclock",
     name: "CheckClock",
     line: "Physical detention evidence kit, check-in / check-out window display.",
