@@ -117,9 +117,9 @@ export function LandingPage() {
 
       <section
         id="portfolio"
-        className="snap-panel glass-field relative z-10 flex flex-col border-t border-white/[0.06]"
+        className="snap-panel snap-panel-loose glass-field relative z-10 flex flex-col border-t border-white/[0.06]"
       >
-        <div className="flex-1 min-h-0 flex flex-col max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10">
+        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10">
           <div
             role="tablist"
             aria-label="Portfolio"
@@ -167,7 +167,7 @@ export function LandingPage() {
             role="tabpanel"
             id={`panel-${tab}`}
             aria-labelledby={`tab-${tab}`}
-            className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-none"
+            className="shrink-0"
           >
             {projects.length === 0 ? (
               <div className="liquid-glass-card rounded-2xl px-5 py-10 text-center">
@@ -197,29 +197,31 @@ export function LandingPage() {
                 ))}
               </div>
             )}
-
-            <footer className="pt-8 pb-[max(1.25rem,env(safe-area-inset-bottom))] mt-8 border-t border-white/[0.06]">
-              <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-3">
-                <p
-                  className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
-                  style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-                >
-                  {BRAND}
-                </p>
-                <div className="flex justify-center">
-                  <Link
-                    href="/clients"
-                    className="text-white/40 text-sm tracking-wide hover:text-white/70 transition-colors min-h-10 inline-flex items-center"
-                  >
-                    clients
-                  </Link>
-                </div>
-                <p className="text-white/40 text-sm tracking-wide text-center sm:text-right">
-                  {STUDIO}
-                </p>
-              </div>
-            </footer>
           </div>
+
+          <div className="flex-1 min-h-10" aria-hidden />
+
+          <footer className="shrink-0 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] mt-2 border-t border-white/[0.06]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-3">
+              <p
+                className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
+                style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
+              >
+                {BRAND}
+              </p>
+              <div className="flex justify-center">
+                <Link
+                  href="/clients"
+                  className="text-white/40 text-sm tracking-wide hover:text-white/70 transition-colors min-h-10 inline-flex items-center"
+                >
+                  clients
+                </Link>
+              </div>
+              <p className="text-white/40 text-sm tracking-wide text-center sm:text-right">
+                {STUDIO}
+              </p>
+            </div>
+          </footer>
         </div>
       </section>
     </div>
