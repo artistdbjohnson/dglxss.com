@@ -53,6 +53,43 @@ export type PortfolioTabId = (typeof PORTFOLIO_TABS)[number]["id"];
 
 export const PROJECTS: PortfolioProject[] = [
   {
+    id: "netjets",
+    name: "NetJets",
+    line: "Full rebuild for the pioneer of fractional private aviation. Restyle, not a rebrand.",
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://netjets-rebuild.vercel.app/",
+    original: "https://www.netjets.com/en-us/",
+    sections: [
+      {
+        id: "brief",
+        title: "Brief",
+        body: "The brief was a restyle, not a rebrand. NetJets already had the lines. Pioneer of fractional ownership, Berkshire company, largest private fleet. So I kept their copy and the 877 number they already use, and I rebuilt the pages so the site feels like the product instead of a corporate homepage doing its best.",
+      },
+      {
+        id: "before",
+        title: "Before",
+        body: "We had a dense marketing site doing the job. Claims stacked on claims, program tiles, a phone strip, and a lot of pages that read like a brochure. It worked fine if you already fly with them. It did not work as well if you were comparing programs and trying to see the cabin.",
+      },
+      {
+        id: "elevation",
+        title: "What I built",
+        body: "The rebuild opens on a dark glass hero and a Global 7500 flyover. Then it keeps the home stack they already run. Pinnacle, cost transparency, new aircraft arriving in 2026, the luxury band, corporate travel, NetJets vs others, news, explore. Fleet pages carry the actual tails and cabin stills. Contact stays Request Information and the same phone number. Liquid glass plates instead of a template grid.",
+      },
+      {
+        id: "stack",
+        title: "Stack",
+        body: "Next.js and React on the front. Tailwind for the system. Framer Motion on the motion. Three.js and React Three Fiber where the page needs depth. Instrument Serif and Barlow for type, Work Sans standing in for the wordmark. Hero video on the Global 7500. Deployed on Vercel.",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body: "You get the fleet on first look. Live at netjets-rebuild.vercel.app. A clean reference for a brand that already owns the category and still needs the homepage to look like it.",
+      },
+    ],
+  },
+  {
     id: "txdiepflap",
     name: "Reconstruction Associates",
     line: "Full rebuild for Breast Reconstruction Associates, multi-location microsurgical practice.",
@@ -118,43 +155,6 @@ export const PROJECTS: PortfolioProject[] = [
         id: "outcome",
         title: "Outcome",
         body: "You land on an artist site that is actually working. Live at seanfalyon.vercel.app. Built so a promoter can send it in a booking thread and not have to apologize for the page.",
-      },
-    ],
-  },
-  {
-    id: "netjets",
-    name: "NetJets",
-    line: "Full rebuild for the pioneer of fractional private aviation. Restyle, not a rebrand.",
-    kind: ["web"],
-    year: "2026",
-    status: "shipped",
-    external: "https://netjets-rebuild.vercel.app/",
-    original: "https://www.netjets.com/en-us/",
-    sections: [
-      {
-        id: "brief",
-        title: "Brief",
-        body: "The brief was a restyle, not a rebrand. NetJets already had the lines. Pioneer of fractional ownership, Berkshire company, largest private fleet. So I kept their copy and the 877 number they already use, and I rebuilt the pages so the site feels like the product instead of a corporate homepage doing its best.",
-      },
-      {
-        id: "before",
-        title: "Before",
-        body: "We had a dense marketing site doing the job. Claims stacked on claims, program tiles, a phone strip, and a lot of pages that read like a brochure. It worked fine if you already fly with them. It did not work as well if you were comparing programs and trying to see the cabin.",
-      },
-      {
-        id: "elevation",
-        title: "What I built",
-        body: "The rebuild opens on a dark glass hero and a Global 7500 flyover. Then it keeps the home stack they already run. Pinnacle, cost transparency, new aircraft arriving in 2026, the luxury band, corporate travel, NetJets vs others, news, explore. Fleet pages carry the actual tails and cabin stills. Contact stays Request Information and the same phone number. Liquid glass plates instead of a template grid.",
-      },
-      {
-        id: "stack",
-        title: "Stack",
-        body: "Next.js and React on the front. Tailwind for the system. Framer Motion on the motion. Three.js and React Three Fiber where the page needs depth. Instrument Serif and Barlow for type, Work Sans standing in for the wordmark. Hero video on the Global 7500. Deployed on Vercel.",
-      },
-      {
-        id: "outcome",
-        title: "Outcome",
-        body: "You get the fleet on first look. Live at netjets-rebuild.vercel.app. A clean reference for a brand that already owns the category and still needs the homepage to look like it.",
       },
     ],
   },
