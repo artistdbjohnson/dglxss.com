@@ -85,13 +85,16 @@ export function HeroParticles({
       particles = [];
       const area = w * h;
       const aspect = w / Math.max(h, 1);
+      const desktop = w >= 900;
 
-      const base = Math.floor(Math.sqrt(area) * 2.4 * density);
-      const count = Math.min(420, Math.max(90, base));
+      const mul = desktop ? 3.15 : 2.4;
+      const cap = desktop ? 900 : 420;
+      const base = Math.floor(Math.sqrt(area) * mul * density);
+      const count = Math.min(cap, Math.max(90, base));
       const cover = Math.hypot(w * 0.5, h * 0.5) * 1.12;
       const baseEy =
         aspect > 1.5 ? 0.8 : aspect > 1.2 ? 0.84 : aspect < 0.7 ? 1.05 : 0.92;
-      const sizeBoost = w > 1100 ? 1.12 : w < 500 ? 1.04 : 1;
+      const sizeBoost = w > 1100 ? 1.2 : w < 500 ? 1.04 : 1;
 
       for (let i = 0; i < count; i++) {
         const layer = (i % 3) as 0 | 1 | 2;
@@ -131,11 +134,12 @@ export function HeroParticles({
         });
       }
 
-      const cols = aspect > 1.2 ? 8 : aspect > 1 ? 7 : 5;
-      const rows = aspect > 1.2 ? 6 : aspect > 1 ? 6 : 8;
+      const cols = desktop ? 14 : aspect > 1.2 ? 8 : aspect > 1 ? 7 : 5;
+      const rows = desktop ? 9 : aspect > 1.2 ? 6 : aspect > 1 ? 6 : 8;
+      const keepChance = desktop ? 0.62 : 0.45;
       for (let gy = 0; gy < rows; gy++) {
         for (let gx = 0; gx < cols; gx++) {
-          if (Math.random() > 0.55) continue;
+          if (Math.random() > keepChance) continue;
           const jx = (gx + 0.5) / cols + rand(-0.03, 0.03);
           const jy = (gy + 0.5) / rows + rand(-0.03, 0.03);
           particles.push({
@@ -159,7 +163,6 @@ export function HeroParticles({
       readScroll();
       const dt = Math.min(48, Math.max(8, now - lastNow));
       lastNow = now;
-      // ~320ms time constant — a snap still takes half a second to finish the river
       const follow = 1 - Math.exp(-dt / 320);
       part += (targetPart - part) * follow;
       if (Math.abs(targetPart - part) < 0.0008) part = targetPart;
