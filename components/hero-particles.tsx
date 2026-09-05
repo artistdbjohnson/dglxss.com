@@ -18,8 +18,8 @@ type Particle = {
 
 /**
  * Continuous seamless particle sky.
- * Scroll split parks the field in left/right edge banks
- * (canoe through a river of light) without changing size or glow.
+ * On scroll, the field becomes a thin left/right border
+ * outside the card column — not behind the cards.
  */
 export function HeroParticles({
   density = 1,
@@ -165,7 +165,7 @@ export function HeroParticles({
         h * 0.5,
         Math.hypot(w, h) * 0.75,
       );
-      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim})`);
+      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim * (1 - ease * 0.35)})`);
       ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim})`);
       ambient.addColorStop(1, `rgba(255,255,255,${0.004 * dim})`);
       ctx.fillStyle = ambient;
@@ -187,7 +187,7 @@ export function HeroParticles({
           h * cy,
           Math.min(w, h) * r,
         );
-        cg.addColorStop(0, `rgba(255,255,255,${a * dim})`);
+        cg.addColorStop(0, `rgba(255,255,255,${a * dim * (1 - ease * 0.4)})`);
         cg.addColorStop(1, "rgba(0,0,0,0)");
         ctx.fillStyle = cg;
         ctx.fillRect(0, 0, w, h);
@@ -196,7 +196,8 @@ export function HeroParticles({
       ctx.globalCompositeOperation = "lighter";
 
       const mid = w * 0.5;
-      const bank = Math.max(28, Math.min(w * 0.16, 88));
+      // Thin edge border. Stays in the side gutters, never the card column.
+      const gutter = Math.max(16, Math.min(w * 0.072, 36));
 
       for (const p of particles) {
         const angle = p.a0 + p.w * elapsed;
@@ -212,10 +213,14 @@ export function HeroParticles({
 
         if (ease > 0.001) {
           const side = px < mid ? -1 : 1;
-          const scatter = ((p.ph % 1) - 0.5) * bank * 0.7;
-          const target = side < 0 ? bank * 0.55 + scatter : w - bank * 0.55 + scatter;
+          const scatter = ((p.ph % 1) - 0.5) * gutter * 0.55;
+          const target =
+            side < 0 ? gutter * 0.42 + scatter : w - gutter * 0.42 + scatter;
           px = px + (target - px) * ease;
-          py = py + ease * h * 0.04;
+          py = py + ease * h * 0.03;
+          const maxX = gutter + 2;
+          if (side < 0 && px > maxX) px = maxX;
+          if (side > 0 && px < w - maxX) px = w - maxX;
           if (px < 2) px = 2;
           if (px > w - 2) px = w - 2;
         }
