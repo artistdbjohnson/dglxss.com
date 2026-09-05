@@ -3,23 +3,35 @@
 import { useLayoutEffect, useRef } from "react";
 
 type Particle = {
+  /** orbit radius */
   r: number;
+  /** base angle (rad) at t=0 */
   a0: number;
+  /** angular velocity (rad / ms) */
   w: number;
+  /** size */
   s: number;
+  /** base alpha */
   o: number;
+  /** vertical ellipse scale */
   ey: number;
+  /** center offset */
   cx: number;
   cy: number;
+  /** twinkle phase */
   ph: number;
+  /** twinkle speed */
   tw: number;
   layer: 0 | 1 | 2;
 };
 
 /**
  * Continuous seamless particle sky.
- * Optional scroll split: field parts to the left/right edges like a canoe
- * through a river of light, then reforms on the way back to the splash.
+ * - No concentric rings
+ * - ~45% thinner than prior dense field
+ * - Positions are continuous functions of time — never reset, never black flash
+ * - First frame paints in useLayoutEffect
+ * - Optional scroll split parts the field to the edges without changing size/glow
  */
 export function HeroParticles({
   density = 1,
@@ -157,8 +169,8 @@ export function HeroParticles({
         h * 0.5,
         Math.hypot(w, h) * 0.75,
       );
-      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim * (1 - ease * 0.55)})`);
-      ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim * (1 - ease * 0.35)})`);
+      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim})`);
+      ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim})`);
       ambient.addColorStop(1, `rgba(255,255,255,${0.004 * dim})`);
       ctx.fillStyle = ambient;
       ctx.fillRect(0, 0, w, h);
@@ -201,17 +213,15 @@ export function HeroParticles({
         if (py < -50) py += h + 100;
         if (py > h + 50) py -= h + 100;
 
-        const dist = Math.min(1, Math.abs(px - mid) / Math.max(mid, 1));
-        const side = px < mid ? -1 : 1;
-        const push = ease * w * 0.46 * (0.28 + 0.72 * dist);
-        px += side * push;
-        py += ease * h * 0.06;
+        if (ease > 0.001) {
+          const dist = Math.min(1, Math.abs(px - mid) / Math.max(mid, 1));
+          const side = px < mid ? -1 : 1;
+          px += side * ease * w * 0.46 * (0.28 + 0.72 * dist);
+          py += ease * h * 0.06;
+        }
 
-        const channel = 1 - Math.min(1, dist * 1.35);
         const twinkle = 0.52 + 0.48 * Math.sin(twinklePhase);
-        const alpha = Math.min(1, p.o * twinkle * (1 - ease * channel * 0.88));
-        if (alpha < 0.01) continue;
-
+        const alpha = Math.min(1, p.o * twinkle);
         const glowR = p.s * (p.layer === 0 ? 5.2 : 4.0);
 
         const glow = ctx.createRadialGradient(px, py, 0, px, py, glowR);
@@ -283,7 +293,7 @@ export function HeroParticles({
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full"
+      className="absolute inset-0 h-full w-full bg-black"
       width={1}
       height={1}
       aria-hidden="true"
