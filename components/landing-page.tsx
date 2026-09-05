@@ -119,13 +119,11 @@ export function LandingPage() {
         id="portfolio"
         className="snap-panel snap-panel-loose relative z-10 flex flex-col border-t border-white/[0.06]"
         style={{
-          background: [
-            "radial-gradient(ellipse 78% 70% at 50% 42%, rgba(5,5,5,0.78) 0%, rgba(5,5,5,0.42) 52%, rgba(5,5,5,0.12) 74%, transparent 88%)",
-            "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.38) 100%)",
-          ].join(", "),
+          background:
+            "radial-gradient(ellipse 62% 88% at 50% 42%, rgba(5,5,5,0.62) 0%, rgba(5,5,5,0.28) 46%, rgba(5,5,5,0.08) 68%, transparent 82%)",
         }}
       >
-        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-5 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-10">
+        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-7 sm:px-8 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
           <div
             role="tablist"
             aria-label="Portfolio"

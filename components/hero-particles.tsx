@@ -3,35 +3,23 @@
 import { useLayoutEffect, useRef } from "react";
 
 type Particle = {
-  /** orbit radius */
   r: number;
-  /** base angle (rad) at t=0 */
   a0: number;
-  /** angular velocity (rad / ms) */
   w: number;
-  /** size */
   s: number;
-  /** base alpha */
   o: number;
-  /** vertical ellipse scale */
   ey: number;
-  /** center offset */
   cx: number;
   cy: number;
-  /** twinkle phase */
   ph: number;
-  /** twinkle speed */
   tw: number;
   layer: 0 | 1 | 2;
 };
 
 /**
  * Continuous seamless particle sky.
- * - No concentric rings
- * - ~45% thinner than prior dense field
- * - Positions are continuous functions of time — never reset, never black flash
- * - First frame paints in useLayoutEffect
- * - Optional scroll split parts the field to the edges without changing size/glow
+ * Scroll split parks the field in left/right edge banks
+ * (canoe through a river of light) without changing size or glow.
  */
 export function HeroParticles({
   density = 1,
@@ -75,8 +63,16 @@ export function HeroParticles({
         targetPart = 0;
         return;
       }
-      const span = Math.max(window.innerHeight, 1);
-      targetPart = Math.min(1, Math.max(0, window.scrollY / span));
+      const vh = Math.max(window.innerHeight, 1);
+      const panel = document.getElementById("portfolio");
+      let raw = 0;
+      if (panel) {
+        raw = 1 - panel.getBoundingClientRect().top / vh;
+      } else {
+        raw = window.scrollY / vh;
+      }
+      raw = Math.min(1, Math.max(0, raw));
+      targetPart = raw < 0.08 ? 0 : raw;
     };
 
     const seed = () => {
@@ -155,7 +151,7 @@ export function HeroParticles({
 
     const paint = (now: number) => {
       const elapsed = now - t0;
-      part += (targetPart - part) * 0.08;
+      part += (targetPart - part) * 0.1;
       if (Math.abs(targetPart - part) < 0.001) part = targetPart;
       const ease = part * part * (3 - 2 * part);
 
@@ -200,6 +196,7 @@ export function HeroParticles({
       ctx.globalCompositeOperation = "lighter";
 
       const mid = w * 0.5;
+      const bank = Math.max(28, Math.min(w * 0.16, 88));
 
       for (const p of particles) {
         const angle = p.a0 + p.w * elapsed;
@@ -214,10 +211,13 @@ export function HeroParticles({
         if (py > h + 50) py -= h + 100;
 
         if (ease > 0.001) {
-          const dist = Math.min(1, Math.abs(px - mid) / Math.max(mid, 1));
           const side = px < mid ? -1 : 1;
-          px += side * ease * w * 0.46 * (0.28 + 0.72 * dist);
-          py += ease * h * 0.06;
+          const scatter = ((p.ph % 1) - 0.5) * bank * 0.7;
+          const target = side < 0 ? bank * 0.55 + scatter : w - bank * 0.55 + scatter;
+          px = px + (target - px) * ease;
+          py = py + ease * h * 0.04;
+          if (px < 2) px = 2;
+          if (px > w - 2) px = w - 2;
         }
 
         const twinkle = 0.52 + 0.48 * Math.sin(twinklePhase);
