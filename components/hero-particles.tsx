@@ -18,8 +18,8 @@ type Particle = {
 
 /**
  * Continuous seamless particle sky.
- * On scroll, the field becomes a thin left/right border
- * outside the card column — not behind the cards.
+ * Scroll parts the field like a canoe through a river of light.
+ * Stars flow to the side banks — they never snap or clamp into a column.
  */
 export function HeroParticles({
   density = 1,
@@ -51,12 +51,18 @@ export function HeroParticles({
     let dpr = 1;
     let particles: Particle[] = [];
     const t0 = performance.now();
+    let lastNow = t0;
     let running = true;
     let part = 0;
     let targetPart = 0;
 
     const rand = (min: number, max: number) =>
       min + Math.random() * (max - min);
+
+    const smoothstep = (a: number, b: number, x: number) => {
+      const t = Math.min(1, Math.max(0, (x - a) / Math.max(b - a, 1e-6)));
+      return t * t * (3 - 2 * t);
+    };
 
     const readScroll = () => {
       if (!splitOnScroll || reduceMotion) {
@@ -72,7 +78,7 @@ export function HeroParticles({
         raw = window.scrollY / vh;
       }
       raw = Math.min(1, Math.max(0, raw));
-      targetPart = raw < 0.08 ? 0 : raw;
+      targetPart = smoothstep(0.02, 0.88, raw);
     };
 
     const seed = () => {
@@ -150,10 +156,16 @@ export function HeroParticles({
     };
 
     const paint = (now: number) => {
-      const elapsed = now - t0;
-      part += (targetPart - part) * 0.1;
-      if (Math.abs(targetPart - part) < 0.001) part = targetPart;
+      readScroll();
+      const dt = Math.min(48, Math.max(8, now - lastNow));
+      lastNow = now;
+      // ~320ms time constant — a snap still takes half a second to finish the river
+      const follow = 1 - Math.exp(-dt / 320);
+      part += (targetPart - part) * follow;
+      if (Math.abs(targetPart - part) < 0.0008) part = targetPart;
       const ease = part * part * (3 - 2 * part);
+
+      const elapsed = now - t0;
 
       ctx.clearRect(0, 0, w, h);
 
@@ -165,7 +177,7 @@ export function HeroParticles({
         h * 0.5,
         Math.hypot(w, h) * 0.75,
       );
-      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim * (1 - ease * 0.35)})`);
+      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim})`);
       ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim})`);
       ambient.addColorStop(1, `rgba(255,255,255,${0.004 * dim})`);
       ctx.fillStyle = ambient;
@@ -187,7 +199,7 @@ export function HeroParticles({
           h * cy,
           Math.min(w, h) * r,
         );
-        cg.addColorStop(0, `rgba(255,255,255,${a * dim * (1 - ease * 0.4)})`);
+        cg.addColorStop(0, `rgba(255,255,255,${a * dim})`);
         cg.addColorStop(1, "rgba(0,0,0,0)");
         ctx.fillStyle = cg;
         ctx.fillRect(0, 0, w, h);
@@ -196,34 +208,30 @@ export function HeroParticles({
       ctx.globalCompositeOperation = "lighter";
 
       const mid = w * 0.5;
-      // Thin edge border. Stays in the side gutters, never the card column.
-      const gutter = Math.max(16, Math.min(w * 0.072, 36));
+      const gutter = Math.max(18, Math.min(w * 0.12, 48));
 
       for (const p of particles) {
         const angle = p.a0 + p.w * elapsed;
         const twinklePhase = p.ph + p.tw * elapsed;
 
-        let px = p.cx + Math.cos(angle) * p.r;
-        let py = p.cy + Math.sin(angle) * p.r * p.ey;
+        let fieldX = p.cx + Math.cos(angle) * p.r;
+        let fieldY = p.cy + Math.sin(angle) * p.r * p.ey;
 
-        if (px < -50) px += w + 100;
-        if (px > w + 50) px -= w + 100;
-        if (py < -50) py += h + 100;
-        if (py > h + 50) py -= h + 100;
+        if (fieldX < -50) fieldX += w + 100;
+        if (fieldX > w + 50) fieldX -= w + 100;
+        if (fieldY < -50) fieldY += h + 100;
+        if (fieldY > h + 50) fieldY -= h + 100;
 
-        if (ease > 0.001) {
-          const side = px < mid ? -1 : 1;
-          const scatter = ((p.ph % 1) - 0.5) * gutter * 0.55;
-          const target =
-            side < 0 ? gutter * 0.42 + scatter : w - gutter * 0.42 + scatter;
-          px = px + (target - px) * ease;
-          py = py + ease * h * 0.03;
-          const maxX = gutter + 2;
-          if (side < 0 && px > maxX) px = maxX;
-          if (side > 0 && px < w - maxX) px = w - maxX;
-          if (px < 2) px = 2;
-          if (px > w - 2) px = w - 2;
-        }
+        const u = (p.ph / (Math.PI * 2) + 1) % 1;
+        const local = Math.min(1, Math.max(0, ease * 1.18 - u * 0.22));
+        const localEase = local * local * (3 - 2 * local);
+
+        const side = fieldX < mid ? -1 : 1;
+        const bankX =
+          side < 0 ? 6 + u * gutter : w - 6 - u * gutter;
+
+        const px = fieldX + (bankX - fieldX) * localEase;
+        const py = fieldY;
 
         const twinkle = 0.52 + 0.48 * Math.sin(twinklePhase);
         const alpha = Math.min(1, p.o * twinkle);

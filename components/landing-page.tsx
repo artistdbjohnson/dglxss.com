@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { HeroParticles } from "@/components/hero-particles";
@@ -27,6 +27,17 @@ export function LandingPage() {
   const projects = useMemo(() => projectsForTab(tab), [tab]);
   const tabMeta = PORTFOLIO_TABS.find((t) => t.id === tab)!;
 
+  useLayoutEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    html.style.scrollBehavior = prev;
+  }, []);
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.style.scrollBehavior = "auto";
@@ -36,7 +47,6 @@ export function LandingPage() {
     const hash = window.location.hash.replace("#", "");
     if (hash === "in-progress" || hash === "work") {
       setTab(hash);
-      requestAnimationFrame(() => scrollToId("portfolio"));
     }
   }, []);
 
