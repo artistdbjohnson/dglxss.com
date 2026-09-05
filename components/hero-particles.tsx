@@ -3,41 +3,32 @@
 import { useLayoutEffect, useRef } from "react";
 
 type Particle = {
-  /** orbit radius */
   r: number;
-  /** base angle (rad) at t=0 */
   a0: number;
-  /** angular velocity (rad / ms) */
   w: number;
-  /** size */
   s: number;
-  /** base alpha */
   o: number;
-  /** vertical ellipse scale */
   ey: number;
-  /** center offset */
   cx: number;
   cy: number;
-  /** twinkle phase */
   ph: number;
-  /** twinkle speed */
   tw: number;
   layer: 0 | 1 | 2;
 };
 
 /**
  * Continuous seamless particle sky.
- * - No concentric rings
- * - ~45% thinner than prior dense field
- * - Positions are continuous functions of time — never reset, never black flash
- * - First frame paints in useLayoutEffect
+ * Optional scroll split: field parts to the left/right edges like a canoe
+ * through a river of light, then reforms on the way back to the splash.
  */
 export function HeroParticles({
   density = 1,
   dim = 1,
+  splitOnScroll = false,
 }: {
   density?: number;
   dim?: number;
+  splitOnScroll?: boolean;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rafRef = useRef<number | null>(null);
@@ -59,19 +50,28 @@ export function HeroParticles({
     let h = 0;
     let dpr = 1;
     let particles: Particle[] = [];
-    // Fixed epoch — continuous forever, never restarts
     const t0 = performance.now();
     let running = true;
+    let part = 0;
+    let targetPart = 0;
 
     const rand = (min: number, max: number) =>
       min + Math.random() * (max - min);
+
+    const readScroll = () => {
+      if (!splitOnScroll || reduceMotion) {
+        targetPart = 0;
+        return;
+      }
+      const span = Math.max(window.innerHeight, 1);
+      targetPart = Math.min(1, Math.max(0, window.scrollY / span));
+    };
 
     const seed = () => {
       particles = [];
       const area = w * h;
       const aspect = w / Math.max(h, 1);
 
-      // Thinner field (~45% of previous dense counts)
       const base = Math.floor(Math.sqrt(area) * 2.4 * density);
       const count = Math.min(420, Math.max(90, base));
       const cover = Math.hypot(w * 0.5, h * 0.5) * 1.12;
@@ -89,7 +89,6 @@ export function HeroParticles({
               ? 0.24 + u * 0.55
               : 0.42 + u * 0.65;
 
-        // Continuous angular velocity (rad/ms) — slow, calm
         const speedBase =
           layer === 0 ? 0.00018 : layer === 1 ? 0.0001 : 0.000055;
 
@@ -118,12 +117,10 @@ export function HeroParticles({
         });
       }
 
-      // Sparse screen-space dust for edge fill (not dense grid)
       const cols = aspect > 1.2 ? 8 : aspect > 1 ? 7 : 5;
       const rows = aspect > 1.2 ? 6 : aspect > 1 ? 6 : 8;
       for (let gy = 0; gy < rows; gy++) {
         for (let gx = 0; gx < cols; gx++) {
-          // Skip many cells for breathability
           if (Math.random() > 0.55) continue;
           const jx = (gx + 0.5) / cols + rand(-0.03, 0.03);
           const jy = (gy + 0.5) / rows + rand(-0.03, 0.03);
@@ -145,12 +142,13 @@ export function HeroParticles({
     };
 
     const paint = (now: number) => {
-      // Continuous time from fixed epoch — never wraps / resets the system
       const elapsed = now - t0;
+      part += (targetPart - part) * 0.08;
+      if (Math.abs(targetPart - part) < 0.001) part = targetPart;
+      const ease = part * part * (3 - 2 * part);
 
       ctx.clearRect(0, 0, w, h);
 
-      // Soft ambient wash (always present — never pure void)
       const ambient = ctx.createRadialGradient(
         w * 0.5,
         h * 0.48,
@@ -159,13 +157,12 @@ export function HeroParticles({
         h * 0.5,
         Math.hypot(w, h) * 0.75,
       );
-      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim})`);
-      ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim})`);
+      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim * (1 - ease * 0.55)})`);
+      ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim * (1 - ease * 0.35)})`);
       ambient.addColorStop(1, `rgba(255,255,255,${0.004 * dim})`);
       ctx.fillStyle = ambient;
       ctx.fillRect(0, 0, w, h);
 
-      // Corner lifts
       for (const [cx, cy, r, a] of [
         [0.12, 0.14, 0.4, 0.018],
         [0.88, 0.16, 0.38, 0.016],
@@ -190,22 +187,31 @@ export function HeroParticles({
 
       ctx.globalCompositeOperation = "lighter";
 
+      const mid = w * 0.5;
+
       for (const p of particles) {
-        // Continuous angle from absolute time — seamless forever
         const angle = p.a0 + p.w * elapsed;
         const twinklePhase = p.ph + p.tw * elapsed;
 
         let px = p.cx + Math.cos(angle) * p.r;
         let py = p.cy + Math.sin(angle) * p.r * p.ey;
 
-        // Soft wrap so particles re-enter frame without teleport flash
         if (px < -50) px += w + 100;
         if (px > w + 50) px -= w + 100;
         if (py < -50) py += h + 100;
         if (py > h + 50) py -= h + 100;
 
+        const dist = Math.min(1, Math.abs(px - mid) / Math.max(mid, 1));
+        const side = px < mid ? -1 : 1;
+        const push = ease * w * 0.46 * (0.28 + 0.72 * dist);
+        px += side * push;
+        py += ease * h * 0.06;
+
+        const channel = 1 - Math.min(1, dist * 1.35);
         const twinkle = 0.52 + 0.48 * Math.sin(twinklePhase);
-        const alpha = Math.min(1, p.o * twinkle);
+        const alpha = Math.min(1, p.o * twinkle * (1 - ease * channel * 0.88));
+        if (alpha < 0.01) continue;
+
         const glowR = p.s * (p.layer === 0 ? 5.2 : 4.0);
 
         const glow = ctx.createRadialGradient(px, py, 0, px, py, glowR);
@@ -224,7 +230,6 @@ export function HeroParticles({
       }
 
       ctx.globalCompositeOperation = "source-over";
-      // No concentric rings — pure particle sky
     };
 
     const resize = () => {
@@ -239,7 +244,7 @@ export function HeroParticles({
       canvas.height = Math.floor(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       seed();
-      // Immediate paint — no empty black frame on resize/load
+      readScroll();
       paint(performance.now());
     };
 
@@ -250,6 +255,8 @@ export function HeroParticles({
       resize();
     });
     ro.observe(canvas);
+
+    window.addEventListener("scroll", readScroll, { passive: true });
 
     const loop = (now: number) => {
       if (!running) return;
@@ -268,14 +275,15 @@ export function HeroParticles({
     return () => {
       running = false;
       ro.disconnect();
+      window.removeEventListener("scroll", readScroll);
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [density, dim]);
+  }, [density, dim, splitOnScroll]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full bg-black"
+      className="absolute inset-0 h-full w-full"
       width={1}
       height={1}
       aria-hidden="true"
