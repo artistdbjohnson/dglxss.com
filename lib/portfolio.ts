@@ -53,6 +53,43 @@ export type PortfolioTabId = (typeof PORTFOLIO_TABS)[number]["id"];
 
 export const PROJECTS: PortfolioProject[] = [
   {
+    id: "novo-freire",
+    name: "Novo & Freire",
+    line: "Full rebuild for a Clínica Médica e de Fisioterapia in São Pedro do Estoril. Factory #1 Portugal pitch.",
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://novo-freire.vercel.app/",
+    original: "https://novoefreire.pai.pt/",
+    sections: [
+      {
+        id: "brief",
+        title: "Brief",
+        body: "Portugal GTM Factory #1. A quiet Estoril clinic on a Páginas Amarelas microsite needed a patient site that felt like the practice, not a directory listing. Exact European Portuguese copy, every live link, their phone and email. Restyle craft on a Flexora chassis — not a rebrand of their care story.",
+      },
+      {
+        id: "before",
+        title: "Before",
+        body: "We had a single-page Yellowbox / PAI template. Dated graphic banners for service tiles, a hotlinked favicon standing in as a logo, and clinical copy trapped in a directory layout. Fine if you already knew the address. Weak if you were choosing a fisioterapia clinic cold.",
+      },
+      {
+        id: "elevation",
+        title: "What I built",
+        body: "The rebuild opens on a quiet luxury hero and a Contacte-nos path into the same phone and email they already publish. Mission, Departamento Clínico, Reabilitação, and Técnico de Fisioterapia keep their exact PT wording — including live typos. Custom SVG wordmark in Plus Jakarta Sans with a Source Sans 3 subtitle. Firefly plates for hero and section media. Text-only Clinico cards so the services stay crisp. Footer: built by dglxss.",
+      },
+      {
+        id: "stack",
+        title: "Stack",
+        body: "Next.js and React on the front. Tailwind for the system. Flexora craft for layout and motion. Plus Jakarta Sans and Source Sans 3 for type. Firefly Partner GPT Image 2 for plates. Deployed on Vercel.",
+      },
+      {
+        id: "outcome",
+        title: "Outcome",
+        body: "Ash gauntlet 10/10. Live at novo-freire.vercel.app. Showcase piece for the Portugal cold-pitch lane — a clinic site that reads like care, not a template.",
+      },
+    ],
+  },
+  {
     id: "netjets",
     name: "NetJets",
     line: "Full rebuild for the pioneer of fractional private aviation. Restyle, not a rebrand.",
