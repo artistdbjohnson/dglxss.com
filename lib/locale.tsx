@@ -13,9 +13,9 @@ import {
 export type Locale = "en" | "pt";
 
 export const LOCALE_STORAGE_KEY = "dglxss-locale";
-/** Portugal market default. */
-export const DEFAULT_LOCALE: Locale = "pt";
-export const LOCALES: readonly Locale[] = ["pt", "en"] as const;
+/** Doug prefers EN while learning PT; PT for PT visitors. */
+export const DEFAULT_LOCALE: Locale = "en";
+export const LOCALES: readonly Locale[] = ["en", "pt"] as const;
 
 export type Localized = { en: string; pt: string };
 
