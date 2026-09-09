@@ -46,6 +46,14 @@ export const UI = {
   aboutWordBuilder: { en: "builder", pt: "construtor" },
   aboutWordMaker: { en: "maker", pt: "criador" },
   aboutWordDreamer: { en: "dreamer", pt: "sonhador" },
+  brandLine: {
+    en: "what dreams may come true",
+    pt: "que os sonhos se tornem verdade",
+  },
+  builtBy: {
+    en: "built by dglxss",
+    pt: "feito por dglxss",
+  },
 } as const satisfies Record<string, UiDict>;
 
 export const PORTFOLIO_TAB_COPY = {

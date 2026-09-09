@@ -21,9 +21,6 @@ import {
   type PortfolioTabId,
 } from "@/lib/portfolio";
 
-const BRAND = "what dreams may come true";
-const STUDIO = "built by dglxss";
-
 function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -32,6 +29,10 @@ function scrollToId(id: string) {
 export function LandingPage() {
   const { locale } = useLocale();
   const [tab, setTab] = useState<PortfolioTabId>("work");
+
+  useEffect(() => {
+    document.title = `${t(UI.brandLine, locale)} — ${t(UI.builtBy, locale)}`;
+  }, [locale]);
   const [openId, setOpenId] = useState<string | null>(null);
 
   const projects = useMemo(() => projectsForTab(tab), [tab]);
@@ -129,10 +130,10 @@ export function LandingPage() {
               className="hero-display hero-title hero-enter text-white lowercase max-w-[17ch] sm:max-w-[22ch] md:max-w-none"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
-              {BRAND}
+              {t(UI.brandLine, locale)}
             </h1>
             <p className="hero-sub hero-enter-delay text-[0.8125rem] sm:text-sm md:text-[0.9375rem] text-white/62 mt-5 md:mt-7 font-medium">
-              {STUDIO}
+              {t(UI.builtBy, locale)}
             </p>
           </div>
         </div>
@@ -234,7 +235,7 @@ export function LandingPage() {
                 className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
                 style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
               >
-                {BRAND}
+                {t(UI.brandLine, locale)}
               </p>
               <div className="flex justify-center">
                 <Link
@@ -245,7 +246,7 @@ export function LandingPage() {
                 </Link>
               </div>
               <p className="text-white/40 text-sm tracking-wide text-center sm:text-right">
-                {STUDIO}
+                {t(UI.builtBy, locale)}
               </p>
             </div>
           </footer>
