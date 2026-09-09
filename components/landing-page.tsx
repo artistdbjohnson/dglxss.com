@@ -4,10 +4,19 @@ import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { HeroParticles } from "@/components/hero-particles";
+import { LanguageSwitch } from "@/components/language-switch";
+import { useLocale } from "@/lib/locale";
+import { t, UI } from "@/lib/ui-strings";
 import {
   KIND_LABEL,
   PORTFOLIO_TABS,
+  projectLine,
   projectsForTab,
+  sectionBody,
+  sectionTitle,
+  tabEmpty,
+  tabEyebrow,
+  tabLabel,
   type PortfolioProject,
   type PortfolioTabId,
 } from "@/lib/portfolio";
@@ -21,6 +30,7 @@ function scrollToId(id: string) {
 }
 
 export function LandingPage() {
+  const { locale } = useLocale();
   const [tab, setTab] = useState<PortfolioTabId>("work");
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -69,13 +79,13 @@ export function LandingPage() {
 
         <nav
           className="relative z-20 px-4 sm:px-6 lg:px-10 pt-[max(1.25rem,env(safe-area-inset-top))] sm:pt-6 shrink-0"
-          aria-label="Primary"
+          aria-label={t(UI.navAria, locale)}
         >
           <div className="liquid-glass-nav rounded-full px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 flex items-center justify-between max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto gap-3">
             <Link
               href="/about"
               className="flex items-center text-white shrink-0 min-h-11 pl-2.5 sm:pl-3 pr-1"
-              aria-label="About dglxss"
+              aria-label={t(UI.aboutAria, locale)}
             >
               <span
                 className="text-[0.95rem] sm:text-base tracking-tight lowercase text-white/95"
@@ -84,25 +94,28 @@ export function LandingPage() {
                 dglxss
               </span>
             </Link>
-            <div className="flex items-center gap-0.5 sm:gap-1">
-              {PORTFOLIO_TABS.map((t) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => {
-                    setTab(t.id);
-                    setOpenId(null);
-                    scrollToId("portfolio");
-                  }}
-                  className={`rounded-full px-3.5 sm:px-4 py-2 text-[0.8125rem] sm:text-sm font-medium min-h-10 inline-flex items-center transition-colors duration-200 ${
-                    tab === t.id
-                      ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
-                      : "text-white/70 hover:text-white hover:bg-white/[0.06]"
-                  }`}
-                >
-                  {t.label}
-                </button>
-              ))}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-0.5 sm:gap-1">
+                {PORTFOLIO_TABS.map((tabItem) => (
+                  <button
+                    key={tabItem.id}
+                    type="button"
+                    onClick={() => {
+                      setTab(tabItem.id);
+                      setOpenId(null);
+                      scrollToId("portfolio");
+                    }}
+                    className={`rounded-full px-3.5 sm:px-4 py-2 text-[0.8125rem] sm:text-sm font-medium min-h-10 inline-flex items-center transition-colors duration-200 ${
+                      tab === tabItem.id
+                        ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
+                        : "text-white/70 hover:text-white hover:bg-white/[0.06]"
+                    }`}
+                  >
+                    {tabLabel(tabItem, locale)}
+                  </button>
+                ))}
+              </div>
+              <LanguageSwitch />
             </div>
           </div>
         </nav>
@@ -136,21 +149,21 @@ export function LandingPage() {
         <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-11 sm:px-14 lg:px-16 pt-6 sm:pt-8 lg:pt-10">
           <div
             role="tablist"
-            aria-label="Portfolio"
+            aria-label={t(UI.portfolioAria, locale)}
             className="liquid-glass-card rounded-full p-1 flex gap-1 mb-5 sm:mb-6 max-w-xs sm:max-w-sm mx-auto w-full shrink-0"
           >
-            {PORTFOLIO_TABS.map((t) => {
-              const active = tab === t.id;
+            {PORTFOLIO_TABS.map((tabItem) => {
+              const active = tab === tabItem.id;
               return (
                 <button
-                  key={t.id}
+                  key={tabItem.id}
                   type="button"
                   role="tab"
-                  id={`tab-${t.id}`}
+                  id={`tab-${tabItem.id}`}
                   aria-selected={active}
-                  aria-controls={`panel-${t.id}`}
+                  aria-controls={`panel-${tabItem.id}`}
                   onClick={() => {
-                    setTab(t.id);
+                    setTab(tabItem.id);
                     setOpenId(null);
                   }}
                   className={`flex-1 rounded-full py-2.5 text-sm font-medium min-h-10 transition-colors duration-200 ${
@@ -159,7 +172,7 @@ export function LandingPage() {
                       : "text-white/55 hover:text-white"
                   }`}
                 >
-                  {t.label}
+                  {tabLabel(tabItem, locale)}
                 </button>
               );
             })}
@@ -167,13 +180,13 @@ export function LandingPage() {
 
           <div className="mb-5 sm:mb-6 text-center shrink-0">
             <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-1">
-              {tabMeta.eyebrow}
+              {tabEyebrow(tabMeta, locale)}
             </p>
             <h2
               className="text-2xl sm:text-3xl text-white tracking-tight"
               style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
             >
-              {tabMeta.label}
+              {tabLabel(tabMeta, locale)}
             </h2>
           </div>
 
@@ -189,10 +202,10 @@ export function LandingPage() {
                   className="text-white/80 text-base tracking-tight lowercase mb-1.5"
                   style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
                 >
-                  soon
+                  {t(UI.soon, locale)}
                 </p>
                 <p className="text-white/55 text-sm leading-relaxed max-w-sm mx-auto">
-                  {tabMeta.empty}
+                  {tabEmpty(tabMeta, locale)}
                 </p>
               </div>
             ) : (
@@ -228,7 +241,7 @@ export function LandingPage() {
                   href="/clients"
                   className="text-white/40 text-sm tracking-wide hover:text-white/70 transition-colors min-h-10 inline-flex items-center"
                 >
-                  clients
+                  {t(UI.clients, locale)}
                 </Link>
               </div>
               <p className="text-white/40 text-sm tracking-wide text-center sm:text-right">
@@ -251,6 +264,8 @@ function ProjectBlock({
   open: boolean;
   onToggle: () => void;
 }) {
+  const { locale } = useLocale();
+
   return (
     <article
       id={project.id}
@@ -274,12 +289,12 @@ function ProjectBlock({
             </span>
             {project.status === "in-progress" && (
               <span className="liquid-glass rounded-full px-2 py-0.5 text-[9px] uppercase tracking-wider font-semibold text-white/80">
-                In progress
+                {t(UI.inProgressBadge, locale)}
               </span>
             )}
           </div>
           <p className="text-[13px] sm:text-sm text-white/55 leading-relaxed">
-            {project.line}
+            {projectLine(project, locale)}
           </p>
           <div className="flex flex-wrap gap-1.5 mt-3">
             {project.kind.map((k) => (
@@ -287,7 +302,7 @@ function ProjectBlock({
                 key={k}
                 className="liquid-glass rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/65"
               >
-                {KIND_LABEL[k]}
+                {t(KIND_LABEL[k], locale)}
               </span>
             ))}
           </div>
@@ -310,10 +325,10 @@ function ProjectBlock({
                 className="pt-2"
               >
                 <h4 className="text-[0.65rem] font-medium uppercase tracking-[0.15em] text-white/40 mb-1.5">
-                  {section.title}
+                  {sectionTitle(section, locale)}
                 </h4>
                 <p className="text-[13px] sm:text-sm text-white/62 leading-relaxed">
-                  {section.body}
+                  {sectionBody(section, locale)}
                 </p>
               </section>
             ))}
@@ -327,15 +342,15 @@ function ProjectBlock({
                     href={`/builds/${project.buildId}`}
                     className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2.5 text-[13px] font-medium min-h-10 hover:bg-white/90 transition-colors"
                   >
-                    Open build
+                    {t(UI.openBuild, locale)}
                     <ArrowUpRight size={14} />
                   </Link>
                   <Link
                     href={`/access#${project.buildId}`}
                     className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-4 py-2.5 text-[13px] font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
-                    aria-label="Client materials"
+                    aria-label={t(UI.clientMaterialsAria, locale)}
                   >
-                    Client materials
+                    {t(UI.clientMaterials, locale)}
                     <ArrowUpRight size={14} />
                   </Link>
                 </>
@@ -348,7 +363,7 @@ function ProjectBlock({
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2.5 text-[13px] font-medium min-h-10 hover:bg-white/90 transition-colors"
                     >
-                      View rebuild
+                      {t(UI.viewRebuild, locale)}
                       <ArrowUpRight size={14} />
                     </a>
                   )}
@@ -359,7 +374,7 @@ function ProjectBlock({
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-4 py-2.5 text-[13px] font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
                     >
-                      View original
+                      {t(UI.viewOriginal, locale)}
                       <ArrowUpRight size={14} />
                     </a>
                   )}
@@ -371,7 +386,7 @@ function ProjectBlock({
           <button
             type="button"
             onClick={onToggle}
-            aria-label="Collapse card"
+            aria-label={t(UI.collapseCard, locale)}
             className="w-full flex items-center justify-center pb-3.5 pt-1 min-h-10 text-white/40 hover:text-white/70 transition-colors"
           >
             <ChevronUp size={16} strokeWidth={2} />

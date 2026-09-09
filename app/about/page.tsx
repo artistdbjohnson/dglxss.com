@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { AboutParticles } from "@/components/about-particles";
 import { AboutTitle } from "@/components/about-title";
+import { AboutNav } from "@/components/about-nav";
 
 export const metadata = {
   title: "dglxss — maker",
@@ -23,27 +23,7 @@ export default function AboutPage() {
         }}
       />
 
-      <nav className="relative z-20 px-4 sm:px-6 lg:px-10 pt-[max(1.25rem,env(safe-area-inset-top))] sm:pt-6 shrink-0">
-        <div className="liquid-glass-nav rounded-full px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 flex items-center justify-between max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto gap-3">
-          <Link
-            href="/"
-            className="flex items-center text-white shrink-0 min-h-11 pl-2.5 sm:pl-3"
-          >
-            <span
-              className="text-[0.95rem] sm:text-base tracking-tight lowercase text-white/95"
-              style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-            >
-              dglxss
-            </span>
-          </Link>
-          <Link
-            href="/"
-            className="rounded-full px-3.5 sm:px-4 py-2 text-[0.8125rem] sm:text-sm font-medium min-h-10 inline-flex items-center text-white/70 hover:text-white hover:bg-white/[0.06] transition-colors"
-          >
-            Home
-          </Link>
-        </div>
-      </nav>
+      <AboutNav />
 
       <main className="relative z-10 flex-1 flex items-center justify-center px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center">
         <AboutTitle />
