@@ -2,6 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { LanguageSwitch } from "@/components/language-switch";
+import { useLocale } from "@/lib/locale";
+import { t, UI } from "@/lib/ui-strings";
 import { ArrowLeft, Check, Copy } from "lucide-react";
 import {
   DNS,
@@ -48,6 +51,7 @@ function loadState(): PortalState {
 }
 
 export function ClientsPortal() {
+  const { locale } = useLocale();
   const [state, setState] = useState<PortalState>(defaultState);
   const [hydrated, setHydrated] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -127,7 +131,7 @@ export function ClientsPortal() {
   if (!hydrated) {
     return (
       <div className="min-h-dvh bg-black text-white flex items-center justify-center">
-        <p className="text-white/40 text-sm tracking-wide">Loading...</p>
+        <p className="text-white/40 text-sm tracking-wide">{t(UI.loading, locale)}</p>
       </div>
     );
   }
@@ -143,9 +147,12 @@ export function ClientsPortal() {
           >
             dglxss
           </Link>
-          <span className="liquid-glass rounded-full px-2.5 py-1 text-[11px] font-medium text-white/70">
-            For clients
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="liquid-glass rounded-full px-2.5 py-1 text-[11px] font-medium text-white/70">
+              {t(UI.forClients, locale)}
+            </span>
+            <LanguageSwitch />
+          </div>
         </header>
         <div className="flex-1 flex flex-col justify-center px-5 sm:px-8 py-12 max-w-3xl mx-auto w-full">
           <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-white/42 mb-3">
@@ -318,13 +325,16 @@ function Wizard({
           >
             dglxss
           </Link>
-          <button
-            type="button"
-            onClick={onStartOver}
-            className="text-xs text-white/45 hover:text-white/80"
-          >
-            Change path
-          </button>
+          <div className="flex items-center gap-3">
+            <LanguageSwitch />
+            <button
+              type="button"
+              onClick={onStartOver}
+              className="text-xs text-white/45 hover:text-white/80"
+            >
+              Change path
+            </button>
+          </div>
         </div>
         <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-white/40">{pathMeta.phaseLabel}</p>
         <h1

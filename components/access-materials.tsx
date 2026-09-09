@@ -3,6 +3,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { LanguageSwitch } from "@/components/language-switch";
+import { useLocale } from "@/lib/locale";
+import { t, UI } from "@/lib/ui-strings";
 import { ArrowUpRight, X } from "lucide-react";
 import { AboutParticles } from "@/components/about-particles";
 import { GO_LIVE_BUILDS, type GoLiveBuild } from "@/lib/go-live";
@@ -13,6 +16,7 @@ function resolveBuild(hash: string): GoLiveBuild {
 }
 
 export function AccessMaterials() {
+  const { locale } = useLocale();
   const router = useRouter();
   const [build, setBuild] = useState<GoLiveBuild>(GO_LIVE_BUILDS[0]);
   const [ready, setReady] = useState(false);
@@ -51,7 +55,7 @@ export function AccessMaterials() {
   if (!ready) {
     return (
       <div className="min-h-dvh bg-black flex items-center justify-center">
-        <p className="text-white/40 text-sm">Loading…</p>
+        <p className="text-white/40 text-sm">{t(UI.loading, locale)}</p>
       </div>
     );
   }
@@ -75,7 +79,7 @@ export function AccessMaterials() {
       {/* Clickable backdrop — closes modal */}
       <button
         type="button"
-        aria-label="Close materials"
+        aria-label={t(UI.closeMaterials, locale)}
         onClick={close}
         className="fixed inset-0 z-10 cursor-default"
       />
@@ -109,14 +113,17 @@ export function AccessMaterials() {
                 {build.line}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={close}
-              aria-label="Close"
-              className="shrink-0 liquid-glass rounded-full p-2.5 text-white/60 hover:text-white hover:bg-white/[0.08] transition-colors min-h-10 min-w-10 inline-flex items-center justify-center"
-            >
-              <X size={18} />
-            </button>
+            <div className="shrink-0 flex items-center gap-2">
+              <LanguageSwitch />
+              <button
+                type="button"
+                onClick={close}
+                aria-label={t(UI.close, locale)}
+                className="liquid-glass rounded-full p-2.5 text-white/60 hover:text-white hover:bg-white/[0.08] transition-colors min-h-10 min-w-10 inline-flex items-center justify-center"
+              >
+                <X size={18} />
+              </button>
+            </div>
           </header>
 
           {/* Scrollable body — no visible scrollbar; wheel / trackpad / touch still work */}
@@ -158,7 +165,7 @@ export function AccessMaterials() {
               href={`/builds/${build.id}`}
               className="inline-flex items-center gap-2 rounded-full bg-white text-black px-4 sm:px-5 py-2.5 text-sm font-medium min-h-10 hover:bg-white/90 transition-colors"
             >
-              Open build
+              {t(UI.openBuild, locale)}
               <ArrowUpRight size={15} />
             </Link>
             <button
@@ -166,7 +173,7 @@ export function AccessMaterials() {
               onClick={close}
               className="inline-flex items-center gap-2 rounded-full liquid-glass px-4 sm:px-5 py-2.5 text-sm font-medium min-h-10 text-white/70 hover:text-white hover:bg-white/[0.06] transition-colors"
             >
-              Close
+              {t(UI.close, locale)}
             </button>
           </footer>
         </article>
