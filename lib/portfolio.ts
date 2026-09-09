@@ -65,7 +65,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "Novo & Freire needed a patient-facing site that felt like the clinic — calm, clear, and easy on a phone — without changing their brand or inventing new clinical claims. Keep every service name, phone, email, and Maps location exact. Elevate the presentation: hierarchy, type, photography, and contact paths.",
+        body: "Novo & Freire needed a patient site that felt like the clinic — calm, clear, easy on a phone — without changing their brand or rewriting their clinical copy. Keep every service name, phone, email, and Maps location exact. Elevate the presentation: hierarchy, type, photography, and contact paths.",
       },
       {
         id: "before",
@@ -75,7 +75,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "elevation",
         title: "What I built",
-        body: "A quiet, navy-and-cream interface with a strong Contacte-nos path into the same phone and email they already publish. Mission, clinical departments, and physiotherapy services keep their exact Portuguese wording. Custom SVG wordmark, bilingual PT/EN, service detail modals, an honest reviews block, and a seamless photo gallery above contact. Attribution: built by dglxss.",
+        body: "A quiet navy-and-cream interface with a clear Contacte-nos path into the same phone and email they already publish. Mission, clinical departments, and physiotherapy services keep their exact Portuguese wording. Custom wordmark, bilingual PT/EN, service detail modals, Maps and Facebook for social proof, and a photo gallery above contact. Footer: built by dglxss.",
       },
       {
         id: "stack",
@@ -85,7 +85,7 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "outcome",
         title: "Outcome",
-        body: "A polished clinic website that reads like care, not a template — live for patients at novo-freire.vercel.app.",
+        body: "A clinic website that reads like care, not a template — live for patients at novo-freire.vercel.app.",
       },
     ],
   },
