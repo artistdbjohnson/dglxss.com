@@ -48,7 +48,7 @@ export const UI = {
   aboutWordDreamer: { en: "dreamer", pt: "sonhador" },
   brandLine: {
     en: "what dreams may come true",
-    pt: "que os sonhos se tornem verdade",
+    pt: "onde os sonhos se fazem verdade",
   },
   builtBy: {
     en: "built by dglxss",
