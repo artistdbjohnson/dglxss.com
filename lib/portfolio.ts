@@ -55,7 +55,7 @@ export const PROJECTS: PortfolioProject[] = [
   {
     id: "novo-freire",
     name: "Novo & Freire",
-    line: "Full rebuild for a Clínica Médica e de Fisioterapia in São Pedro do Estoril. Factory #1 Portugal pitch.",
+    line: "Website redesign for a Clínica Médica e de Fisioterapia in São Pedro do Estoril — clean, mobile-first patient experience.",
     kind: ["web"],
     year: "2026",
     status: "shipped",
@@ -65,27 +65,27 @@ export const PROJECTS: PortfolioProject[] = [
       {
         id: "brief",
         title: "Brief",
-        body: "Portugal GTM Factory #1. A quiet Estoril clinic on a Páginas Amarelas microsite needed a patient site that felt like the practice, not a directory listing. Exact European Portuguese copy, every live link, their phone and email. Restyle craft on a Flexora chassis — not a rebrand of their care story.",
+        body: "Novo & Freire needed a patient-facing site that felt like the clinic — calm, clear, and easy on a phone — without changing their brand or inventing new clinical claims. Keep every service name, phone, email, and Maps location exact. Elevate the presentation: hierarchy, type, photography, and contact paths.",
       },
       {
         id: "before",
         title: "Before",
-        body: "We had a single-page Yellowbox / PAI template. Dated graphic banners for service tiles, a hotlinked favicon standing in as a logo, and clinical copy trapped in a directory layout. Fine if you already knew the address. Weak if you were choosing a fisioterapia clinic cold.",
+        body: "The live site sat on a dated directory-style template. Crowded service banners, a favicon standing in as the logo, and clinical copy trapped in a layout that worked if you already knew the address — not if you were choosing a fisioterapia clinic cold.",
       },
       {
         id: "elevation",
         title: "What I built",
-        body: "The rebuild opens on a quiet luxury hero and a Contacte-nos path into the same phone and email they already publish. Mission, Departamento Clínico, Reabilitação, and Técnico de Fisioterapia keep their exact PT wording — including live typos. Custom SVG wordmark in Plus Jakarta Sans with a Source Sans 3 subtitle. Firefly plates for hero and section media. Text-only Clinico cards so the services stay crisp. Footer: built by dglxss.",
+        body: "A quiet, navy-and-cream interface with a strong Contacte-nos path into the same phone and email they already publish. Mission, clinical departments, and physiotherapy services keep their exact Portuguese wording. Custom SVG wordmark, bilingual PT/EN, service detail modals, an honest reviews block, and a seamless photo gallery above contact. Attribution: built by dglxss.",
       },
       {
         id: "stack",
         title: "Stack",
-        body: "Next.js and React on the front. Tailwind for the system. Flexora craft for layout and motion. Plus Jakarta Sans and Source Sans 3 for type. Firefly Partner GPT Image 2 for plates. Deployed on Vercel.",
+        body: "Next.js and React. Tailwind for the design system. Plus Jakarta Sans and Source Sans 3 for type. Custom clinical photography for heroes and services. Deployed on Vercel.",
       },
       {
         id: "outcome",
         title: "Outcome",
-        body: "Ash gauntlet 10/10. Live at novo-freire.vercel.app. Showcase piece for the Portugal cold-pitch lane — a clinic site that reads like care, not a template.",
+        body: "A polished clinic website that reads like care, not a template — live for patients at novo-freire.vercel.app.",
       },
     ],
   },
