@@ -92,7 +92,63 @@ export function projectSections(
 
 export const PROJECTS: PortfolioProject[] = [
   {
+    id: "village-cascais",
+    name: "The Village Cascais",
+    line: {
+      en: "Website redesign for a cowork, language, and workshop community in Pai do Vento, Cascais — bilingual, mobile-first, easy to join.",
+      pt: "Redesign do site para uma comunidade de co-work, línguas e workshops no Pai do Vento, Cascais — bilingue, mobile-first, fácil de juntar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://village-cascais-self.vercel.app/",
+    original: "https://www.the-village.pt/",
+    sections: [
+      {
+        id: "brief",
+        title: { en: "Brief", pt: "Brief" },
+        body: {
+          en: "The Village needed a site that felt like the room — a Cascais community of desks, Portuguese classes, English support, and clubs — without rewriting their prices or their voice. Keep every euro they already publish. Make it readable on a phone. Give people a real way to get in touch.",
+          pt: "The Village precisava de um site que parecesse a sala — uma comunidade em Cascais de secretárias, aulas de Português, apoio de Inglês e clubes — sem reescrever os preços nem a voz. Manter cada euro que já publicam. Ler-se bem no telemóvel. Dar um caminho real de contacto.",
+        },
+      },
+      {
+        id: "before",
+        title: { en: "Before", pt: "Antes" },
+        body: {
+          en: "The live homepage is a dated one-page template. Co-work bands, language copy, and workshops are all there, but the hierarchy is soup. Contact chrome still prints placeholder phone and email. If you already know Rua de Santarém, you can find them. If you are choosing a desk in Cascais cold, the page does not help.",
+          pt: "A homepage actual é um template de uma página datado. As faixas de co-work, o texto das línguas e os workshops estão lá, mas a hierarquia é sopa. O contacto ainda imprime telefone e email placeholder. Se já se conhece a Rua de Santarém, encontra-se. Se se está a escolher uma secretária em Cascais a frio, a página não ajuda.",
+        },
+      },
+      {
+        id: "elevation",
+        title: { en: "What I built", pt: "O que construí" },
+        body: {
+          en: "A full-viewport community hero on their own collab film, then the real desk bands — €85 half-days, €125 full-day fixed, €55 private room, €15 day pass — with 5G, kitchenette, and VAT called out as they publish them. Portuguese classes and extracurricular English keep their wording and prices. Book Club, Art Club, and Stitch 'n' Bitch sit on their photographs. Contact is a form, not a fake 555 number. PT/EN and dark/light throughout. Footer: built by dglxss.",
+          pt: "Um hero de comunidade em ecrã inteiro no filme de colaboração deles, depois as faixas reais de secretária — €85 meios dias, €125 dia inteiro fixo, €55 sala privada, €15 dia avulso — com 5G, copa e IVA como publicam. As aulas de Português e o Inglês extracurricular mantêm o texto e os preços. Book Club, Art Club e Stitch 'n' Bitch nas fotografias deles. O contacto é um formulário, não um 555 falso. PT/EN e dark/light em todo o site. Footer: construído por dglxss.",
+        },
+      },
+      {
+        id: "stack",
+        title: { en: "Stack", pt: "Stack" },
+        body: {
+          en: "Next.js and React. Tailwind for the system. Inter for type. Their live photography and hero video. Deployed on Vercel.",
+          pt: "Next.js e React. Tailwind para o sistema. Inter na tipografia. A fotografia e o vídeo hero que já tinham. Publicado na Vercel.",
+        },
+      },
+      {
+        id: "outcome",
+        title: { en: "Outcome", pt: "Resultado" },
+        body: {
+          en: "A community site that reads like Cascais, not a template — live at village-cascais-self.vercel.app.",
+          pt: "Um site de comunidade que se lê como Cascais, não como template — live em village-cascais-self.vercel.app.",
+        },
+      },
+    ],
+  },
+  {
     id: "novo-freire",
+
     name: "Novo & Freire",
     line: {
       en: "Website redesign for a Clínica Médica e de Fisioterapia in São Pedro do Estoril — clean, mobile-first patient experience.",
