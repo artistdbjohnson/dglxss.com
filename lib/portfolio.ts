@@ -91,6 +91,62 @@ export function projectSections(
 }
 
 export const PROJECTS: PortfolioProject[] = [
+
+  {
+    id: "aectm",
+    name: "AECTM Castro Marim",
+    line: {
+      en: "Full multi-page restyle for a Portuguese public school cluster — quiet institutional craft, exact PT copy, EN twin.",
+      pt: "Restyle multi-página completo para um agrupamento escolar público português — ofício institucional quieto, copy PT exacto, gémeo EN.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://aectm.vercel.app/",
+    original: "https://aectm.pt/",
+    sections: [
+      {
+        id: "brief",
+        title: { en: "Brief", pt: "Brief" },
+        body: {
+          en: "Agrupamento de Escolas de Castro Marim needed a site parents and staff could trust — clear structure, calendars, documents, Erasmus, and news — without inventing school policy. Keep every Portuguese label and body from the live WordPress site. Give an English twin for chrome and key titles. Kill the generic blue preload bars.",
+          pt: "O Agrupamento de Escolas de Castro Marim precisava de um site em que pais e staff confiassem — estrutura clara, calendários, documentos, Erasmus e notícias — sem inventar política escolar. Manter cada rótulo e corpo em português do WordPress vivo. Dar um gémeo em inglês para o chrome e títulos-chave. Matar as barras azuis genéricas de preload.",
+        },
+      },
+      {
+        id: "before",
+        title: { en: "Before", pt: "Antes" },
+        body: {
+          en: "A dated CodeVibrant WordPress theme: mega-menu soup, a loud blue signal-bar splash, and years of news archive fighting for attention. The information was there — escolas, estrutura, alunos, ementas, contactos — but the surface felt like 2018 admin chrome, not a school community.",
+          pt: "Um tema WordPress CodeVibrant datado: sopa de mega-menu, splash de barras azuis ruidosas, e anos de arquivo de notícias a disputar atenção. A informação estava lá — escolas, estrutura, alunos, ementas, contactos — mas a superfície parecia chrome de admin de 2018, não uma comunidade escolar.",
+        },
+      },
+      {
+        id: "elevation",
+        title: { en: "What I built", pt: "O que construí" },
+        body: {
+          en: "A Motionsites aurora-onboard remap into an institutional welcome: staggered phases, tonal Inter surfaces, and a Motionsites quiet crest loader with thin progress — no blue bars. Theme and locale sit as one designed chrome cluster. The crest collapses into a sticky bar with section-aware underlines. News cards open a shared-layout reading panel with Comunidade / Avisos intent density. Exact PT transplant across structure, documents, students, activities, and contacts; EN twin for chrome. Footer: built by dglxss.",
+          pt: "Um remap Motionsites aurora-onboard para um welcome institucional: fases em stagger, superfícies Inter tonais, e um loader quieto de brasão Motionsites com progresso fino — sem barras azuis. Tema e idioma num único cluster de chrome desenhado. O brasão colapsa numa barra sticky com underlines por secção. Os cards de notícias abrem um painel de leitura shared-layout com densidade Comunidade / Avisos. Transplante PT exacto em estrutura, documentos, alunos, atividades e contactos; gémeo EN no chrome. Footer: construído por dglxss.",
+        },
+      },
+      {
+        id: "stack",
+        title: { en: "Stack", pt: "Stack" },
+        body: {
+          en: "Next.js and React. Tailwind for the system. Inter for type. Framer Motion for logo-collapse, section chrome, and the news reading panel. Live school photography and marks. Deployed on Vercel.",
+          pt: "Next.js e React. Tailwind para o sistema. Inter na tipografia. Framer Motion para logo-collapse, chrome de secção e o painel de leitura de notícias. Fotografia e marcas da escola. Publicado na Vercel.",
+        },
+      },
+      {
+        id: "outcome",
+        title: { en: "Outcome", pt: "Resultado" },
+        body: {
+          en: "A school-cluster site that reads like Castro Marim, not a WP theme — live at aectm.vercel.app.",
+          pt: "Um site de agrupamento que se lê como Castro Marim, não como tema WP — live em aectm.vercel.app.",
+        },
+      },
+    ],
+  },
   {
     id: "luxury-home-remodeling",
     name: "Luxury Home Remodeling",
