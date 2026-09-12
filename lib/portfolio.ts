@@ -92,6 +92,61 @@ export function projectSections(
 
 export const PROJECTS: PortfolioProject[] = [
   {
+    id: "luxury-home-remodeling",
+    name: "Luxury Home Remodeling",
+    line: {
+      en: "Website redesign for a Bay Area luxury kitchen, bath, and whole-home remodeler — quiet editorial craft, exact marketing words.",
+      pt: "Redesign do site para um remodelador de luxo de cozinhas, casas de banho e habitação na Bay Area — ofício editorial quieto, palavras de marketing exactas.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://luxury-home-remodeling.vercel.app/",
+    original: "https://luxuryhomeremodeling.com/",
+    sections: [
+      {
+        id: "brief",
+        title: { en: "Brief", pt: "Brief" },
+        body: {
+          en: "Luxury Home Remodeling needed a site that matched their Bay Area craft — kitchen, bath, whole-home, pools, landscaping — without rewriting the phone, CSLB license, or the service blurbs they already publish. Restyle, not a rebrand. Keep every marketing line. Make the digital surface feel as quiet-luxury as the work.",
+          pt: "A Luxury Home Remodeling precisava de um site à altura do ofício na Bay Area — cozinha, banho, habitação, piscinas, paisagismo — sem reescrever o telefone, a licença CSLB, ou os textos de serviço que já publicam. Restyle, não um rebrand. Manter cada linha de marketing. Fazer a superfície digital sentir-se tão quiet-luxury quanto o trabalho.",
+        },
+      },
+      {
+        id: "before",
+        title: { en: "Before", pt: "Antes" },
+        body: {
+          en: "The live site sat on a WordPress theme with SEO-stuffed nav, placeholder portfolio labels (\"Luxury Bathroom – 1\"…), and generic award chrome. The craft offline did not match the digital. Contact and license were present — the hierarchy was not.",
+          pt: "O site vivo estava num tema WordPress com navegação SEO-stuffed, labels de portfólio placeholder (\"Luxury Bathroom – 1\"…) e chrome genérico de prémios. O ofício offline não batia com o digital. Contacto e licença estavam lá — a hierarquia não.",
+        },
+      },
+      {
+        id: "elevation",
+        title: { en: "What I built", pt: "O que construí" },
+        body: {
+          en: "A Produx.design craft freeze: dark-first editorial luxury, bronze accent, stacked manifesto hero, numbered services with quiet chips, and portfolio cards that keep their stub titles. Logo-collapse sticky nav and a provenance strip for CSLB #1044943, Angi, and Google reviews. Exact service and process copy. EN/PT and dark/light throughout. Footer: built by dglxss.",
+          pt: "Um craft freeze Produx.design: luxo editorial dark-first, acento bronze, hero manifesto em stack, serviços numerados com chips quietos, e cards de portfólio que mantêm os títulos stub. Nav sticky com logo-collapse e uma faixa de proveniência para CSLB #1044943, Angi e Google reviews. Copy exacto de serviços e processo. EN/PT e dark/light em todo o site. Footer: construído por dglxss.",
+        },
+      },
+      {
+        id: "stack",
+        title: { en: "Stack", pt: "Stack" },
+        body: {
+          en: "Next.js and React. Tailwind for the system. Instrument Serif and Inter for type. Their live photography. Framer Motion for quiet reveals. Deployed on Vercel.",
+          pt: "Next.js e React. Tailwind para o sistema. Instrument Serif e Inter na tipografia. A fotografia que já tinham. Framer Motion para reveals quietos. Publicado na Vercel.",
+        },
+      },
+      {
+        id: "outcome",
+        title: { en: "Outcome", pt: "Resultado" },
+        body: {
+          en: "A Bay Area remodeler site that reads like quiet luxury, not a theme — live at luxury-home-remodeling.vercel.app.",
+          pt: "Um site de remodelação na Bay Area que se lê como quiet luxury, não como tema — live em luxury-home-remodeling.vercel.app.",
+        },
+      },
+    ],
+  },
+  {
     id: "village-cascais",
     name: "The Village Cascais",
     line: {
