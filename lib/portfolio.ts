@@ -346,16 +346,16 @@ export const PROJECTS: PortfolioProject[] = [
         id: "elevation",
         title: { en: "What I built", pt: "O que construí" },
         body: {
-          en: "The rebuild opens on a dark glass hero and a Global 7500 flyover. Then it keeps the home stack they already run. Pinnacle, cost transparency, new aircraft arriving in 2026, the luxury band, corporate travel, NetJets vs others, news, explore. Fleet pages carry the actual tails and cabin stills. Contact stays Request Information and the same phone number. Liquid glass plates instead of a template grid.",
-          pt: "O rebuild abre num hero de glass escuro e num overflight do Global 7500. Depois mantém o stack home que já correm. Pinnacle, transparência de custos, novas aeronaves em 2026, a banda de luxo, travel corporativo, NetJets vs outros, news, explore. As páginas de frota trazem as caudas reais e stills de cabine. Contacto mantém Request Information e o mesmo telefone. Placas de liquid glass em vez de uma grelha de template.",
+          en: "The rebuild opens on a dark glass hero and a photoreal Citation Latitude under-wing loop — no CGI cloud flyover. Then it keeps the home stack they already run. Pinnacle, cost transparency, new aircraft arriving in 2026, the luxury band, corporate travel, NetJets vs others, news, explore. Fleet carries a 20s taxi plate plus the actual tails and cabin stills. Contact stays Request Information and the same phone number. Liquid glass plates instead of a template grid.",
+          pt: "O rebuild abre num hero de glass escuro e num loop fotoreal de Citation Latitude sob a asa — sem overflight CGI de nuvens. Depois mantém o stack home que já correm. Pinnacle, transparência de custos, novas aeronaves em 2026, a banda de luxo, travel corporativo, NetJets vs outros, news, explore. A frota traz um plano de taxi de 20s mais as caudas reais e stills de cabine. Contacto mantém Request Information e o mesmo telefone. Placas de liquid glass em vez de uma grelha de template.",
         },
       },
       {
         id: "stack",
         title: { en: "Stack", pt: "Stack" },
         body: {
-          en: "Next.js and React on the front. Tailwind for the system. Framer Motion on the motion. Three.js and React Three Fiber where the page needs depth. Instrument Serif and Barlow for type, Work Sans standing in for the wordmark. Hero video on the Global 7500. Deployed on Vercel.",
-          pt: "Next.js e React no front. Tailwind para o sistema. Framer Motion no movimento. Three.js e React Three Fiber onde a página precisa de profundidade. Instrument Serif e Barlow na tipografia, Work Sans no wordmark. Vídeo hero do Global 7500. Publicado na Vercel.",
+          en: "Next.js and React on the front. Tailwind for the system. Framer Motion on the motion. Three.js and React Three Fiber where the page needs depth. Instrument Serif and Barlow for type, Work Sans standing in for the wordmark. Hero video is a photoreal Latitude under-wing loop; Fleet gets a taxi plate. Deployed on Vercel.",
+          pt: "Next.js e React no front. Tailwind para o sistema. Framer Motion no movimento. Three.js e React Three Fiber onde a página precisa de profundidade. Instrument Serif e Barlow na tipografia, Work Sans no wordmark. Vídeo hero fotoreal sob a asa do Latitude; a frota tem plano de taxi. Publicado na Vercel.",
         },
       },
       {
