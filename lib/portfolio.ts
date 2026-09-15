@@ -8,6 +8,7 @@ import type { Localized, Locale } from "@/lib/locale";
 import { pick } from "@/lib/locale";
 import { PORTFOLIO_TAB_COPY, UI, t, type UiDict } from "@/lib/ui-strings";
 import { RECENT_CASES } from "@/lib/recent-cases";
+import { LEGACY_CASES } from "@/lib/legacy-cases";
 
 export type ProjectKind = "web" | "saas" | "hardware" | "product";
 
@@ -71,7 +72,7 @@ export function projectSections(
   }));
 }
 
-export const PROJECTS: PortfolioProject[] = [...RECENT_CASES];
+export const PROJECTS: PortfolioProject[] = [...RECENT_CASES, ...LEGACY_CASES];
 
 export function projectsForTab(tab: PortfolioTabId): PortfolioProject[] {
   if (tab === "work") {
