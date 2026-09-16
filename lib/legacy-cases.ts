@@ -5,8 +5,8 @@ export const LEGACY_CASES: PortfolioProject[] = [
     id: "aectm",
     name: "AECTM Castro Marim",
     line: {
-      en: "Full multi-page restyle for a Portuguese public school cluster — quiet institutional craft, exact PT copy, EN twin.",
-      pt: "Restyle multi-página completo para um agrupamento escolar público português — ofício institucional quieto, copy PT exacto, gémeo EN.",
+      en: "School-handoff rebuild for Agrupamento de Escolas de Castro Marim — liquid glass, PT|EN, working news/calendar/docs, exact PT transplant.",
+      pt: "Rebuild de handoff escolar para o Agrupamento de Escolas de Castro Marim — liquid glass, PT|EN, notícias/calendário/docs a funcionar, transplant PT exacto.",
     },
     kind: ["web"],
     year: "2026",
