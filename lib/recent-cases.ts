@@ -1,6 +1,41 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
+{
+    id: "visconde-da-luz",
+    name: "Visconde da Luz",
+    line: {
+      en: "Website redesign for a Cascais garden restaurant since 1976 — traditional Portuguese seafood, bilingual, reserve-ready.",
+      pt: "Redesign do site de um restaurante de jardim em Cascais desde 1976 — marisco português tradicional, bilingue, pronto a reservar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://visconde-da-luz.vercel.app/",
+    original: "https://www.viscondedaluz.pt/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Restaurante Visconde da Luz. Keep A Alma da Tradição, the 1976 garden story, and every dish name they already publish. Make reserve and hours obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com o Restaurante Visconde da Luz. Manter A Alma da Tradição, a história do jardim desde 1976, e todos os nomes de pratos que já publicam. Tornar a reserva e o horário óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Páginas Amarelas template chrome — repeated hero slides, placeholder ementa captions, phone-and-email only. Heritage is strong; the digital path is thin.",
+        pt: "O site vivo corre em chrome de template Páginas Amarelas — slides de hero repetidos, legendas de ementa placeholder, só telefone e email. A herança é forte; o caminho digital é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites garden-curtain hero, place-card bilingual ementa, hours-aware reserve chrome, and exact contacts from Jardim Visconde da Luz. PT default with EN twin. Dark and light. Exact testimonials.",
+        pt: "Um hero Motionsites com cortina de jardim, ementa bilingue em place-card, chrome de reserva consciente do horário, e contactos exactos do Jardim Visconde da Luz. PT por omissão com gémeo EN. Escuro e claro. Testemunhos exactos.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites mythic-naturecore with an Axiom innovation pass.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites mythic-naturecore com passe de inovação Axiom.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Cascais garden restaurant pitch site live at visconde-da-luz.vercel.app.",
+        pt: "Um site de pitch para o restaurante de jardim em Cascais — live em visconde-da-luz.vercel.app.",
+      }},
+    ],
+  },
   {
     id: "servpro",
     name: "SERVPRO",
