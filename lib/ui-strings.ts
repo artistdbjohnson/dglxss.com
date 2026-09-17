@@ -33,6 +33,13 @@ export const UI = {
   clientMaterials: { en: "Client materials", pt: "Materiais do cliente" },
   clientMaterialsAria: { en: "Client materials", pt: "Materiais do cliente" },
   collapseCard: { en: "Collapse card", pt: "Fechar cartão" },
+  mosaicAria: { en: "Case surfaces", pt: "Superfícies do caso" },
+  nestedDeckAria: { en: "Case notes", pt: "Notas do caso" },
+  livePlate: { en: "Live", pt: "Live" },
+  scanHint: {
+    en: "Tap a plate to read that surface.",
+    pt: "Toque numa placa para ler essa superfície.",
+  },
   home: { en: "Home", pt: "Início" },
   clients: { en: "clients", pt: "clientes" },
   forClients: { en: "For clients", pt: "Para clientes" },

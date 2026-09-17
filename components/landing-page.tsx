@@ -1,30 +1,20 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { HeroParticles } from "@/components/hero-particles";
-import { LanguageSwitch } from "@/components/language-switch";
+import { SiteNav } from "@/components/site-nav";
+import { CaseStack } from "@/components/case-stack";
 import { useLocale } from "@/lib/locale";
 import { t, UI } from "@/lib/ui-strings";
 import {
-  KIND_LABEL,
   PORTFOLIO_TABS,
-  projectLine,
   projectsForTab,
-  sectionBody,
-  sectionTitle,
   tabEmpty,
   tabEyebrow,
   tabLabel,
-  type PortfolioProject,
   type PortfolioTabId,
 } from "@/lib/portfolio";
-
-function scrollToId(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 export function LandingPage() {
   const { locale } = useLocale();
@@ -33,10 +23,9 @@ export function LandingPage() {
   useEffect(() => {
     document.title = `${t(UI.brandLine, locale)} — ${t(UI.builtBy, locale)}`;
   }, [locale]);
-  const [openId, setOpenId] = useState<string | null>(null);
 
   const projects = useMemo(() => projectsForTab(tab), [tab]);
-  const tabMeta = PORTFOLIO_TABS.find((t) => t.id === tab)!;
+  const tabMeta = PORTFOLIO_TABS.find((item) => item.id === tab)!;
 
   useLayoutEffect(() => {
     if ("scrollRestoration" in history) {
@@ -61,11 +50,24 @@ export function LandingPage() {
     }
   }, []);
 
+  const selectTab = (id: PortfolioTabId) => {
+    setTab(id);
+    const panel = document.getElementById("portfolio");
+    if (panel) {
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    if (window.location.hash !== `#${id}`) {
+      history.replaceState(null, "", `#${id}`);
+    }
+  };
+
   return (
     <div className="relative bg-black text-white">
       <div className="fixed inset-0 z-0 pointer-events-none">
         <HeroParticles splitOnScroll />
       </div>
+
+      <SiteNav tab={tab} onTab={selectTab} />
 
       <section className="snap-panel relative z-10 w-full flex flex-col">
         <div
@@ -78,52 +80,9 @@ export function LandingPage() {
           }}
         />
 
-        <nav
-          className="relative z-20 px-4 sm:px-6 lg:px-10 pt-[max(1.25rem,env(safe-area-inset-top))] sm:pt-6 shrink-0"
-          aria-label={t(UI.navAria, locale)}
-        >
-          <div className="liquid-glass-nav rounded-full px-3.5 sm:px-5 lg:px-6 py-2 sm:py-2.5 flex items-center justify-between max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto gap-3">
-            <Link
-              href="/about"
-              className="flex items-center text-white shrink-0 min-h-11 pl-2.5 sm:pl-3 pr-1"
-              aria-label={t(UI.aboutAria, locale)}
-            >
-              <span
-                className="text-[0.95rem] sm:text-base tracking-tight lowercase text-white/95"
-                style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
-              >
-                dglxss
-              </span>
-            </Link>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center gap-0.5 sm:gap-1">
-                {PORTFOLIO_TABS.map((tabItem) => (
-                  <button
-                    key={tabItem.id}
-                    type="button"
-                    onClick={() => {
-                      setTab(tabItem.id);
-                      setOpenId(null);
-                      scrollToId("portfolio");
-                    }}
-                    className={`rounded-full px-3.5 sm:px-4 py-2 text-[0.8125rem] sm:text-sm font-medium min-h-10 inline-flex items-center transition-colors duration-200 ${
-                      tab === tabItem.id
-                        ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
-                        : "text-white/70 hover:text-white hover:bg-white/[0.06]"
-                    }`}
-                  >
-                    {tabLabel(tabItem, locale)}
-                  </button>
-                ))}
-              </div>
-              <LanguageSwitch />
-            </div>
-          </div>
-        </nav>
-
         <div
           id="hero"
-          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center"
+          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-[var(--deck-top)] pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center"
         >
           <div className="flex flex-col items-center -translate-y-[4%] sm:-translate-y-[6%]">
             <h1
@@ -147,39 +106,8 @@ export function LandingPage() {
             "radial-gradient(ellipse 58% 86% at 50% 42%, rgba(5,5,5,0.5) 0%, rgba(5,5,5,0.18) 48%, transparent 72%)",
         }}
       >
-        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-11 sm:px-14 lg:px-16 pt-6 sm:pt-8 lg:pt-10">
-          <div
-            role="tablist"
-            aria-label={t(UI.portfolioAria, locale)}
-            className="liquid-glass-card rounded-full p-1 flex gap-1 mb-5 sm:mb-6 max-w-xs sm:max-w-sm mx-auto w-full shrink-0"
-          >
-            {PORTFOLIO_TABS.map((tabItem) => {
-              const active = tab === tabItem.id;
-              return (
-                <button
-                  key={tabItem.id}
-                  type="button"
-                  role="tab"
-                  id={`tab-${tabItem.id}`}
-                  aria-selected={active}
-                  aria-controls={`panel-${tabItem.id}`}
-                  onClick={() => {
-                    setTab(tabItem.id);
-                    setOpenId(null);
-                  }}
-                  className={`flex-1 rounded-full py-2.5 text-sm font-medium min-h-10 transition-colors duration-200 ${
-                    active
-                      ? "bg-white text-black shadow-[0_1px_0_rgba(255,255,255,0.35)_inset]"
-                      : "text-white/55 hover:text-white"
-                  }`}
-                >
-                  {tabLabel(tabItem, locale)}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mb-5 sm:mb-6 text-center shrink-0">
+        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-6xl xl:max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
+          <div className="mb-6 sm:mb-8 text-center shrink-0">
             <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-1">
               {tabEyebrow(tabMeta, locale)}
             </p>
@@ -193,12 +121,12 @@ export function LandingPage() {
 
           <div
             role="tabpanel"
-            id={`panel-${tab}`}
+            id="portfolio-panel"
             aria-labelledby={`tab-${tab}`}
             className="shrink-0"
           >
             {projects.length === 0 ? (
-              <div className="liquid-glass-card rounded-2xl px-5 py-10 text-center">
+              <div className="liquid-glass-card rounded-2xl px-5 py-10 text-center max-w-lg mx-auto">
                 <p
                   className="text-white/80 text-base tracking-tight lowercase mb-1.5"
                   style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
@@ -210,26 +138,13 @@ export function LandingPage() {
                 </p>
               </div>
             ) : (
-              <div className="flex flex-col gap-4 sm:gap-5">
-                {projects.map((project) => (
-                  <ProjectBlock
-                    key={project.id}
-                    project={project}
-                    open={openId === project.id}
-                    onToggle={() =>
-                      setOpenId((id) =>
-                        id === project.id ? null : project.id,
-                      )
-                    }
-                  />
-                ))}
-              </div>
+              <CaseStack projects={projects} />
             )}
           </div>
 
           <div className="flex-1 min-h-10" aria-hidden />
 
-          <footer className="shrink-0 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] mt-2 border-t border-white/[0.06]">
+          <footer className="shrink-0 pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))] mt-6 border-t border-white/[0.06]">
             <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-3">
               <p
                 className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
@@ -253,147 +168,5 @@ export function LandingPage() {
         </div>
       </section>
     </div>
-  );
-}
-
-function ProjectBlock({
-  project,
-  open,
-  onToggle,
-}: {
-  project: PortfolioProject;
-  open: boolean;
-  onToggle: () => void;
-}) {
-  const { locale } = useLocale();
-
-  return (
-    <article
-      id={project.id}
-      className={`liquid-glass-card rounded-2xl flex flex-col ${
-        open ? "ring-1 ring-white/15" : ""
-      }`}
-    >
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={open}
-        className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 min-h-11 flex items-start gap-3 shrink-0"
-      >
-        <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-1">
-            <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
-              {project.name}
-            </h3>
-            <span className="text-white/42 text-[11px] tabular-nums tracking-wide">
-              {project.year}
-            </span>
-            {project.status === "in-progress" && (
-              <span className="liquid-glass rounded-full px-2 py-0.5 text-[9px] uppercase tracking-wider font-semibold text-white/80">
-                {t(UI.inProgressBadge, locale)}
-              </span>
-            )}
-          </div>
-          <p className="text-[13px] sm:text-sm text-white/55 leading-relaxed">
-            {projectLine(project, locale)}
-          </p>
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {project.kind.map((k) => (
-              <span
-                key={k}
-                className="liquid-glass rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/65"
-              >
-                {t(KIND_LABEL[k], locale)}
-              </span>
-            ))}
-          </div>
-        </div>
-        <ChevronDown
-          size={16}
-          className={`shrink-0 mt-1 text-white/40 transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-
-      {open && (
-        <>
-          <div className="border-t border-white/[0.08] px-5 sm:px-6 pt-2 pb-4 space-y-4">
-            {project.sections.map((section) => (
-              <section
-                key={section.id}
-                id={`${project.id}-${section.id}`}
-                className="pt-2"
-              >
-                <h4 className="text-[0.65rem] font-medium uppercase tracking-[0.15em] text-white/40 mb-1.5">
-                  {sectionTitle(section, locale)}
-                </h4>
-                <p className="text-[13px] sm:text-sm text-white/62 leading-relaxed">
-                  {sectionBody(section, locale)}
-                </p>
-              </section>
-            ))}
-          </div>
-
-          {(project.buildId || project.external || project.original) && (
-            <div className="shrink-0 border-t border-white/[0.08] px-5 sm:px-6 py-4 flex flex-wrap items-center gap-2">
-              {project.buildId ? (
-                <>
-                  <Link
-                    href={`/builds/${project.buildId}`}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2.5 text-[13px] font-medium min-h-10 hover:bg-white/90 transition-colors"
-                  >
-                    {t(UI.openBuild, locale)}
-                    <ArrowUpRight size={14} />
-                  </Link>
-                  <Link
-                    href={`/access#${project.buildId}`}
-                    className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-4 py-2.5 text-[13px] font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
-                    aria-label={t(UI.clientMaterialsAria, locale)}
-                  >
-                    {t(UI.clientMaterials, locale)}
-                    <ArrowUpRight size={14} />
-                  </Link>
-                </>
-              ) : (
-                <>
-                  {project.external && (
-                    <a
-                      href={project.external}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-2.5 text-[13px] font-medium min-h-10 hover:bg-white/90 transition-colors"
-                    >
-                      {t(UI.viewRebuild, locale)}
-                      <ArrowUpRight size={14} />
-                    </a>
-                  )}
-                  {project.original && (
-                    <a
-                      href={project.original}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full liquid-glass px-4 py-2.5 text-[13px] font-medium min-h-10 text-white/75 hover:text-white hover:bg-white/[0.06] transition-colors"
-                    >
-                      {t(UI.viewOriginal, locale)}
-                      <ArrowUpRight size={14} />
-                    </a>
-                  )}
-                </>
-              )}
-            </div>
-          )}
-
-          <button
-            type="button"
-            onClick={onToggle}
-            aria-label={t(UI.collapseCard, locale)}
-            className="w-full flex items-center justify-center pb-3.5 pt-1 min-h-10 text-white/40 hover:text-white/70 transition-colors"
-          >
-            <ChevronUp size={16} strokeWidth={2} />
-          </button>
-        </>
-      )}
-    </article>
   );
 }
