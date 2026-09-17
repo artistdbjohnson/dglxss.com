@@ -370,6 +370,370 @@
   animation: hero-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) 90ms both;
 }
 
+.site-nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.site-nav-fixed > * {
+  pointer-events: auto;
+}
+
+.site-nav-fixed::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: calc(4.75rem + env(safe-area-inset-top));
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.18) 62%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+:root {
+  --deck-top: calc(4.65rem + env(safe-area-inset-top));
+}
+
+.case-deck {
+  position: relative;
+}
+
+.case-deck-item {
+  position: sticky;
+  top: calc(var(--deck-top) + (var(--i, 0) * 12px));
+  z-index: var(--z, 1);
+  margin-bottom: 12px;
+}
+
+.case-deck-item:last-child {
+  margin-bottom: 0;
+}
+
+.case-deck-card {
+  position: relative;
+  height: 100%;
+  padding: 1.25rem 1.25rem 1.35rem;
+  border-radius: 28px;
+  background: #0c0c0c;
+  transform: scale(var(--deck-scale, 1));
+  transform-origin: top center;
+  will-change: transform;
+  backface-visibility: hidden;
+  contain: layout style;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 18px 48px rgba(0, 0, 0, 0.42);
+}
+
+.case-deck-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--case-ink, #fff) 14%, transparent) 0%,
+    transparent 42%
+  );
+}
+
+.case-deck-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.case-index {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.case-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 0.65rem;
+  min-height: 11.5rem;
+}
+
+.case-mosaic-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 0;
+}
+
+.mosaic-tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 5.25rem;
+  border-radius: 1.1rem;
+  padding: 0.75rem 0.85rem 0.8rem;
+  text-align: left;
+  color: var(--case-mist, #f2f2f2);
+  background: var(--case-paper, #111);
+  transform: translateZ(0) scale(0.985);
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  opacity: 0.78;
+}
+
+.mosaic-tile-tall {
+  min-height: 11.5rem;
+}
+
+.mosaic-tile.is-active {
+  transform: translateZ(0) scale(1);
+  opacity: 1;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--case-ink, #fff) 55%, transparent),
+    0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.mosaic-tile-label {
+  position: relative;
+  z-index: 2;
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--case-ink, #fff);
+}
+
+.mosaic-tile-name {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.mosaic-tile-excerpt {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 0.55rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.62);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mosaic-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.mosaic-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.mosaic-garden::after {
+  background:
+    radial-gradient(120% 90% at 80% 120%, rgba(196, 164, 106, 0.28), transparent 50%),
+    radial-gradient(80% 70% at 10% 0%, rgba(80, 140, 90, 0.35), transparent 55%);
+}
+.mosaic-storm::after {
+  background:
+    linear-gradient(125deg, transparent 30%, rgba(125, 206, 160, 0.2) 31%, transparent 33%),
+    radial-gradient(90% 80% at 90% 10%, rgba(0, 99, 65, 0.55), transparent 60%);
+}
+.mosaic-stripe::after {
+  background: repeating-linear-gradient(
+    -18deg,
+    rgba(200, 16, 46, 0.18) 0 8px,
+    transparent 8px 16px
+  );
+}
+.mosaic-canopy::after {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(143, 191, 115, 0.28), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(40, 90, 50, 0.45), transparent 42%);
+}
+.mosaic-blocks::after {
+  background:
+    linear-gradient(90deg, rgba(245, 197, 24, 0.16) 33%, transparent 33% 66%, rgba(245, 197, 24, 0.1) 66%),
+    linear-gradient(180deg, transparent 55%, rgba(245, 197, 24, 0.12) 55%);
+}
+.mosaic-aurora::after {
+  background:
+    radial-gradient(120% 80% at 0% 100%, rgba(142, 180, 200, 0.32), transparent 50%),
+    radial-gradient(80% 70% at 100% 0%, rgba(90, 130, 170, 0.28), transparent 55%);
+}
+.mosaic-bronze::after {
+  background:
+    linear-gradient(160deg, rgba(196, 163, 106, 0.28), transparent 55%),
+    radial-gradient(70% 50% at 90% 80%, rgba(176, 141, 87, 0.2), transparent 60%);
+}
+.mosaic-warm::after {
+  background:
+    radial-gradient(90% 80% at 10% 90%, rgba(224, 160, 106, 0.3), transparent 50%),
+    linear-gradient(200deg, rgba(240, 216, 192, 0.08), transparent 40%);
+}
+.mosaic-clinic::after {
+  background:
+    linear-gradient(180deg, rgba(243, 234, 216, 0.08), transparent 40%),
+    radial-gradient(80% 70% at 100% 0%, rgba(201, 180, 138, 0.22), transparent 55%);
+}
+.mosaic-wing::after {
+  background:
+    linear-gradient(115deg, rgba(197, 205, 214, 0.16) 0%, transparent 42%),
+    radial-gradient(90% 60% at 80% 120%, rgba(255, 255, 255, 0.08), transparent 50%);
+}
+.mosaic-soft::after {
+  background:
+    radial-gradient(80% 70% at 20% 20%, rgba(224, 122, 164, 0.28), transparent 50%),
+    radial-gradient(70% 60% at 90% 90%, rgba(244, 232, 238, 0.1), transparent 50%);
+}
+.mosaic-gold::after {
+  background:
+    radial-gradient(90% 80% at 80% 20%, rgba(255, 213, 74, 0.22), transparent 50%),
+    linear-gradient(180deg, transparent 60%, rgba(255, 213, 74, 0.08) 100%);
+}
+.mosaic-dock::after {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(212, 160, 23, 0.12) 0 2px,
+      transparent 2px 18px
+    ),
+    radial-gradient(80% 70% at 50% 110%, rgba(212, 160, 23, 0.2), transparent 55%);
+}
+
+.note-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  margin-top: 0.95rem;
+}
+
+.note-slat {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: calc(var(--slat-i, 0) * 8px);
+  width: calc(100% - var(--slat-i, 0) * 8px);
+  min-height: 2.4rem;
+  padding: 0.42rem 0.8rem;
+  border-radius: 14px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transform: translateZ(0) scale(var(--slat-scale, 1));
+  transform-origin: left center;
+  z-index: var(--slat-z, 1);
+  transition:
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.note-slat.is-active {
+  color: #fff;
+  background: color-mix(in srgb, var(--case-ink, #fff) 14%, rgba(255, 255, 255, 0.04));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--case-ink, #fff) 40%, transparent);
+}
+
+.note-slat-index {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.32);
+  font-variant-numeric: tabular-nums;
+}
+
+.note-slat-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  .case-deck {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+
+  .case-deck-item {
+    position: static;
+    top: auto;
+    margin-bottom: 0;
+  }
+
+  .case-deck-card {
+    transform: none;
+    will-change: auto;
+    padding: 1.45rem 1.5rem 1.55rem;
+  }
+
+  .case-mosaic {
+    min-height: 13.5rem;
+  }
+
+  .mosaic-tile-tall {
+    min-height: 13.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .case-deck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mosaic-tile:hover {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -384,5 +748,20 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .case-deck-item {
+    position: static;
+    top: auto;
+  }
+
+  .case-deck-card,
+  .mosaic-tile,
+  .mosaic-tile.is-active,
+  .note-slat {
+    transform: none;
+    transition: none;
+    animation: none;
+    will-change: auto;
   }
 }
