@@ -8,10 +8,16 @@ export type CaseSurface = {
   ink: string;
   paper: string;
   mist: string;
-  motif: "garden" | "storm" | "stripe" | "canopy" | "blocks" | "aurora" | "bronze" | "warm" | "clinic" | "wing" | "soft" | "gold" | "dock";
+  motif: "garden" | "storm" | "stripe" | "canopy" | "blocks" | "aurora" | "bronze" | "warm" | "clinic" | "wing" | "soft" | "gold" | "dock" | "enamel";
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "farmington-dental-ny": {
+    ink: "#689ade",
+    paper: "#07151f",
+    mist: "#daedff",
+    motif: "enamel",
+  },
   "visconde-da-luz": {
     ink: "#c4a46a",
     paper: "#14261a",

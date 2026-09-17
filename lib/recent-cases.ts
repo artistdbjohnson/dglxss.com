@@ -1,6 +1,41 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
+  {
+    id: "farmington-dental-ny",
+    name: "Farmington Dental NY",
+    line: {
+      en: "Website redesign for a family dental practice in Farmington, NY — Motionsites equilibrium, bilingual, patient-ready.",
+      pt: "Redesign do site de uma clínica dentária de família em Farmington, NY — Motionsites equilibrium, bilingue, pronto para pacientes.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://farmington-dental-ny.vercel.app/",
+    original: "https://www.farmingtondentalny.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Farmington Dental. Keep Experience the Farmington Dental Difference, Expert Dental Care in a Relaxed and Friendly Environment, and every published service — Preventative, Cosmetic, Restorative, Emergency, Pediatric, Endodontic. Make phone, hours, and patient forms obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Farmington Dental. Manter Experience the Farmington Dental Difference, Expert Dental Care in a Relaxed and Friendly Environment, e cada serviço que já publicam — Preventative, Cosmetic, Restorative, Emergency, Pediatric, Endodontic. Tornar o telefone, o horário e os formulários de paciente óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Wix template chrome — long-scroll marketing, service accordions, team headshots, Google reviews. The practice is clear; the digital surface is a template. Phone and forms are there — the path is thin.",
+        pt: "O site vivo corre em chrome de template Wix — marketing em scroll longo, accordions de serviço, retratos da equipa, reviews do Google. A prática é clara; a superfície digital é um template. Telefone e formulários estão lá — o caminho é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites equilibrium chassis remapped from wellness to family dental: liquid-glass nav, full-bleed hero, nested liquid-glass service accordion, and a sticky section rail. Exact public copy from Farmington, NY. EN default with PT twin. Dark and light. Their logos and team plates. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites equilibrium remapado de wellness para clínica dentária de família: nav em liquid-glass, hero em ecrã inteiro, accordion de serviços aninhado em liquid-glass, e um rail sticky de secção. Copy público exacto de Farmington, NY. EN por omissão com gémeo PT. Escuro e claro. Os logótipos e as placas da equipa. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites equilibrium with an Axiom innovation pass — nested liquid-glass accordion and sticky section rail.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites equilibrium com passe de inovação Axiom — accordion aninhado em liquid-glass e rail sticky de secção.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Farmington, NY family dental pitch site live at farmington-dental-ny.vercel.app.",
+        pt: "Um site de pitch para a clínica dentária de família em Farmington, NY — live em farmington-dental-ny.vercel.app.",
+      }},
+    ],
+  },
 {
     id: "visconde-da-luz",
     name: "Visconde da Luz",
