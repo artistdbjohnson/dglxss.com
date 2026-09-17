@@ -178,35 +178,12 @@ export function HeroParticles({
         0,
         w * 0.5,
         h * 0.5,
-        Math.hypot(w, h) * 0.75,
+        Math.hypot(w, h) * 0.82,
       );
-      ambient.addColorStop(0, `rgba(255,255,255,${0.04 * dim})`);
-      ambient.addColorStop(0.45, `rgba(255,255,255,${0.014 * dim})`);
-      ambient.addColorStop(1, `rgba(255,255,255,${0.004 * dim})`);
+      ambient.addColorStop(0, `rgba(255,255,255,${0.018 * dim})`);
+      ambient.addColorStop(1, "rgba(255,255,255,0)");
       ctx.fillStyle = ambient;
       ctx.fillRect(0, 0, w, h);
-
-      for (const [cx, cy, r, a] of [
-        [0.12, 0.14, 0.4, 0.018],
-        [0.88, 0.16, 0.38, 0.016],
-        [0.1, 0.86, 0.42, 0.018],
-        [0.9, 0.84, 0.4, 0.016],
-        [0.5, 0.08, 0.35, 0.014],
-        [0.5, 0.92, 0.35, 0.014],
-      ] as const) {
-        const cg = ctx.createRadialGradient(
-          w * cx,
-          h * cy,
-          0,
-          w * cx,
-          h * cy,
-          Math.min(w, h) * r,
-        );
-        cg.addColorStop(0, `rgba(255,255,255,${a * dim})`);
-        cg.addColorStop(1, "rgba(0,0,0,0)");
-        ctx.fillStyle = cg;
-        ctx.fillRect(0, 0, w, h);
-      }
 
       ctx.globalCompositeOperation = "lighter";
 
