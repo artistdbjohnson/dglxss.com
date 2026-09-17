@@ -140,3 +140,9 @@ export function hostLabel(url?: string): string | null {
 export function indexLabel(index: number): string {
   return String(index + 1).padStart(2, "0");
 }
+
+export function excerpt(body: string, max = 78): string {
+  const clean = body.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return `${clean.slice(0, max).replace(/\s+\S*$/, "")}…`;
+}

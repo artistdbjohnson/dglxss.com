@@ -12,6 +12,7 @@ import {
   type PortfolioProject,
 } from "@/lib/portfolio";
 import {
+  excerpt,
   hostLabel,
   indexLabel,
   mosaicSlots,
@@ -282,7 +283,12 @@ function MosaicTile({
           ? t(UI.livePlate, locale)
           : sectionTitle(section, locale)}
       </span>
-      <span className="mosaic-tile-name">{project.name}</span>
+      {tall ? (
+        <span className="mosaic-tile-name">{project.name}</span>
+      ) : null}
+      <span className="mosaic-tile-excerpt">
+        {excerpt(sectionBody(section, locale), tall ? 110 : 64)}
+      </span>
     </button>
   );
 }
