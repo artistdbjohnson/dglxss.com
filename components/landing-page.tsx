@@ -69,20 +69,10 @@ export function LandingPage() {
 
       <SiteNav tab={tab} onTab={selectTab} />
 
-      <section className="snap-panel relative z-10 w-full flex flex-col">
-        <div
-          className="absolute inset-0 z-[1] pointer-events-none"
-          style={{
-            background: [
-              "radial-gradient(ellipse 100% 95% at 50% 48%, transparent 42%, rgba(0,0,0,0.18) 78%, rgba(0,0,0,0.42) 100%)",
-              "linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, transparent 12%, transparent 88%, rgba(0,0,0,0.32) 100%)",
-            ].join(", "),
-          }}
-        />
-
+      <section className="relative z-10 w-full min-h-[100dvh] flex flex-col">
         <div
           id="hero"
-          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-[var(--deck-top)] pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center"
+          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-[var(--deck-top)] pb-16 text-center"
         >
           <div className="flex flex-col items-center -translate-y-[4%] sm:-translate-y-[6%]">
             <h1
@@ -100,14 +90,10 @@ export function LandingPage() {
 
       <section
         id="portfolio"
-        className="snap-panel snap-panel-loose relative z-10 flex flex-col"
-        style={{
-          background:
-            "radial-gradient(ellipse 58% 86% at 50% 42%, rgba(5,5,5,0.5) 0%, rgba(5,5,5,0.18) 48%, transparent 72%)",
-        }}
+        className="work-panel snap-panel-loose relative z-10 flex flex-col"
       >
-        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-11 sm:px-14 lg:px-16 pt-6 sm:pt-8 lg:pt-10">
-          <div className="mb-6 sm:mb-8 text-center shrink-0">
+        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-5 sm:px-8 lg:px-12 pt-2 sm:pt-3">
+          <div className="mb-5 sm:mb-6 text-center shrink-0">
             <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-1">
               {tabEyebrow(tabMeta, locale)}
             </p>
@@ -126,7 +112,7 @@ export function LandingPage() {
             className="shrink-0"
           >
             {projects.length === 0 ? (
-              <div className="liquid-glass-card rounded-2xl px-5 py-10 text-center max-w-lg mx-auto">
+              <div className="case-card rounded-2xl px-5 py-10 text-center max-w-lg mx-auto">
                 <p
                   className="text-white/80 text-base tracking-tight lowercase mb-1.5"
                   style={{ fontFamily: "var(--font-serif), Georgia, serif" }}
@@ -144,7 +130,7 @@ export function LandingPage() {
 
           <div className="flex-1 min-h-10" aria-hidden />
 
-          <footer className="shrink-0 pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))] mt-6 border-t border-white/[0.06]">
+          <footer className="shrink-0 pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))] mt-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-2 sm:gap-3">
               <p
                 className="text-white/75 lowercase tracking-tight text-sm text-center sm:text-left"
