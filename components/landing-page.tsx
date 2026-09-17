@@ -69,10 +69,10 @@ export function LandingPage() {
 
       <SiteNav tab={tab} onTab={selectTab} />
 
-      <section className="snap-panel relative z-10 w-full flex flex-col">
+      <section className="relative z-10 w-full min-h-[100dvh] flex flex-col">
         <div
           id="hero"
-          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-[var(--deck-top)] pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center"
+          className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-[var(--deck-top)] pb-16 text-center"
         >
           <div className="flex flex-col items-center -translate-y-[4%] sm:-translate-y-[6%]">
             <h1
