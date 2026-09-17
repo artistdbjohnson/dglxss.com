@@ -141,9 +141,6 @@ function CaseCard({
             />
 
             <div className="case-read mt-4" aria-live="polite">
-              <p className="text-[0.65rem] font-medium uppercase tracking-[0.15em] text-white/40 mb-1.5">
-                {sectionTitle(active, locale)}
-              </p>
               <p className="text-[13px] sm:text-sm text-white/68 leading-relaxed">
                 {sectionBody(active, locale)}
               </p>
@@ -310,11 +307,8 @@ function MosaicTile({
           ? t(UI.livePlate, locale)
           : sectionTitle(section, locale)}
       </span>
-      {tall ? (
-        <span className="mosaic-tile-name">{project.name}</span>
-      ) : null}
       <span className="mosaic-tile-excerpt">
-        {excerpt(sectionBody(section, locale), tall ? 110 : 64)}
+        {excerpt(sectionBody(section, locale), tall ? 160 : 72)}
       </span>
     </button>
   );

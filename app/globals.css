@@ -403,6 +403,8 @@
 
 .case-card {
   scroll-margin-top: calc(var(--deck-top) + 0.5rem);
+  height: auto;
+  max-height: none;
 }
 
 .case-mosaic {
@@ -465,17 +467,6 @@
   color: var(--case-ink, #fff);
 }
 
-.mosaic-tile-name {
-  position: relative;
-  z-index: 2;
-  display: block;
-  margin-top: 0.45rem;
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-}
-
 .mosaic-tile-excerpt {
   position: relative;
   z-index: 2;
@@ -488,6 +479,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.mosaic-tile-tall .mosaic-tile-excerpt {
+  -webkit-line-clamp: 6;
 }
 
 .mosaic-tile::before {
