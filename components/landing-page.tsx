@@ -100,13 +100,13 @@ export function LandingPage() {
 
       <section
         id="portfolio"
-        className="snap-panel snap-panel-loose relative z-10 flex flex-col border-t border-white/[0.06]"
+        className="snap-panel snap-panel-loose relative z-10 flex flex-col"
         style={{
           background:
             "radial-gradient(ellipse 58% 86% at 50% 42%, rgba(5,5,5,0.5) 0%, rgba(5,5,5,0.18) 48%, transparent 72%)",
         }}
       >
-        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-6xl xl:max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 lg:pt-10">
+        <div className="flex flex-col min-h-[100dvh] max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full mx-auto px-11 sm:px-14 lg:px-16 pt-6 sm:pt-8 lg:pt-10">
           <div className="mb-6 sm:mb-8 text-center shrink-0">
             <p className="text-[0.6rem] font-medium tracking-[0.2em] uppercase text-white/40 mb-1">
               {tabEyebrow(tabMeta, locale)}
@@ -138,7 +138,7 @@ export function LandingPage() {
                 </p>
               </div>
             ) : (
-              <CaseStack projects={projects} />
+              <CaseStack key={tab} projects={projects} />
             )}
           </div>
 

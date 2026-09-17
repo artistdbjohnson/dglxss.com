@@ -401,59 +401,8 @@
   --deck-top: calc(4.65rem + env(safe-area-inset-top));
 }
 
-.case-deck {
-  position: relative;
-}
-
-.case-deck-item {
-  position: sticky;
-  top: calc(var(--deck-top) + (var(--i, 0) * 12px));
-  z-index: var(--z, 1);
-  margin-bottom: 12px;
-}
-
-.case-deck-item:last-child {
-  margin-bottom: 0;
-}
-
-.case-deck-card {
-  position: relative;
-  height: 100%;
-  padding: 1.25rem 1.25rem 1.35rem;
-  border-radius: 28px;
-  background: #0c0c0c;
-  transform: scale(var(--deck-scale, 1));
-  transform-origin: top center;
-  will-change: transform;
-  backface-visibility: hidden;
-  contain: layout style;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 18px 48px rgba(0, 0, 0, 0.42);
-}
-
-.case-deck-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(
-    165deg,
-    color-mix(in srgb, var(--case-ink, #fff) 14%, transparent) 0%,
-    transparent 42%
-  );
-}
-
-.case-deck-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.case-index {
-  font-size: clamp(2rem, 6vw, 3.5rem);
+.case-card {
+  scroll-margin-top: calc(var(--deck-top) + 0.5rem);
 }
 
 .case-mosaic {
@@ -668,13 +617,6 @@
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--case-ink, #fff) 40%, transparent);
 }
 
-.note-slat-index {
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.32);
-  font-variant-numeric: tabular-nums;
-}
-
 .note-slat-title {
   font-size: 0.75rem;
   font-weight: 500;
@@ -694,36 +636,12 @@
 }
 
 @media (min-width: 1024px) {
-  .case-deck {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.35rem;
-  }
-
-  .case-deck-item {
-    position: static;
-    top: auto;
-    margin-bottom: 0;
-  }
-
-  .case-deck-card {
-    transform: none;
-    will-change: auto;
-    padding: 1.45rem 1.5rem 1.55rem;
-  }
-
   .case-mosaic {
     min-height: 13.5rem;
   }
 
   .mosaic-tile-tall {
     min-height: 13.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .case-deck {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -750,12 +668,6 @@
     transform: none;
   }
 
-  .case-deck-item {
-    position: static;
-    top: auto;
-  }
-
-  .case-deck-card,
   .mosaic-tile,
   .mosaic-tile.is-active,
   .note-slat {
