@@ -557,6 +557,11 @@
     radial-gradient(90% 80% at 90% 8%, rgba(104, 154, 222, 0.32), transparent 55%),
     radial-gradient(80% 70% at 8% 92%, rgba(134, 166, 158, 0.22), transparent 50%);
 }
+.mosaic-lagoon::after {
+  background:
+    radial-gradient(95% 85% at 88% 6%, rgba(126, 184, 168, 0.34), transparent 55%),
+    radial-gradient(80% 70% at 8% 94%, rgba(11, 28, 44, 0.45), transparent 52%);
+}
 .mosaic-wing::after {
   background:
     linear-gradient(115deg, rgba(197, 205, 214, 0.16) 0%, transparent 42%),
