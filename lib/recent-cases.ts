@@ -2,6 +2,41 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "hope4cancer",
+    name: "Hope4Cancer",
+    line: {
+      en: "Website redesign for integrative cancer treatment centers in Cancun and Playas de Tijuana — Motionsites equilibrium, bilingual, consult-ready.",
+      pt: "Redesign do site de centros de tratamento integrativo de cancro em Cancún e Playas de Tijuana — Motionsites equilibrium, bilingue, pronto para consulta.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://hope4cancer.vercel.app/",
+    original: "https://hope4cancer.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Hope4Cancer Treatment Centers. Keep Find Hope In Every Step, Patient-Centered Integrative & Alternative Cancer Treatment Center, the 7 Key Principles of Cancer Therapy, and every published therapy — SPDT, Sunivera, PDT Plus. Make phone, treatment plan, and admissions obvious on a phone. Opening vote: a scroll cinematic hero — not a BRA splash video.",
+        pt: "Estudo de design independente. Sem afiliação com a Hope4Cancer Treatment Centers. Manter Find Hope In Every Step, Patient-Centered Integrative & Alternative Cancer Treatment Center, os 7 Key Principles of Cancer Therapy, e cada terapia que já publicam — SPDT, Sunivera, PDT Plus. Tornar o telefone, o plano de tratamento e as admissões óbvios no telemóvel. Voto de abertura: um hero cinematográfico em scroll — não um vídeo splash à BRA.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on WP Engine WordPress chrome — long-scroll marketing, principle wheels, patient journeys, two Mexico campuses. The care is clear; the digital surface is a clinic CMS. Phone and the treatment-plan form are there — the path is thin.",
+        pt: "O site vivo corre em chrome WordPress WP Engine — marketing em scroll longo, rodas de princípios, jornadas de pacientes, dois campi no México. O cuidado é claro; a superfície digital é um CMS de clínica. Telefone e o formulário de plano de tratamento estão lá — o caminho é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites equilibrium chassis remapped from wellness to integrative oncology: liquid-glass nav, a scroll cinematic hero on ad stills (Caribbean dawn, Pacific dusk, clinic, linen — not a BRA splash video), a 7 Key Principles orbit, and a sticky consult rail. Exact public copy from hope4cancer.com. EN default with PT twin. Dark and light. Ad photography held to the BRA craft floor. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites equilibrium remapado de wellness para oncologia integrativa: nav em liquid-glass, um hero cinematográfico em scroll com stills de anúncio (amanhecer caribenho, entardecer do Pacífico, clínica, linho — não um vídeo splash à BRA), uma órbita dos 7 Key Principles, e um rail sticky de consulta. Copy público exacto de hope4cancer.com. EN por omissão com gémeo PT. Escuro e claro. Fotografia de anúncio no piso de ofício da BRA. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites equilibrium with an Axiom innovation pass — scroll cinematic stills, principle orbit, and sticky consult rail. Ad photography at the BRA craft floor.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites equilibrium com passe de inovação Axiom — stills cinematográficos em scroll, órbita de princípios e rail sticky de consulta. Fotografia de anúncio no piso de ofício da BRA.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An integrative-care pitch site for Cancun and Playas de Tijuana — live at hope4cancer.vercel.app.",
+        pt: "Um site de pitch para o cuidado integrativo em Cancún e Playas de Tijuana — live em hope4cancer.vercel.app.",
+      }},
+    ],
+  },
+  {
     id: "farmington-dental-ny",
     name: "Farmington Dental NY",
     line: {
