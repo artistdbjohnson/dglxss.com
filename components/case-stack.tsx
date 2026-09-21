@@ -43,6 +43,34 @@ export function CaseStack({ projects }: { projects: PortfolioProject[] }) {
   );
 }
 
+function CollapsedQuickLink({
+  href,
+  label,
+  projectName,
+  quiet = false,
+}: {
+  href: string;
+  label: string;
+  projectName: string;
+  quiet?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${label} — ${projectName}`}
+      onClick={(event) => event.stopPropagation()}
+      className={`inline-flex items-center justify-end gap-1 whitespace-nowrap text-[12px] sm:text-[13px] font-medium tracking-wide min-h-10 transition-colors hover:text-white ${
+        quiet ? "text-white/68" : "text-white/90"
+      }`}
+    >
+      {label}
+      <ArrowUpRight size={13} strokeWidth={2} className="shrink-0" />
+    </a>
+  );
+}
+
 function CaseCard({
   project,
   open,
@@ -61,6 +89,12 @@ function CaseCard({
   const active =
     project.sections.find((s) => s.id === activeId) ?? project.sections[0];
   const live = hostLabel(project.external);
+  const showQuickLinks = !open && Boolean(project.external || project.original);
+
+  const toggleFromControl = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation();
+    onToggle();
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -88,47 +122,84 @@ function CaseCard({
         } as CSSProperties
       }
     >
-      <button
-        type="button"
+      <div
+        className="w-full px-5 sm:px-6 py-4 sm:py-5 shrink-0 cursor-pointer"
         onClick={onToggle}
-        aria-expanded={open}
-        className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 min-h-11 flex items-start gap-3 shrink-0"
       >
-        <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-1">
-            <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
-              {project.name}
-            </h3>
-            <span className="text-white/42 text-[11px] tabular-nums tracking-wide">
-              {project.year}
+        <div className="flex items-start gap-2">
+          <button
+            type="button"
+            onClick={toggleFromControl}
+            aria-expanded={open}
+            className="flex-1 min-w-0 text-left min-h-11"
+          >
+            <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
+                {project.name}
+              </h3>
+              <span className="text-white/42 text-[11px] tabular-nums tracking-wide">
+                {project.year}
+              </span>
+              {project.status === "in-progress" && (
+                <span className="liquid-glass rounded-full px-2 py-0.5 text-[9px] uppercase tracking-wider font-semibold text-white/80">
+                  {t(UI.inProgressBadge, locale)}
+                </span>
+              )}
             </span>
-            {project.status === "in-progress" && (
-              <span className="liquid-glass rounded-full px-2 py-0.5 text-[9px] uppercase tracking-wider font-semibold text-white/80">
-                {t(UI.inProgressBadge, locale)}
-              </span>
-            )}
-          </div>
-          <p className="text-[13px] sm:text-sm text-white/55 leading-relaxed">
-            {projectLine(project, locale)}
-          </p>
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {project.kind.map((k) => (
-              <span
-                key={k}
-                className="liquid-glass rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/65"
-              >
-                {t(KIND_LABEL[k], locale)}
-              </span>
-            ))}
-          </div>
+          </button>
+          <button
+            type="button"
+            onClick={toggleFromControl}
+            aria-expanded={open}
+            aria-label={`${t(open ? UI.collapseCard : UI.expandCard, locale)} — ${project.name}`}
+            className="shrink-0 mt-0.5 -mr-1.5 inline-flex items-center justify-center min-h-8 min-w-8 text-white/40 hover:text-white/70 transition-colors"
+          >
+            <ChevronDown
+              size={16}
+              className={`transition-transform duration-200 ${
+                open ? "rotate-180" : ""
+              }`}
+            />
+          </button>
         </div>
-        <ChevronDown
-          size={16}
-          className={`shrink-0 mt-1 text-white/40 transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
+
+        <div className="mt-1 flex items-center gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-[13px] sm:text-sm text-white/55 leading-relaxed">
+              {projectLine(project, locale)}
+            </p>
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {project.kind.map((k) => (
+                <span
+                  key={k}
+                  className="liquid-glass rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-white/65"
+                >
+                  {t(KIND_LABEL[k], locale)}
+                </span>
+              ))}
+            </div>
+          </div>
+          {showQuickLinks && (
+            <div className="flex flex-col items-end shrink-0 self-center">
+              {project.external && (
+                <CollapsedQuickLink
+                  href={project.external}
+                  label={t(UI.viewRebuild, locale)}
+                  projectName={project.name}
+                />
+              )}
+              {project.original && (
+                <CollapsedQuickLink
+                  href={project.original}
+                  label={t(UI.viewOriginal, locale)}
+                  projectName={project.name}
+                  quiet
+                />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
 
       {open && (
         <>

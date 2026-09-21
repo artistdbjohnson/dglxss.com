@@ -32,6 +32,7 @@ export const UI = {
   openBuild: { en: "Open build", pt: "Abrir build" },
   clientMaterials: { en: "Client materials", pt: "Materiais do cliente" },
   clientMaterialsAria: { en: "Client materials", pt: "Materiais do cliente" },
+  expandCard: { en: "Expand card", pt: "Abrir cartão" },
   collapseCard: { en: "Collapse card", pt: "Fechar cartão" },
   mosaicAria: { en: "Case surfaces", pt: "Superfícies do caso" },
   nestedDeckAria: { en: "Case notes", pt: "Notas do caso" },
