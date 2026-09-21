@@ -2,6 +2,41 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "boho-studios-medspa",
+    name: "Boho Studios MedSpa",
+    line: {
+      en: "Website redesign for a medical spa in Old Town Fort Collins — Motionsites equilibrium, bilingual, book-ready.",
+      pt: "Redesign do site de um medical spa no Old Town Fort Collins — Motionsites equilibrium, bilingue, pronto para marcar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://boho-studios-medspa.vercel.app/",
+    original: "https://bohostudios.org/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Boho Studios. Keep Leading the Future of Aesthetics, Age With Intention®, A beautifully natural approach, and every published treatment — Botox, Dermal Fillers, Non-Surgical Facelifts, Laser Hair Removal, Body Contouring, Micro Needling, Permanent Makeup and Lashes, Regenerative Medicine, Vaginal Rejuvenation, Buccal Facial, Biostimulators, Skin to Soul. Preserve the published typo Jon us. Make phone, hours, and Book obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Boho Studios. Manter Leading the Future of Aesthetics, Age With Intention®, A beautifully natural approach, e cada tratamento que já publicam — Botox, Dermal Fillers, Non-Surgical Facelifts, Laser Hair Removal, Body Contouring, Micro Needling, Permanent Makeup and Lashes, Regenerative Medicine, Vaginal Rejuvenation, Buccal Facial, Biostimulators, Skin to Soul. Preservar o typo publicado Jon us. Tornar o telefone, o horário e o Book óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Weebly template chrome — long-scroll marketing, treatment tiles, a membership promo, team portraits, Google reviews. The studio is clear; the digital surface is a template. Phone and booking are there — the path is thin.",
+        pt: "O site vivo corre em chrome de template Weebly — marketing em scroll longo, mosaicos de tratamento, um promo de membership, retratos da equipa, reviews do Google. O estúdio é claro; a superfície digital é um template. Telefone e booking estão lá — o caminho é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites equilibrium chassis remapped from wellness to medical aesthetics: liquid-glass nav, a scroll-revealed Ken Burns hero (no splash video), a liquid-glass treatment mosaic, an Age With Intention® sticky philosophy rail, and a Skin to Soul membership ribbon under the hero. Exact public copy from bohostudios.org, including the published typo Jon us. EN default with PT twin. Dark and light. Identity-preserved staff portraits from the published About. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites equilibrium remapado de wellness para estética médica: nav em liquid-glass, um hero Ken Burns revelado em scroll (sem vídeo splash), um mosaico de tratamentos em liquid-glass, um rail sticky de filosofia Age With Intention®, e uma fita de membership Skin to Soul por baixo do hero. Copy público exacto de bohostudios.org, incluindo o typo publicado Jon us. EN por omissão com gémeo PT. Escuro e claro. Retratos da equipa com identidade preservada do About publicado. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites equilibrium with an Axiom innovation pass — scroll-revealed Ken Burns hero, liquid-glass treatment mosaic, Age With Intention® sticky philosophy rail, and Skin to Soul membership ribbon.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites equilibrium com passe de inovação Axiom — hero Ken Burns revelado em scroll, mosaico de tratamentos em liquid-glass, rail sticky de filosofia Age With Intention®, e fita de membership Skin to Soul.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An Old Town Fort Collins medical spa pitch site live at boho-studios-medspa.vercel.app.",
+        pt: "Um site de pitch para o medical spa no Old Town Fort Collins — live em boho-studios-medspa.vercel.app.",
+      }},
+    ],
+  },
+  {
     id: "farmington-dental-ny",
     name: "Farmington Dental NY",
     line: {

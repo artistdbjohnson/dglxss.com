@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "boho-studios-medspa": {
+    ink: "#a89d6a",
+    paper: "#131313",
+    mist: "#f6f3f3",
+    motif: "warm",
+  },
   "farmington-dental-ny": {
     ink: "#689ade",
     paper: "#07151f",
