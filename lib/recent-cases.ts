@@ -1,6 +1,42 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
+{
+  id: "lp-clinic-cascais",
+  name: "LP CLINIC Cascais",
+  line: {
+    en: "Website redesign for a Cascais implantology and dental aesthetics clinic — Motionsites clinical-editorial, bilingual, book-ready.",
+    pt: "Redesign do site de uma clínica de implantologia e estética dentária em Cascais — Motionsites clinical-editorial, bilingue, pronto a marcar.",
+  },
+  kind: ["web"],
+  year: "2026",
+  status: "shipped",
+  external: "https://lp-clinic-cascais.vercel.app/",
+  original: "https://www.lpclinic.pt/",
+  sections: [
+    { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+      en: "Independent design study. Not affiliated with LP CLINIC. Keep the Cascais implantology, Invisalign, veneers, and facial aesthetics story they already publish, plus international-patient pathways. Make Marcações and phone obvious on a phone.",
+      pt: "Estudo de design independente. Sem afiliação com a LP CLINIC. Manter a história de implantologia, Invisalign, facetas e estética facial em Cascais que já publicam, mais o caminho de paciente internacional. Tornar as Marcações e o telefone óbvios no telemóvel.",
+    }},
+    { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+      en: "The live site runs on Wix template chrome — dense treatment menus, clinical cases, team bios, dental-tourism pages. The clinic is clear; the digital surface is a builder template.",
+      pt: "O site vivo corre em chrome de template Wix — menus densos de tratamentos, casos clínicos, bios da equipa, páginas de turismo dentário. A clínica é clara; a superfície digital é um template de builder.",
+    }},
+    { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+      en: "A Motionsites clinical-editorial chassis with a quiet LP crest micro-loader, liquid-glass nav, treatment mosaic, smile-journey strip, before/after reveal rail, and international-patient soft dock. Exact public copy from Cascais. PT default with EN twin. Dark and light. Their logo and staff plates. Footer: built by dglxss.",
+      pt: "Um chassis Motionsites clinical-editorial com um micro-loader quieto do crest LP, nav em liquid-glass, mosaico de tratamentos, faixa smile-journey, rail de antes/depois, e dock suave para paciente internacional. Copy público exacto de Cascais. PT por omissão com gémeo EN. Escuro e claro. O logótipo e as placas da equipa. Footer: construído por dglxss.",
+    }},
+    { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+      en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites clinical-editorial dental with an Axiom innovation pass — smile-journey strip, before/after reveal rail, international-patient soft dock.",
+      pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites clinical-editorial dental com passe de inovação Axiom — faixa smile-journey, rail de antes/depois, dock de paciente internacional.",
+    }},
+    { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+      en: "A Cascais dental clinic pitch site live at lp-clinic-cascais.vercel.app.",
+      pt: "Um site de pitch para a clínica dentária em Cascais — live em lp-clinic-cascais.vercel.app.",
+    }},
+  ],
+},
+
   {
     id: "boho-studios-medspa",
     name: "Boho Studios MedSpa",
