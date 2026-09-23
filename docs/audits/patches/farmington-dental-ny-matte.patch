@@ -1,0 +1,158 @@
+diff --git a/README.md b/README.md
+index b779ee0..b40a5be 100644
+--- a/README.md
++++ b/README.md
+@@ -2,7 +2,7 @@
+ 
+ Independent design study / pitch rebuild of https://www.farmingtondentalny.com/
+ 
+-Craft winner: Motionsites `equilibrium` (liquid-glass nav, Geist, full-bleed hero, gradient glass border) plus Axiom twists: nested liquid-glass service accordion and a soft sticky section rail. Locks: EN | PT and dark | light.
++Craft winner: Motionsites `equilibrium` layout (Geist, full-bleed hero, nested service accordion, soft sticky section rail) with matte solid chrome instead of the shared liquid-glass blur and specular ring. Locks: EN | PT and dark | light.
+ 
+ Attribution: built by dglxss.
+ 
+diff --git a/app/globals.css b/app/globals.css
+index ffd59ab..2fe2425 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -80,83 +80,27 @@ body {
+   color: #07151f;
+ }
+ 
++/* Matte chrome. Replaces the shared equilibrium liquid-glass recipe
++   (4px blur, luminosity, 1.4px specular ring) so this pitch is not
++   the same frosted pill as the other Path A clinics. */
+ .liquid-glass {
+-  background: rgba(255, 255, 255, 0.01);
+-  background-blend-mode: luminosity;
+-  backdrop-filter: blur(4px);
+-  -webkit-backdrop-filter: blur(4px);
+-  border: none;
+-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+-  position: relative;
+-  overflow: hidden;
+-  isolation: isolate;
+-}
+-
+-.liquid-glass::before {
+-  content: "";
+-  position: absolute;
+-  inset: 0;
+-  border-radius: inherit;
+-  padding: 1.4px;
+-  background: linear-gradient(
+-    180deg,
+-    rgba(255, 255, 255, 0.45) 0%,
+-    rgba(255, 255, 255, 0.15) 20%,
+-    rgba(255, 255, 255, 0) 40%,
+-    rgba(255, 255, 255, 0) 60%,
+-    rgba(255, 255, 255, 0.15) 80%,
+-    rgba(255, 255, 255, 0.45) 100%
+-  );
+-  -webkit-mask:
+-    linear-gradient(#fff 0 0) content-box,
+-    linear-gradient(#fff 0 0);
+-  -webkit-mask-composite: xor;
+-  mask-composite: exclude;
+-  pointer-events: none;
+-  z-index: 2;
++  background: var(--bg-elev);
++  border: 1px solid var(--line);
++  box-shadow: none;
+ }
+ 
+-html.light .liquid-glass {
+-  background: rgba(255, 255, 255, 0.46);
+-  box-shadow:
+-    inset 0 1px 1px rgba(255, 255, 255, 0.62),
+-    0 10px 30px rgba(12, 60, 96, 0.06);
++.on-hero .liquid-glass {
++  background: rgba(7, 21, 32, 0.94);
++  border-color: rgba(255, 255, 255, 0.2);
+ }
+ 
+-html.light .liquid-glass::before {
+-  background: linear-gradient(
+-    180deg,
+-    rgba(255, 255, 255, 0.88) 0%,
+-    rgba(104, 154, 222, 0.28) 20%,
+-    rgba(255, 255, 255, 0) 40%,
+-    rgba(255, 255, 255, 0) 60%,
+-    rgba(134, 166, 158, 0.22) 80%,
+-    rgba(255, 255, 255, 0.72) 100%
+-  );
+-}
+-
+-html.light .on-hero .liquid-glass {
+-  background: rgba(255, 255, 255, 0.01);
+-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+-}
+-
+-html.light .on-hero .liquid-glass::before {
+-  background: linear-gradient(
+-    180deg,
+-    rgba(255, 255, 255, 0.45) 0%,
+-    rgba(255, 255, 255, 0.15) 20%,
+-    rgba(255, 255, 255, 0) 40%,
+-    rgba(255, 255, 255, 0) 60%,
+-    rgba(255, 255, 255, 0.15) 80%,
+-    rgba(255, 255, 255, 0.45) 100%
+-  );
++.liquid-glass.liquid-glass-panel {
++  background: var(--bg-elev);
+ }
+ 
+-.liquid-glass.liquid-glass-panel {
++.on-hero .liquid-glass.liquid-glass-panel {
+   background: #0b1c28;
+-  background-blend-mode: normal;
+-  backdrop-filter: blur(18px);
+-  -webkit-backdrop-filter: blur(18px);
++  border-color: rgba(255, 255, 255, 0.16);
+ }
+ 
+ .hero-still {
+diff --git a/components/chrome.tsx b/components/chrome.tsx
+index 4cd1341..961308d 100644
+--- a/components/chrome.tsx
++++ b/components/chrome.tsx
+@@ -65,7 +65,7 @@ export function Chrome({
+       className={cn(
+         "fixed top-0 right-0 left-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-colors",
+         onHero ? "on-hero" : "is-stuck",
+-        scrolled && "bg-[color:var(--bg)]/88 backdrop-blur-md",
++        scrolled && "border-b border-[color:var(--line)] bg-[color:var(--bg)]",
+       )}
+     >
+       <a
+diff --git a/components/hero.tsx b/components/hero.tsx
+index 53ba8f8..3dd5509 100644
+--- a/components/hero.tsx
++++ b/components/hero.tsx
+@@ -42,7 +42,7 @@ export function Hero() {
+           </a>
+           <ExtLink
+             href={links.newPatientForms}
+-            className="liquid-glass rounded-full px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/5 sm:px-7 sm:text-base"
++            className="rounded-full border border-white/40 bg-transparent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 sm:px-7 sm:text-base"
+           >
+             {t.chrome.patientForms}
+           </ExtLink>
+diff --git a/components/services.tsx b/components/services.tsx
+index 8b93523..b6c2c43 100644
+--- a/components/services.tsx
++++ b/components/services.tsx
+@@ -131,11 +131,11 @@ export function Services() {
+                           </div>
+                           <div
+                             className={cn(
+-                              "liquid-glass overflow-hidden rounded-xl bg-linear-to-br p-[1px]",
++                              "overflow-hidden rounded-xl bg-linear-to-br p-[1px]",
+                               plate.nest,
+                             )}
+                           >
+-                            <div className="rounded-[10px] bg-[color:var(--bg-elev)]/55 p-4 sm:p-5">
++                            <div className="rounded-[10px] bg-[color:var(--bg)] p-4 sm:p-5">
+                               <p className="text-sm leading-relaxed text-[color:var(--muted)] sm:text-[15px]">
+                                 {copy.body}
+                               </p>
