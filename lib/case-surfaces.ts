@@ -8,10 +8,16 @@ export type CaseSurface = {
   ink: string;
   paper: string;
   mist: string;
-  motif: "garden" | "storm" | "stripe" | "canopy" | "blocks" | "aurora" | "bronze" | "warm" | "clinic" | "wing" | "soft" | "gold" | "dock" | "enamel";
+  motif: "garden" | "storm" | "stripe" | "canopy" | "blocks" | "aurora" | "bronze" | "warm" | "clinic" | "wing" | "soft" | "gold" | "dock" | "enamel" | "sage";
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "batley-carr-dental": {
+    ink: "#8fbfb9",
+    paper: "#141615",
+    mist: "#f7f4ef",
+    motif: "sage",
+  },
   "boho-studios-medspa": {
     ink: "#a89d6a",
     paper: "#131313",

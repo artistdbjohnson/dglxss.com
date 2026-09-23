@@ -1,6 +1,41 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
+  {
+    id: "batley-carr-dental",
+    name: "Batley Carr Dental Centre",
+    line: {
+      en: "Website redesign for a family dental practice in Batley Carr, West Yorkshire — Motionsites clinical-editorial, bilingual EN default with PT twin, dark and light, book-ready.",
+      pt: "Redesign do site de uma clínica dentária de família em Batley Carr, West Yorkshire — Motionsites clinical-editorial, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto a marcar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://batley-carr-dental.vercel.app/",
+    original: "https://batleydental.wixsite.com/surgery",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Batley Carr Dental Centre. Path A. Keep the Dewsbury family practice they already publish — BDA Good practice Award 2014–2018, CQC passed, NHS and private, orthodontics, the published team and GDC numbers, and the private tariff. Make phone and contact obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Batley Carr Dental Centre. Path A. Manter a prática de família em Dewsbury que já publicam — BDA Good practice Award 2014–2018, CQC passed, NHS e privado, ortodontia, a equipa publicada e os números GDC, e a tarifa privada. Tornar o telefone e o contacto óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Wix template chrome — stacked hours, a BDA year list, treatment blurbs, and a separate team page of names and GDC numbers. The practice is clear; the digital surface is a builder template. The phone is there — the path is thin.",
+        pt: "O site vivo corre em chrome de template Wix — horas empilhadas, uma lista de anos BDA, textos de tratamento, e uma página de equipa à parte com nomes e números GDC. A prática é clara; a superfície digital é um template de builder. O telefone está lá — o caminho é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites clinical-editorial chassis with a quiet open on the wordmark and mark, matte solid chrome, a BDA year-rail, the CQC passed line, an NHS|Private switch, orthodontics, the published team with GDC numbers, the private tariff, a West Yorkshire town dock, and contact. Exact public copy from Batley Carr, including Disable access. EN default with PT twin. Dark and light. Published plates only — no invented clinician faces. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites clinical-editorial com uma abertura quieta no wordmark e na marca, chrome sólido mate, um year-rail BDA, a linha CQC passed, um switch NHS|Private, ortodontia, a equipa publicada com números GDC, a tarifa privada, um dock das vilas de West Yorkshire, e contacto. Copy público exacto de Batley Carr, incluindo Disable access. EN por omissão com gémeo PT. Escuro e claro. Só placas publicadas — sem caras de clínicos inventadas. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites clinical-editorial dental with an Axiom innovation pass — quiet wordmark open, BDA year-rail, NHS|Private path, private tariff, and West Yorkshire town dock. Matte solid chrome.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites clinical-editorial dental com passe de inovação Axiom — abertura quieta do wordmark, year-rail BDA, caminho NHS|Private, tarifa privada, e dock de West Yorkshire. Chrome sólido mate.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Batley Carr, West Yorkshire dental pitch site live at batley-carr-dental.vercel.app.",
+        pt: "Um site de pitch para a clínica dentária em Batley Carr, West Yorkshire — live em batley-carr-dental.vercel.app.",
+      }},
+    ],
+  },
 {
   id: "lp-clinic-cascais",
   name: "LP CLINIC Cascais",
