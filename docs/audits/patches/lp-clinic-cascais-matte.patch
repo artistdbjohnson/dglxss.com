@@ -1,0 +1,190 @@
+diff --git a/README.md b/README.md
+index 4ec44a3..a11926d 100644
+--- a/README.md
++++ b/README.md
+@@ -2,7 +2,7 @@
+ 
+ Independent design study for [lpclinic.pt](https://www.lpclinic.pt/). Not affiliated with LP CLINIC.
+ 
+-**Craft:** Motionsites clinical-editorial dental · crest micro-loader open · PT default + EN · dark|light · Axiom: smile-journey strip, before/after reveal rail, international soft dock.
++**Craft:** Motionsites clinical-editorial dental · matte solid chrome (no shared liquid-glass blur) · crest micro-loader open · PT default + EN · dark|light · Axiom: smile-journey strip, before/after reveal rail, international soft dock.
+ 
+ **Stack:** Next.js · Tailwind · GitHub · Vercel
+ 
+diff --git a/app/globals.css b/app/globals.css
+index 7cd8b52..8284c5c 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -68,56 +68,24 @@ body {
+   color: #151414;
+ }
+ 
++/* Matte paper and solid plates. Replaces the shared liquid-glass recipe
++   (blur, luminosity, specular mask ring) so clinic pitches do not share
++   one frosted chrome. */
+ .liquid-glass {
+-  background: rgba(255, 255, 255, 0.01);
+-  background-blend-mode: luminosity;
+-  backdrop-filter: blur(6px);
+-  -webkit-backdrop-filter: blur(6px);
+-  border: none;
+-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+-  position: relative;
+-  overflow: hidden;
+-  isolation: isolate;
+-}
+-
+-.liquid-glass::before {
+-  content: "";
+-  position: absolute;
+-  inset: 0;
+-  border-radius: inherit;
+-  padding: 1.4px;
+-  background: linear-gradient(
+-    180deg,
+-    rgba(255, 255, 255, 0.45) 0%,
+-    rgba(255, 255, 255, 0.15) 20%,
+-    rgba(255, 255, 255, 0) 40%,
+-    rgba(255, 255, 255, 0) 60%,
+-    rgba(220, 148, 13, 0.18) 80%,
+-    rgba(255, 255, 255, 0.4) 100%
+-  );
+-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-  -webkit-mask-composite: xor;
+-  mask-composite: exclude;
+-  pointer-events: none;
+-  z-index: 2;
+-}
+-
+-html.light .liquid-glass {
+-  background: rgba(255, 255, 255, 0.5);
+-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7), 0 10px 30px rgba(40, 38, 38, 0.05);
++  background: var(--bg-elev);
++  border: 1px solid var(--line);
++  box-shadow: none;
++  color: var(--ink);
+ }
+ 
+-html.light .liquid-glass-panel {
+-  background: rgba(255, 255, 255, 0.72);
+-  color: var(--ink);
++.on-hero .liquid-glass {
++  background: rgba(21, 20, 20, 0.94);
++  border-color: rgba(255, 255, 255, 0.2);
++  color: #f2f2f2;
+ }
+ 
+ .liquid-glass.liquid-glass-panel {
+-  background: rgba(28, 26, 25, 0.82);
+-  background-blend-mode: normal;
+-  backdrop-filter: blur(18px);
+-  -webkit-backdrop-filter: blur(18px);
+-  color: #f2f2f2;
++  background: var(--bg-elev);
+ }
+ 
+ .rail-underline {
+diff --git a/components/before-after.tsx b/components/before-after.tsx
+index 0424cc7..84ecda5 100644
+--- a/components/before-after.tsx
++++ b/components/before-after.tsx
+@@ -62,10 +62,10 @@ function Pair({
+             ‖
+           </span>
+         </div>
+-        <span className="absolute top-3 left-3 rounded-full bg-black/45 px-2.5 py-1 text-[10px] font-medium tracking-wider text-white/90 uppercase backdrop-blur-sm">
++        <span className="absolute top-3 left-3 rounded-full bg-black/75 px-2.5 py-1 text-[10px] font-medium tracking-wider text-white/90 uppercase">
+           {t.before}
+         </span>
+-        <span className="absolute top-3 right-3 rounded-full bg-black/45 px-2.5 py-1 text-[10px] font-medium tracking-wider text-white/90 uppercase backdrop-blur-sm">
++        <span className="absolute top-3 right-3 rounded-full bg-black/75 px-2.5 py-1 text-[10px] font-medium tracking-wider text-white/90 uppercase">
+           {t.after}
+         </span>
+       </div>
+diff --git a/components/chrome.tsx b/components/chrome.tsx
+index 921230a..5a336d4 100644
+--- a/components/chrome.tsx
++++ b/components/chrome.tsx
+@@ -61,7 +61,7 @@ export function Chrome({
+       className={cn(
+         "fixed top-0 right-0 left-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-colors",
+         onHero ? "on-hero" : "is-stuck",
+-        scrolled && "bg-[color:var(--bg)]/88 backdrop-blur-md",
++        scrolled && "border-b border-[color:var(--line)] bg-[color:var(--bg)]",
+       )}
+     >
+       <a
+@@ -183,7 +183,7 @@ export function Chrome({
+                   key={item.id}
+                   href={`#${item.id}`}
+                   onClick={(e) => goTo(e, item.id)}
+-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-white/90 hover:bg-white/8"
++                  className="rounded-xl px-3 py-2.5 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/8"
+                 >
+                   {locale === "pt" ? item.pt : item.en}
+                 </a>
+diff --git a/components/intl-dock.tsx b/components/intl-dock.tsx
+index 9bccbfb..fc54517 100644
+--- a/components/intl-dock.tsx
++++ b/components/intl-dock.tsx
+@@ -14,7 +14,7 @@ export function IntlDock() {
+     <div className="intl-dock liquid-glass pointer-events-auto fixed right-3 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 hidden max-w-[16rem] flex-col gap-2 rounded-2xl p-3 sm:flex">
+       <button
+         type="button"
+-        className="text-left text-[12px] font-medium tracking-wide text-white/90"
++        className="text-left text-[12px] font-medium tracking-wide text-[color:var(--ink)]"
+         onClick={() => scrollToAnchor("internacional", reduce ? "auto" : "smooth")}
+       >
+         {t.intlDock}
+@@ -23,7 +23,7 @@ export function IntlDock() {
+         <button
+           type="button"
+           onClick={() => setLocale("en")}
+-          className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-white/85 uppercase"
++          className="rounded-full border border-[color:var(--line)] px-2.5 py-1 text-[10px] font-semibold tracking-wider text-[color:var(--ink)] uppercase"
+         >
+           EN
+         </button>
+diff --git a/components/sections.tsx b/components/sections.tsx
+index b3e51ab..dd9064d 100644
+--- a/components/sections.tsx
++++ b/components/sections.tsx
+@@ -36,7 +36,7 @@ export function Hero() {
+           </ExtLink>
+           <ExtLink
+             href={links.whatsapp}
+-            className="liquid-glass rounded-full px-6 py-3.5 text-sm font-semibold text-white"
++            className="rounded-full border border-white/40 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+           >
+             {t.heroWhatsapp}
+           </ExtLink>
+@@ -137,7 +137,7 @@ export function SmileJourney() {
+           ))}
+         </div>
+         {/* sticky chip mobile */}
+-        <div className="journey-chip sticky top-[calc(var(--sticky-nav-height)+0.5rem)] z-30 mt-6 flex gap-2 overflow-x-auto rounded-full border border-[color:var(--line)] bg-[color:var(--bg)]/90 p-1.5 backdrop-blur-md md:hidden">
++        <div className="journey-chip sticky top-[calc(var(--sticky-nav-height)+0.5rem)] z-30 mt-6 flex gap-2 overflow-x-auto rounded-full border border-[color:var(--line)] bg-[color:var(--bg)] p-1.5 md:hidden">
+           {t.journey.map((step) => (
+             <span
+               key={step.t}
+@@ -282,17 +282,17 @@ export function Contacto() {
+         </div>
+         <div className="liquid-glass liquid-glass-panel flex flex-col justify-between rounded-3xl p-7">
+           <div>
+-            <p className="text-sm text-white/70">{t.disclaimer}</p>
++            <p className="text-sm text-[color:var(--muted)]">{t.disclaimer}</p>
+             <div className="mt-6 flex flex-wrap gap-3">
+               <ExtLink href={links.booking} className="rounded-full bg-gold px-5 py-3 text-sm font-semibold text-charcoal">
+                 {t.heroCta}
+               </ExtLink>
+-              <ExtLink href={links.whatsapp} className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white">
++              <ExtLink href={links.whatsapp} className="rounded-full border border-[color:var(--line)] px-5 py-3 text-sm font-semibold text-[color:var(--ink)]">
+                 WhatsApp
+               </ExtLink>
+             </div>
+           </div>
+-          <div className="mt-10 flex gap-4 text-sm text-white/60">
++          <div className="mt-10 flex gap-4 text-sm text-[color:var(--muted)]">
+             <ExtLink href={links.instagram}>Instagram</ExtLink>
+             <ExtLink href={links.facebook}>Facebook</ExtLink>
+             <ExtLink href={links.tiktok}>TikTok</ExtLink>
