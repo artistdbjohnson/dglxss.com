@@ -45,6 +45,42 @@ FaceLess is a lot of glass code and a quiet page. The store reads as paper. The 
 
 Village and Novo Freire are glassy enough to feel tacky on their own. They are not why the three pitches look like one site. Their repos were not in the public list this token can see, so they were not restyled.
 
+## Second recipe — 16 Sep PWAs
+
+A same-day pass copied one frost block into four installable pitches. The comment in source is `Liquid glass — frost, hairline, inner light, depth`. The rule is identical:
+
+- `background: var(--glass)` with `background-blend-mode: luminosity`
+- `backdrop-filter: blur(18px) saturate(1.45)`
+- hairline border plus an inset white highlight
+
+Only the tint changes (SERVPRO green-black, Roto red-black, Davey green-black, Budget Dumpster warm black). Glass is on cards and stats, not only the nav.
+
+| Site | Score | `.liquid-glass` nodes | Where | Call |
+| --- | ---: | ---: | --- | --- |
+| SERVPRO | 7 | 29 | 8 cards, 4 stats, 11 industry chips, nav, dock | **DIAL BACK** |
+| Budget Dumpster | 7 | 27 | 13 cards, 4 steps, 4 stats, nav, dock | **DIAL BACK** |
+| Roto-Rooter | 6 | 19 | 4 cards, 4 stats, nav, dock | Same recipe. Next if another pass happens. |
+| Davey Tree | 6 | 14 | 4 cards, 4 stats, nav, dock | Same recipe. Quieter count. |
+
+Live light-mode card fills, measured in Chrome:
+
+| Card | Computed | Pixel |
+| --- | --- | --- |
+| SERVPRO live | `rgba(255,255,255,0.5)` + `blur(18px) saturate(1.45)` | `[232, 230, 223]` |
+| SERVPRO matte | `rgb(255,255,255)`, filter `none` | `[255, 255, 255]` |
+| Budget Dumpster live | `rgba(255,255,255,0.36)` + the same blur | `[246, 245, 238]` |
+| Budget Dumpster matte | `rgb(255,255,255)`, filter `none` | `[255, 255, 255]` |
+
+Nav and the hero trust chips stay solid dark plates so white type still reads on photography. Mobile menus drop the 18px blur.
+
+Other public pitches from the same two weeks, checked the same way, do not share either recipe:
+
+- Molly Maid: 2 nodes, blur 8–10px. Quiet.
+- Safelite: one absolute glass card, blur 20px. Not a page system.
+- Carrier: blur 12px only.
+- NetJets rebuild: `.glass` at blur 20–24px, plus a 4px and a 50px override. Its own aviation plates.
+- Agrupamento de Castro Marim: `.glass` blur 20–28px saturate 1.3–1.4. School chrome, separate from both factories.
+
 ## What changed
 
 Dial-back is on the two public pitches that share the seed and that this environment can build: **Farmington** (worst count, generic white ring) and **LP CLINIC** (the other September pitch on the same ring). Boho is the third twin. `artistdbjohnson/boho-studios-medspa` and the other likely names return 404, so there is no patch for it.
