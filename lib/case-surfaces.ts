@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "prime-six": {
+    ink: "#DF5826",
+    paper: "#0A0A0A",
+    mist: "#F6F3EE",
+    motif: "warm",
+  },
   "franklin-plastic-surgery": {
     ink: "#A8946A",
     paper: "#1A1A1A",

@@ -2,6 +2,41 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "prime-six",
+    name: "Prime 6",
+    line: {
+      en: "Website redesign for a Shark Tank hospitality charcoal brand — Motionsites creative-studio fuel-system, bilingual EN default with PT twin, dark and light, sample-ready.",
+      pt: "Redesign do site de uma marca de carvão para hospitality (Shark Tank) — Motionsites creative-studio fuel-system, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto para amostra.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://dglxss-prime-six.vercel.app/",
+    original: "https://www.prime-six.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Prime 6. Path A. Transplant of prime-six.com. Keep Chef-Tested. Fire-Perfected., the published up-to-60% fuel claim, USDA, woman-owned, Avendra, Veritree, and Shark Tank as published, Chef Terry Koval and Grant Achatz, the hospitality free sample path, and info@prime-six.com. Fix mobile. Make the sample CTA obvious.",
+        pt: "Estudo de design independente. Sem afiliação com a Prime 6. Path A. Transplante de prime-six.com. Manter Chef-Tested. Fire-Perfected., a afirmação publicada de combustível up-to-60%, USDA, woman-owned, Avendra, Veritree e Shark Tank como publicado, Chef Terry Koval e Grant Achatz, o caminho de amostra grátis para hospitality, e info@prime-six.com. Corrigir o telemóvel. Tornar o CTA de amostra óbvio.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on polished Wix desktop chrome — strong fire photography. On a phone it keeps a ~980px canvas and horizontal-scrolls. The hero lacks a product CTA. Proof is scattered. The sample form is long.",
+        pt: "O site vivo corre em chrome Wix polido de desktop — fotografia de fogo forte. No telemóvel mantém um canvas de ~980px e faz scroll horizontal. O hero não tem CTA de produto. A prova está espalhada. O formulário de amostra é longo.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites creative-studio chassis remapped to fire orange #DF5826, with an Axiom ember-hex ignition open (~1.15s) into the Chef-Tested hearth hero and Request a Hospitality Sample in the first fold, a burn-story scroll from raw hardwood waste to the furnace to plated service, a hospitality economics calculator capped at the published up-to-60% in pounds and refills with no invented dollars, a credibility and traceability dock for USDA, woman-owned, Avendra, Shark Tank, Veritree, and the named chefs, and a two-step sample funnel. Matte solid chrome — no liquid-glass. Exact public copy from prime-six.com. EN default with PT twin. Dark and light. Published plates only. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites creative-studio remapado para o laranja de fogo #DF5826, com uma abertura de ignição Axiom em ember-hex (~1.15s) no hero de hearth Chef-Tested e Request a Hospitality Sample na primeira dobra, um scroll de burn-story da madeira residual crua ao forno ao serviço empratado, uma calculadora de economia de hospitality limitada ao up-to-60% publicado em libras e recargas sem dólares inventados, um dock de credibilidade e rastreabilidade para USDA, woman-owned, Avendra, Shark Tank, Veritree e os chefs nomeados, e um funil de amostra em dois passos. Chrome sólido mate — sem liquid-glass. Copy público exacto de prime-six.com. EN por omissão com gémeo PT. Escuro e claro. Só placas publicadas. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites creative-studio with an Axiom innovation pass — ember-hex open, burn-story scroll, hospitality economics calculator, and credibility stack. Matte solid chrome.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites creative-studio com passe de inovação Axiom — abertura ember-hex, scroll de burn-story, calculadora de economia de hospitality, e stack de credibilidade. Chrome sólido mate.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A hospitality charcoal pitch site live at dglxss-prime-six.vercel.app.",
+        pt: "Um site de pitch de carvão para hospitality — live em dglxss-prime-six.vercel.app.",
+      }},
+    ],
+  },
+  {
     id: "franklin-plastic-surgery",
     name: "Franklin Plastic Surgery",
     line: {
