@@ -2,6 +2,41 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "franklin-plastic-surgery",
+    name: "Franklin Plastic Surgery",
+    line: {
+      en: "Website redesign for a board-certified plastic surgery practice in Cary / Triangle NC — Motionsites surgical-prestige, bilingual EN default with PT twin, dark and light, consultation-ready.",
+      pt: "Redesign do site de uma prática de cirurgia plástica certificada em Cary / Triangle NC — Motionsites surgical-prestige, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto para consulta.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://franklin-plastic-surgery.vercel.app/",
+    original: "https://www.josephfranklinmd.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Franklin Plastic Surgery or Joseph A. Franklin, MD, FACS. Path A. Transplant of josephfranklinmd.com. Keep REFINED EXCELLENCE, THE FRANKLIN EXPERIENCE, the published credentials — ABPS, ASPS, FACS — the procedure hubs, AesthetiSure as published, the Cary address, and (919) 651-8006. Make phone and consultation obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Franklin Plastic Surgery ou com Joseph A. Franklin, MD, FACS. Path A. Transplante de josephfranklinmd.com. Manter REFINED EXCELLENCE, THE FRANKLIN EXPERIENCE, as credenciais publicadas — ABPS, ASPS, FACS — os hubs de procedimentos, AesthetiSure como publicado, a morada em Cary, e o (919) 651-8006. Tornar o telefone e a consulta óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Squarespace practice chrome — procedure menus, galleries, and a consulting arm. The practice is clear; the digital surface is template-adjacent. The phone is there — the path is thin.",
+        pt: "O site vivo corre em chrome de prática Squarespace — menus de procedimentos, galerias, e um braço de consultoria. A prática é clara; a superfície digital é adjacente ao template. O telefone está lá — o caminho é fino.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites surgical-prestige chassis with a credentials letterhead stamp open — a cream sheet, MD FACS, and ABPS ASPS FACS chips that dissolve into the REFINED EXCELLENCE hero — matte solid chrome, a credentials trust dock under the hero, a procedure constellation for Breast, Face, Body, Laser, Injectables, and Men with Reconstructive beside it, and a Triangle catchment dock for Cary, Raleigh, Durham, Chapel Hill, and Apex. Exact public copy from josephfranklinmd.com, including published quirks such as Aestheti sure and Reveal Your Best SelF where they appear in the body. EN default with PT twin. Dark and light. Identity-preserved plates of Joseph A. Franklin, MD, FACS only. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites surgical-prestige com uma abertura em carimbo de letterhead das credenciais — uma folha creme, MD FACS, e chips ABPS ASPS FACS que se dissolvem no hero REFINED EXCELLENCE — chrome sólido mate, um dock de confiança das credenciais por baixo do hero, uma constelação de procedimentos para Breast, Face, Body, Laser, Injectables e Men com Reconstructive ao lado, e um dock de catchment do Triangle para Cary, Raleigh, Durham, Chapel Hill e Apex. Copy público exacto de josephfranklinmd.com, incluindo peculiaridades publicadas como Aestheti sure e Reveal Your Best SelF onde aparecem no corpo. EN por omissão com gémeo PT. Escuro e claro. Só placas publicadas de Joseph A. Franklin, MD, FACS — identidade preservada. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites surgical-prestige with an Axiom innovation pass — letterhead stamp, credentials trust dock, procedure constellation, and Triangle catchment dock. Matte solid chrome.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites surgical-prestige com passe de inovação Axiom — carimbo de letterhead, dock de confiança das credenciais, constelação de procedimentos, e dock de catchment do Triangle. Chrome sólido mate.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Cary / Triangle NC plastic surgery pitch site live at franklin-plastic-surgery.vercel.app.",
+        pt: "Um site de pitch para cirurgia plástica em Cary / Triangle NC — live em franklin-plastic-surgery.vercel.app.",
+      }},
+    ],
+  },
+  {
     id: "batley-carr-dental",
     name: "Batley Carr Dental Centre",
     line: {
