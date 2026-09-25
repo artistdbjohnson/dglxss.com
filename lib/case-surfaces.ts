@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "quinta-dos-pizoes": {
+    ink: "#9aaf96",
+    paper: "#101412",
+    mist: "#e6ebe3",
+    motif: "canopy",
+  },
   "prime-six": {
     ink: "#DF5826",
     paper: "#0A0A0A",
