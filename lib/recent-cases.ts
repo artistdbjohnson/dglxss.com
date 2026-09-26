@@ -2,6 +2,41 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "quinta-dos-pizoes",
+    name: "Quinta dos Pizões",
+    line: {
+      en: "Website redesign for a Sintra wedding estate — Motionsites wanderful-hero, bilingual PT default with EN twin, dark and light, visit-ready.",
+      pt: "Redesign do site de uma quinta de casamentos em Sintra — Motionsites wanderful-hero, bilingue, PT por omissão com gémeo EN, escuro e claro, pronto a visitar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://quinta-dos-pizoes.vercel.app/",
+    original: "https://quintadepizoes.pt/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Quinta dos Pizões or Grupo Vitor Cerqueira. Path A. Transplant of quintadepizoes.pt. Keep A sua imaginação é o nosso limite..., the Sintra gardens and salão de gala, the vista over Castelo dos Mouros and Palácio da Pena, Decoração, Ideias Originais, Carros, Limousines & Charret, Ementas Personalizadas, the published testimonials, and the Pêro Pinheiro contacts — 219 151 572, 965 134 949, and geral@vitorcerqueira.pt. Make Contacte-nos obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Quinta dos Pizões ou com o Grupo Vitor Cerqueira. Path A. Transplante de quintadepizoes.pt. Manter A sua imaginação é o nosso limite..., os jardins de Sintra e o salão de gala, a vista sobre o Castelo dos Mouros e o Palácio da Pena, Decoração, Ideias Originais, Carros, Limousines & Charret, Ementas Personalizadas, os testemunhos publicados, e os contactos de Pêro Pinheiro — 219 151 572, 965 134 949, e geral@vitorcerqueira.pt. Tornar o Contacte-nos óbvio no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on WordPress wedding-template chrome — a Revolution Slider, a theme menu of services, and Contact Form 7 for Contacte-nos. The estate is clear; the digital surface is a builder template. The phones are there — the path is a plugin form.",
+        pt: "O site vivo corre em chrome de template de casamentos WordPress — um Revolution Slider, um menu de tema de serviços, e Contact Form 7 para o Contacte-nos. A quinta é clara; a superfície digital é um template de builder. Os telefones estão lá — o caminho é um formulário de plugin.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites wanderful-hero chassis with a still cinematic poster open (~1.2s) into the Sintra vista, matte solid chrome, a day-of timeline from ceremony to cocktail to dinner to fireworks, a vista provenance dock for Castelo dos Mouros · Palácio da Pena · jardins · salão de gala, and a working Contacte-nos — mailto, call, and WhatsApp — replacing Contact Form 7. Exact public copy from quintadepizoes.pt, including A sua imaginação é o nosso limite.... PT default with EN twin. Dark and light. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites wanderful-hero com uma abertura em poster cinematográfico parado (~1.2s) na vista de Sintra, chrome sólido mate, uma timeline do dia da cerimónia ao cocktail ao jantar aos fogos, um dock de proveniência da vista para Castelo dos Mouros · Palácio da Pena · jardins · salão de gala, e um Contacte-nos a funcionar — mailto, chamada e WhatsApp — no lugar do Contact Form 7. Copy público exacto de quintadepizoes.pt, incluindo A sua imaginação é o nosso limite.... PT por omissão com gémeo EN. Escuro e claro. Footer: construído por dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/quinta-dos-pizoes) and Vercel. Craft from Motionsites wanderful-hero with an Axiom innovation pass — still cinematic poster open, Sintra day-of timeline, vista provenance dock, and Contacte-nos. Matte solid chrome — no liquid-glass.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/quinta-dos-pizoes) e na Vercel. Ofício Motionsites wanderful-hero com passe de inovação Axiom — abertura em poster cinematográfico parado, timeline do dia em Sintra, dock de proveniência da vista, e Contacte-nos. Chrome sólido mate — sem liquid-glass.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Sintra wedding estate pitch site live at quinta-dos-pizoes.vercel.app.",
+        pt: "Um site de pitch para a quinta de casamentos em Sintra — live em quinta-dos-pizoes.vercel.app.",
+      }},
+    ],
+  },
+  {
     id: "prime-six",
     name: "Prime 6",
     line: {
