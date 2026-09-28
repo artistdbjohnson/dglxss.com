@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "the-x-for-boys",
+    name: "The \"X\" for Boys",
+    line: {
+      en: "Website redesign for The \"X\" for Boys, a life-preparatory program in Albany, GA — Motionsites securify-hero and neo-museum, bilingual EN default with PT twin, dark and light, donate-ready.",
+      pt: "Redesign do site de The \"X\" for Boys, um programa de preparação para a vida em Albany, GA — Motionsites securify-hero e neo-museum, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto a doar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://the-x-for-boys.vercel.app/",
+    original: "https://thexforboys.org/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with The \"X\" for Boys. Path A. Transplant of thexforboys.org. Keep the published lines — Donate to The X for Boys & Girls, let US make Man!, The Life Preparatory School for Boys is a 501(c)3 charitable organization, The X for Boys Est. 2019, and King is set to open The \"X\" for Boys Life Preparatory School in Fall 2022 — including the messy caps. Keep Albany, GA, simple automotive repair, simple home improvement, the weekly book club, GoGetFunding donate, and the footer HOME / APPOINTMENTS / CONTACT US / PARENT PORTAL. The provided X+fist logo stays as given — never recolor the fist. Make DONATE obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com The \"X\" for Boys. Path A. Transplante de thexforboys.org. Manter as linhas publicadas — Donate to The X for Boys & Girls, let US make Man!, The Life Preparatory School for Boys is a 501(c)3 charitable organization, The X for Boys Est. 2019, e King is set to open The \"X\" for Boys Life Preparatory School in Fall 2022 — incluindo as maiúsculas desarrumadas. Manter Albany, GA, a reparação automóvel simples, a melhoria da casa, o clube de leitura semanal, o donativo GoGetFunding, e o footer HOME / APPOINTMENTS / CONTACT US / PARENT PORTAL. O logótipo X+punho fornecido fica como foi dado — nunca recolorir o punho. Tornar o DONATE óbvio no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on GoDaddy website-builder chrome — a donate headline, stacked program blurbs, a cookie bar, and a Powered by GoDaddy footer. The school is clear; the digital surface is a builder template. HOME, APPOINTMENTS, CONTACT US, and PARENT PORTAL are there — the path is template chrome.",
+        pt: "O site vivo corre em chrome de website builder GoDaddy — um título de donativo, textos de programa empilhados, uma barra de cookies, e um footer Powered by GoDaddy. A escola é clara; a superfície digital é um template de builder. HOME, APPOINTMENTS, CONTACT US e PARENT PORTAL estão lá — o caminho é chrome de template.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites securify-hero film stage over neo-museum interiors. Hero YouTube autoplay from @newemergingking — First Oil Change. First Step to Manhood. — with custom pause and mute only, no YouTube chrome. A 9:16 black-and-white muted looping scroll bed (bed-loop.mp4). An Instagram gallery from @newemergingking. The school palette stays locked — brand red #F70303, black #161616 / #1B1B1B / #575757, white / #F6F6F6. Type: EB Garamond display, Libre Baskerville body, Source Sans 3 UI. The provided X+fist logo, never recolored. Exact public copy from thexforboys.org, including Fall 2022 and the messy caps — let US make Man! and I F YOU DO NOT WISH. GoGetFunding donate beside the published PayPal, Cash App $emergingking, and the mailing address. Footer HOME / APPOINTMENTS / CONTACT US / PARENT PORTAL, with restyled socials for Facebook, Instagram, X, and YouTube. EN default with PT twin. Dark and light. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with The \"X\" for Boys.",
+        pt: "Um palco de filme Motionsites securify-hero sobre interiores neo-museum. Autoplay de YouTube do @newemergingking — First Oil Change. First Step to Manhood. — só com pause e mute próprios, sem chrome do YouTube. Um fundo de scroll 9:16 a preto e branco, em loop e sem som (bed-loop.mp4). Uma galeria Instagram de @newemergingking. A paleta da escola fica fechada — vermelho de marca #F70303, preto #161616 / #1B1B1B / #575757, branco / #F6F6F6. Tipo: EB Garamond no display, Libre Baskerville no corpo, Source Sans 3 na UI. O logótipo X+punho fornecido, nunca recolorido. Copy público exacto de thexforboys.org, incluindo Fall 2022 e as maiúsculas desarrumadas — let US make Man! e I F YOU DO NOT WISH. Donativo GoGetFunding ao lado do PayPal publicado, Cash App $emergingking, e a morada de correio. Footer HOME / APPOINTMENTS / CONTACT US / PARENT PORTAL, com redes sociais reestilizadas para Facebook, Instagram, X e YouTube. EN por omissão com gémeo PT. Escuro e claro. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with The \"X\" for Boys.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/the-x-for-boys) and Vercel. Motionsites securify-hero + neo-museum — hero film stage, museum interiors, custom pause and mute, and the school palette. Matte solid chrome — no liquid-glass.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/the-x-for-boys) e na Vercel. Motionsites securify-hero + neo-museum — palco de filme no hero, interiores de museu, pause e mute próprios, e a paleta da escola. Chrome sólido mate — sem liquid-glass.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An Albany, GA life-preparatory pitch site live at the-x-for-boys.vercel.app.",
+        pt: "Um site de pitch para o programa de preparação para a vida em Albany, GA — live em the-x-for-boys.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "adamthwaite-plastic-surgery",
     name: "Jonathan Adamthwaite Plastic Surgery",
     line: {
