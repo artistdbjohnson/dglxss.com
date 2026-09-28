@@ -1,6 +1,42 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
+{
+  id: "adamthwaite-plastic-surgery",
+  name: "Jonathan Adamthwaite Plastic Surgery",
+  line: {
+    en: "Website redesign for a UK consultant plastic surgeon — Motionsites prosthetics-hero remapped surgical prestige, bilingual EN default with PT twin, dark and light, consult-ready.",
+    pt: "Redesign do site de um cirurgião plástico consultor no Reino Unido — Motionsites prosthetics-hero remapado para prestígio cirúrgico, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto a consulta.",
+  },
+  kind: ["web"],
+  year: "2026",
+  status: "shipped",
+  external: "https://adamthwaite-plastic-surgery.vercel.app/",
+  original: "https://www.adamthwaite.co.uk/",
+  sections: [
+    { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+      en: "Independent design study. Not affiliated with Jonathan Adamthwaite Plastic Surgery. Path A. Keep Welcome, FRCS (Plast), three international fellowships and three international awards, free 3D Simulation and 4D Augmented Reality planning, Cosmetic Surgery, Facial Aesthetics, Body Contouring, Treatment of Skin Lesions, and the published Yorkshire and Cheshire catchment. Make 0800 002 9554 and Book Your Free Consultation obvious on a phone.",
+      pt: "Estudo de design independente. Sem afiliação com Jonathan Adamthwaite Plastic Surgery. Path A. Manter Welcome, FRCS (Plast), três fellowships internacionais e três prémios internacionais, planeamento gratuito com 3D Simulation e 4D Augmented Reality, Cosmetic Surgery, Facial Aesthetics, Body Contouring, Treatment of Skin Lesions, e a área de Yorkshire e Cheshire publicada. Tornar o 0800 002 9554 e Book Your Free Consultation óbvios no telemóvel.",
+    }},
+    { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+      en: "The live site runs on Wix template chrome — dense treatment menus, blog tiles, clinic location lists. The consultant is clear; the digital surface is a builder template. Phone and free online consults are there — the path is thin.",
+      pt: "O site vivo corre em chrome de template Wix — menus densos de tratamentos, tiles de blog, listas de clínicas. O consultor é claro; a superfície digital é um template de builder. Telefone e consultas online gratuitas estão lá — o caminho é fino.",
+    }},
+    { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+      en: "A Motionsites prosthetics-hero chassis remapped to UK surgical prestige: a scroll-revealed editorial hero (no splash video, no Ken Burns, no letterhead stamp), matte solid chrome, a free 3D|4D simulation consult dock, a fellowship and award typographic strip, a treatment constellation with exact published labels, and a Yorkshire|Cheshire catchment dock. Exact public copy from adamthwaite.co.uk. Identity-preserved surgeon plates from the published site. EN default with PT twin. Dark and light. Footer: built by dglxss.",
+      pt: "Um chassis Motionsites prosthetics-hero remapado para prestígio cirúrgico no Reino Unido: um hero editorial revelado em scroll (sem vídeo splash, sem Ken Burns, sem stamp letterhead), chrome sólido mate, um dock de consulta 3D|4D gratuita, uma faixa tipográfica de fellowships e prémios, uma constelação de tratamentos com labels exactos publicados, e um dock Yorkshire|Cheshire. Copy público exacto de adamthwaite.co.uk. Placas do cirurgião com identidade preservada do site publicado. EN por omissão com gémeo PT. Escuro e claro. Footer: construído por dglxss.",
+    }},
+    { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+      en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites prosthetics-hero with an Axiom innovation pass — scroll-revealed hero, 3D|4D consult dock, fellowship strip, Yorkshire|Cheshire catchment. Matte solid chrome — no liquid-glass.",
+      pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites prosthetics-hero com passe de inovação Axiom — hero revelado em scroll, dock de consulta 3D|4D, faixa de fellowships, dock Yorkshire|Cheshire. Chrome sólido mate — sem liquid-glass.",
+    }},
+    { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+      en: "A UK consultant plastic surgery pitch site live at adamthwaite-plastic-surgery.vercel.app.",
+      pt: "Um site de pitch para cirurgia plástica de consultor no Reino Unido — live em adamthwaite-plastic-surgery.vercel.app.",
+    }},
+  ],
+},
+
   {
     id: "quinta-dos-pizoes",
     name: "Quinta dos Pizões",
