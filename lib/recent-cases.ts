@@ -1,41 +1,41 @@
 import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
-{
-  id: "adamthwaite-plastic-surgery",
-  name: "Jonathan Adamthwaite Plastic Surgery",
-  line: {
-    en: "Website redesign for a UK consultant plastic surgeon — Motionsites prosthetics-hero remapped surgical prestige, bilingual EN default with PT twin, dark and light, consult-ready.",
-    pt: "Redesign do site de um cirurgião plástico consultor no Reino Unido — Motionsites prosthetics-hero remapado para prestígio cirúrgico, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto a consulta.",
+  {
+    id: "adamthwaite-plastic-surgery",
+    name: "Jonathan Adamthwaite Plastic Surgery",
+    line: {
+      en: "Website redesign for a UK consultant plastic surgeon in Yorkshire and Cheshire — Motionsites prosthetics-hero, bilingual EN default with PT twin, dark and light, consultation-ready.",
+      pt: "Redesign do site de um cirurgião plástico consultor no Reino Unido, Yorkshire e Cheshire — Motionsites prosthetics-hero, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto para consulta.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://adamthwaite-plastic-surgery.vercel.app/",
+    original: "https://www.adamthwaite.co.uk/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Jonathan Adamthwaite Plastic Surgery or Mr Jonathan Adamthwaite FRCS (Plast). Path A. Transplant of adamthwaite.co.uk. Keep the published line — one of the UK's leading Consultant Plastic Surgeons specialising in cosmetic and reconstructive surgery of the breasts, face and body — FRCS (Plast), three international fellowships and three international awards, Oxford University and the University of London, the Royal Marsden, Great Ormond Street, Mount Vernon & the Royal Free, USA, Sweden and Barcelona, 3D Simulation and 4D Augmented Reality at no charge, the three homepage reviews, 0800 002 9554, secretary@adamthwaite.co.uk, and free online consultations on FaceTime, Skype, Google Duo, and WhatsApp Video Call. Make the phone and Book your free consultation obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Jonathan Adamthwaite Plastic Surgery ou com Mr Jonathan Adamthwaite FRCS (Plast). Path A. Transplante de adamthwaite.co.uk. Manter a linha publicada — one of the UK's leading Consultant Plastic Surgeons specialising in cosmetic and reconstructive surgery of the breasts, face and body — FRCS (Plast), three international fellowships and three international awards, Oxford University e the University of London, the Royal Marsden, Great Ormond Street, Mount Vernon & the Royal Free, USA, Sweden e Barcelona, 3D Simulation and 4D Augmented Reality sem custo, as três reviews da homepage, 0800 002 9554, secretary@adamthwaite.co.uk, e consultas online gratuitas por FaceTime, Skype, Google Duo e WhatsApp Video Call. Tornar o telefone e Book your free consultation óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on Wix builder chrome — a Welcome block, a treatments menu, Areas of Expertise, blog tiles, and a Get in touch form. Under the intro sits the published keyword line Best plastic and cosmetic surgeon UK, Leeds, Harrogate, York, Manchester, Liverpool, Durham, Newcastle, Bradford. The practice is clear; the digital surface is a builder template. The phone and Book your free consultation are there — the contact path is the Wix form.",
+        pt: "O site vivo corre em chrome de builder Wix — um bloco Welcome, um menu de tratamentos, Areas of Expertise, tiles de blog, e um formulário Get in touch. Por baixo da introdução está a linha de keywords publicada Best plastic and cosmetic surgeon UK, Leeds, Harrogate, York, Manchester, Liverpool, Durham, Newcastle, Bradford. A prática é clara; a superfície digital é um template de builder. O telefone e Book your free consultation estão lá — o caminho de contacto é o formulário Wix.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites prosthetics-hero chassis remapped to UK consultant plastic surgery, with a scroll-revealed hero open on the published surgeon portrait, calm medical photography, and matte solid chrome — paper #F4F2EE, mist #E8E4DC, ink #141414, surgical teal #1F5C5A. Axiom docks: a 3D|4D simulation consult (No charge · breasts, face and body), a fellowship/award typographic strip — 3 international fellowships · 3 international awards · FRCS (Plast) — and Yorkshire|Cheshire catchment chips for Leeds, Bradford, Harrogate, York, Ilkley, Yorkshire, North Yorkshire, Cheshire, Chester, Manchester, Wilmslow, Liverpool, Durham, and Newcastle. Four areas of practice stay as published: Cosmetic Surgery, Facial Aesthetics, Body Contouring Surgery, Treatment of Skin Lesions. The practice list follows the published navigation. Exact public copy from adamthwaite.co.uk, including Mr Adamthwaite uses 3D Simulation and 4D Augmented Reality and the three homepage reviews, quoted verbatim. EN default with PT twin. Dark and light. Footer: built by dglxss · Not affiliated · Design study.",
+        pt: "Um chassis Motionsites prosthetics-hero remapado para cirurgia plástica de consultor no Reino Unido, com uma abertura de hero revelada em scroll no retrato publicado, fotografia médica calma, e chrome sólido mate — paper #F4F2EE, mist #E8E4DC, ink #141414, teal cirúrgico #1F5C5A. Docks Axiom: uma consulta 3D|4D (No charge · breasts, face and body), uma faixa tipográfica de fellowships e awards — 3 international fellowships · 3 international awards · FRCS (Plast) — e chips de catchment Yorkshire|Cheshire para Leeds, Bradford, Harrogate, York, Ilkley, Yorkshire, North Yorkshire, Cheshire, Chester, Manchester, Wilmslow, Liverpool, Durham e Newcastle. Quatro áreas de prática ficam como publicadas: Cosmetic Surgery, Facial Aesthetics, Body Contouring Surgery, Treatment of Skin Lesions. A lista da prática segue a navegação publicada. Copy público exacto de adamthwaite.co.uk, incluindo Mr Adamthwaite uses 3D Simulation and 4D Augmented Reality e as três reviews da homepage, citadas verbatim. EN por omissão com gémeo PT. Escuro e claro. Footer: built by dglxss · Not affiliated · Design study.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/adamthwaite-plastic-surgery) and Vercel. Craft from Motionsites prosthetics-hero with an Axiom innovation pass — scroll-revealed hero open, 3D|4D simulation consult dock, fellowship/award typographic strip, and Yorkshire|Cheshire catchment chips. Matte solid chrome — no liquid-glass.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/adamthwaite-plastic-surgery) e na Vercel. Ofício Motionsites prosthetics-hero com passe de inovação Axiom — abertura de hero revelada em scroll, dock de consulta 3D|4D, faixa tipográfica de fellowships e awards, e chips de catchment Yorkshire|Cheshire. Chrome sólido mate — sem liquid-glass.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Yorkshire and Cheshire consultant plastic surgery pitch site live at adamthwaite-plastic-surgery.vercel.app.",
+        pt: "Um site de pitch para cirurgia plástica de consultor em Yorkshire e Cheshire — live em adamthwaite-plastic-surgery.vercel.app.",
+      }},
+    ],
   },
-  kind: ["web"],
-  year: "2026",
-  status: "shipped",
-  external: "https://adamthwaite-plastic-surgery.vercel.app/",
-  original: "https://www.adamthwaite.co.uk/",
-  sections: [
-    { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
-      en: "Independent design study. Not affiliated with Jonathan Adamthwaite Plastic Surgery. Path A. Keep Welcome, FRCS (Plast), three international fellowships and three international awards, free 3D Simulation and 4D Augmented Reality planning, Cosmetic Surgery, Facial Aesthetics, Body Contouring, Treatment of Skin Lesions, and the published Yorkshire and Cheshire catchment. Make 0800 002 9554 and Book Your Free Consultation obvious on a phone.",
-      pt: "Estudo de design independente. Sem afiliação com Jonathan Adamthwaite Plastic Surgery. Path A. Manter Welcome, FRCS (Plast), três fellowships internacionais e três prémios internacionais, planeamento gratuito com 3D Simulation e 4D Augmented Reality, Cosmetic Surgery, Facial Aesthetics, Body Contouring, Treatment of Skin Lesions, e a área de Yorkshire e Cheshire publicada. Tornar o 0800 002 9554 e Book Your Free Consultation óbvios no telemóvel.",
-    }},
-    { id: "before", title: { en: "Before", pt: "Antes" }, body: {
-      en: "The live site runs on Wix template chrome — dense treatment menus, blog tiles, clinic location lists. The consultant is clear; the digital surface is a builder template. Phone and free online consults are there — the path is thin.",
-      pt: "O site vivo corre em chrome de template Wix — menus densos de tratamentos, tiles de blog, listas de clínicas. O consultor é claro; a superfície digital é um template de builder. Telefone e consultas online gratuitas estão lá — o caminho é fino.",
-    }},
-    { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
-      en: "A Motionsites prosthetics-hero chassis remapped to UK surgical prestige: a scroll-revealed editorial hero (no splash video, no Ken Burns, no letterhead stamp), matte solid chrome, a free 3D|4D simulation consult dock, a fellowship and award typographic strip, a treatment constellation with exact published labels, and a Yorkshire|Cheshire catchment dock. Exact public copy from adamthwaite.co.uk. Identity-preserved surgeon plates from the published site. EN default with PT twin. Dark and light. Footer: built by dglxss.",
-      pt: "Um chassis Motionsites prosthetics-hero remapado para prestígio cirúrgico no Reino Unido: um hero editorial revelado em scroll (sem vídeo splash, sem Ken Burns, sem stamp letterhead), chrome sólido mate, um dock de consulta 3D|4D gratuita, uma faixa tipográfica de fellowships e prémios, uma constelação de tratamentos com labels exactos publicados, e um dock Yorkshire|Cheshire. Copy público exacto de adamthwaite.co.uk. Placas do cirurgião com identidade preservada do site publicado. EN por omissão com gémeo PT. Escuro e claro. Footer: construído por dglxss.",
-    }},
-    { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
-      en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites prosthetics-hero with an Axiom innovation pass — scroll-revealed hero, 3D|4D consult dock, fellowship strip, Yorkshire|Cheshire catchment. Matte solid chrome — no liquid-glass.",
-      pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites prosthetics-hero com passe de inovação Axiom — hero revelado em scroll, dock de consulta 3D|4D, faixa de fellowships, dock Yorkshire|Cheshire. Chrome sólido mate — sem liquid-glass.",
-    }},
-    { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
-      en: "A UK consultant plastic surgery pitch site live at adamthwaite-plastic-surgery.vercel.app.",
-      pt: "Um site de pitch para cirurgia plástica de consultor no Reino Unido — live em adamthwaite-plastic-surgery.vercel.app.",
-    }},
-  ],
-},
 
   {
     id: "quinta-dos-pizoes",
