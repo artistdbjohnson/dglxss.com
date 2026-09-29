@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "forsyth-park-inn",
+    name: "Forsyth Park Inn",
+    line: {
+      en: "Website redesign for Forsyth Park Inn, a historic Queen Anne bed and breakfast overlooking Forsyth Park in Savannah — Motionsites mythic-naturecore, bilingual EN default with PT twin, dark and light, book-ready.",
+      pt: "Redesign do site da Forsyth Park Inn, uma pousada histórica Queen Anne com vista para o Forsyth Park em Savannah — Motionsites mythic-naturecore, bilingue, EN por omissão com gémeo PT, escuro e claro, pronto a reservar.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://forsyth-park-inn.vercel.app/",
+    original: "https://www.forsythparkinn.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Forsyth Park Inn. Path A. Transplant of forsythparkinn.com. Keep the published welcome — Immerse yourself in southern hospitality… — the circa 1893 Queen Anne Victorian Bed and Breakfast overlooking the largest park in the historic district, stay-includes (gourmet breakfast, social hour wine & hors d'oeuvres, courtyard fountain, late evening sweets), rooms Lafayette through Chippewa / Garden Cottage, weddings (elopement 2–10 · ceremony 11–45), Captain Aaron Flint \"Rudder\" Churchill history, WeddingWire / Southern Living / The Knot / Select Registry awards, FAQ (check-in 3pm / out 11am; no pets; no children under 12), and live Book Now / phone (912) 233-6800 / InnKeeper@ForsythParkInn.com / maps. Make Book Now obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Forsyth Park Inn. Path A. Transplante de forsythparkinn.com. Manter a boas-vindas publicadas — Immerse yourself in southern hospitality… — a Bed and Breakfast Queen Anne Victorian de cerca de 1893 com vista para o maior parque do distrito histórico, o que a estadia inclui (pequeno-almoço gourmet, social hour com vinho e hors d'oeuvres, fonte do pátio, doces à noite), os quartos de Lafayette a Chippewa / Garden Cottage, casamentos (elopement 2–10 · cerimónia 11–45), a história do Capitão Aaron Flint \"Rudder\" Churchill, os prémios WeddingWire / Southern Living / The Knot / Select Registry, as FAQ (check-in 15h / out 11h; sem animais; sem crianças menores de 12), e Book Now / telefone (912) 233-6800 / InnKeeper@ForsythParkInn.com / mapas vivos. Tornar o Book Now óbvio no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on conventional hospitality-template chrome — stacked marketing blocks, booking CTAs, and award badges for a Savannah B&B. The inn is clear; the digital surface is template hospitality. Book Now and the phone are there — the path is builder chrome.",
+        pt: "O site vivo corre em chrome convencional de template de hospitalidade — blocos de marketing empilhados, CTAs de reserva, e badges de prémios para uma B&B em Savannah. A pousada é clara; a superfície digital é template de hospitalidade. Book Now e o telefone estão lá — o caminho é chrome de builder.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites mythic-naturecore chassis remapped to Queen Anne hospitality. Opening is an Axiom verandah curtain: linen and moss panels part once per session onto the park-facing verandah plate, wordmark, and welcome line (hash deep-link or prefers-reduced-motion stays on the static first frame — not a video splash, Ken Burns, crest, or letterhead). Stay-includes ritual dock (Gourmet breakfast · Social hour · Courtyard fountain) with Book Now. Historic District catchment soft chips — Forsyth Park · Historic District · River Street · City Market · Tybee day-trip. Matte linen/paper/stone — indigo #2A3364, paper #F7F3EC, mist #E8E2D6, ink #1A1A1A, brass #8B7355, park moss #3D5C4A. Soft frost sticky nav only — no liquid-glass card grids. Exact public copy and live outbound Book / phone / mail / maps / awards. EN default with PT twin. Dark and light. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with Forsyth Park Inn.",
+        pt: "Um chassis Motionsites mythic-naturecore remapado para hospitalidade Queen Anne. A abertura é uma cortina de varanda Axiom: painéis de linho e musgo abrem uma vez por sessão sobre a placa da varanda virada ao parque, o wordmark e a linha de boas-vindas (deep-link com hash ou prefers-reduced-motion fica no primeiro frame estático — não é splash de vídeo, Ken Burns, brasão ou letterhead). Dock ritual do que a estadia inclui (Gourmet breakfast · Social hour · Courtyard fountain) com Book Now. Chips suaves de catchment do Historic District — Forsyth Park · Historic District · River Street · City Market · Tybee day-trip. Linho/papel/pedra mate — indigo #2A3364, paper #F7F3EC, mist #E8E2D6, ink #1A1A1A, brass #8B7355, moss do parque #3D5C4A. Só nav sticky com frost suave — sem grelhas de liquid-glass. Copy público exacto e Book / telefone / mail / mapas / prémios vivos. EN por omissão com gémeo PT. Escuro e claro. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with Forsyth Park Inn.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/forsyth-park-inn) and Vercel. Craft from Motionsites mythic-naturecore with an Axiom innovation pass — verandah curtain open, stay-includes ritual dock, Historic District catchment chips. Matte solid chrome — no liquid-glass.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/forsyth-park-inn) e na Vercel. Ofício Motionsites mythic-naturecore com passe de inovação Axiom — abertura em cortina de varanda, dock ritual do que a estadia inclui, chips de catchment do Historic District. Chrome sólido mate — sem liquid-glass.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Savannah historic B&B pitch site live at forsyth-park-inn.vercel.app.",
+        pt: "Um site de pitch para a B&B histórica em Savannah — live em forsyth-park-inn.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "the-x-for-boys",
     name: "The \"X\" for Boys",
     line: {

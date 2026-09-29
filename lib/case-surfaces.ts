@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "forsyth-park-inn": {
+    ink: "#2A3364",
+    paper: "#1A1A1A",
+    mist: "#F7F3EC",
+    motif: "garden",
+  },
   "the-x-for-boys": {
     ink: "#F70303",
     paper: "#161616",
