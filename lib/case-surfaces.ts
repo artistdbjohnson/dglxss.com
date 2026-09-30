@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "oralvide-cascais": {
+    ink: "#d8a818",
+    paper: "#12110f",
+    mist: "#f3f0e8",
+    motif: "gold",
+  },
   "forsyth-park-inn": {
     ink: "#2A3364",
     paper: "#1A1A1A",

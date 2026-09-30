@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "oralvide-cascais",
+    name: "Oralvide",
+    line: {
+      en: "Website redesign for Oralvide, a dental clinic in Alcabideche | Cascais — Motionsites surgical-prestige remapped to Cascais digital-lab dental, bilingual PT default with EN twin, dark and light, consultation-ready.",
+      pt: "Redesign do site da Oralvide, clínica dentária em Alcabideche | Cascais — Motionsites surgical-prestige remapado para dentária de laboratório digital em Cascais, bilingue, PT por omissão com gémeo EN, escuro e claro, pronto para consulta.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://oralvide-cascais.vercel.app/",
+    original: "https://oralvide.pt/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Oralvide. Path A. Transplant of oralvide.pt. Keep the published lines — A revolução dentista em Alcabideche / The dentist revolution in Alcabideche — EXPERIÊNCIA · PRECISÃO · PERSONALIZAÇÃO, the eight treatments (Implantes Dentários, Dentes em 1 dia, Cirurgia Oral, Prótese fixa | removível, Facetas Dentárias, Aparelhos dentários / Invisalign, Branqueamento, Endodontia), About with 3D imaging, radiographs, and 100% digital in-house laboratory, the four urgency symptoms, amenities (easy parking through variety of treatments), Lic 21473/2022 | N Reg E161081 | NIPC 514699841, Rua do Carrascal 98, Loja 01 Alcabideche | Cascais, +351 914 096 889 / +351 211 347 774, clinica@oralvide.pt, Seg–Sex 10h–13h | 14h–19h. Make Agendar consulta and the phones obvious on a phone.",
+        pt: "Estudo de design independente. Sem afiliação com a Oralvide. Path A. Transplante de oralvide.pt. Manter as linhas publicadas — A revolução dentista em Alcabideche — EXPERIÊNCIA · PRECISÃO · PERSONALIZAÇÃO, os oito tratamentos (Implantes Dentários, Dentes em 1 dia, Cirurgia Oral, Prótese fixa | removível, Facetas Dentárias, Aparelhos dentários / Invisalign, Branqueamento, Endodontia), Sobre nós com imagens 3D, radiografias e Laboratório próprio 100% digital, os quatro sintomas de urgência, as comodidades, Lic 21473/2022 | N Reg E161081 | NIPC 514699841, Rua do Carrascal 98, Loja 01 Alcabideche | Cascais, +351 914 096 889 / +351 211 347 774, clinica@oralvide.pt, Seg–Sex 10h–13h | 14h–19h. Tornar Agendar consulta e os telefones óbvios no telemóvel.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on WordPress marketing chrome — stacked Invisalign and same-day smile blocks, icon service tiles, and a contact footer for an Alcabideche clinic. The practice is clear; the digital surface is template dental WordPress. Phones and Agendar consulta are there — the path is builder chrome.",
+        pt: "O site vivo corre em chrome de marketing WordPress — blocos empilhados de Invisalign e sorriso no mesmo dia, tiles de serviços com ícones, e um footer de contacto para uma clínica em Alcabideche. A prática é clara; a superfície digital é WordPress de template dentário. Os telefones e Agendar consulta estão lá — o caminho é chrome de builder.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites surgical-prestige chassis remapped to Cascais digital-lab dental. Opening is an Axiom same-day smile stamp: a gold seal lands with Dentes em 1 dia / Teeth in One Day, then lifts into the editorial hero with wordmark and Agendar consulta (hash deep-link or prefers-reduced-motion stays on the static first frame — not a video splash, Ken Burns, crest, letterhead, or verandah curtain). In-house digital lab dock — Imagens 3D · Radiografias · Laboratório 100% digital. Urgency symptoms rail with the four published bullets and live tels. Cascais|Alcabideche catchment soft chips. Matte paper/ink/gold/teal — soft frost sticky nav only, no liquid-glass card grids. Exact public copy and live outbound tel/mail/maps. PT default with EN twin. Dark and light. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with Oralvide.",
+        pt: "Um chassis Motionsites surgical-prestige remapado para dentária de laboratório digital em Cascais. A abertura é um selo Axiom de sorriso no mesmo dia: um selo dourado aterra com Dentes em 1 dia / Teeth in One Day e depois ergue-se no hero editorial com wordmark e Agendar consulta (deep-link com hash ou prefers-reduced-motion fica no primeiro frame estático — não é splash de vídeo, Ken Burns, brasão, letterhead ou cortina de varanda). Dock do laboratório digital próprio — Imagens 3D · Radiografias · Laboratório 100% digital. Rail de sintomas de urgência com os quatro bullets publicados e telefones vivos. Chips suaves de catchment Cascais|Alcabideche. Papel/ink/ouro/teal mate — só nav sticky com frost suave, sem grelhas de liquid-glass. Copy público exacto e tel/mail/mapas vivos. PT por omissão com gémeo EN. Escuro e claro. Footer: built by dglxss · Design study and pitch rebuild. Not affiliated with Oralvide.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/oralvide-cascais) and Vercel. Craft from Motionsites surgical-prestige with an Axiom innovation pass — same-day smile stamp open, in-house digital lab dock, urgency symptoms rail, Cascais|Alcabideche catchment chips. Matte solid chrome — no liquid-glass.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/oralvide-cascais) e na Vercel. Ofício Motionsites surgical-prestige com passe de inovação Axiom — abertura em selo de sorriso no mesmo dia, dock do laboratório digital próprio, rail de sintomas de urgência, chips de catchment Cascais|Alcabideche. Chrome sólido mate — sem liquid-glass.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An Alcabideche | Cascais dental pitch site live at oralvide-cascais.vercel.app.",
+        pt: "Um site de pitch para a clínica dentária em Alcabideche | Cascais — live em oralvide-cascais.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "forsyth-park-inn",
     name: "Forsyth Park Inn",
     line: {
