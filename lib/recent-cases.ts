@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "city-skin-doctor",
+    name: "City Skin Doctor",
+    line: {
+      en: "Website redesign for a doctor-led medical, surgical & cosmetic clinic in Cardiff — Motionsites neo-museum, HIW|CQC pathway open, bilingual.",
+      pt: "Redesign do site de uma clínica médica, cirúrgica e cosmética liderada por médico em Cardiff — Motionsites neo-museum, abertura HIW|CQC, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://city-skin-doctor.vercel.app/",
+    original: "https://www.cityskindoctor.co.uk/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with City Skin Doctor. Keep Dr Ebrahim Feghenaby as Medical Director, HIW and CQC regulation marks, Medical · Surgical · Cosmetic pathways, Cardiff City Road and London Harrow Road, academy and partner strip, and published booking. Matte paper and stone — soft frost sticky nav only.",
+        pt: "Estudo de design independente. Sem afiliação com a City Skin Doctor. Manter o Dr. Ebrahim Feghenaby como diretor médico, marcas HIW e CQC, percursos Medical · Surgical · Cosmetic, Cardiff City Road e London Harrow Road, academia e faixa de parceiros, e o booking publicado. Papel e pedra mate — frost suave só na nav sticky.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live Squarespace site carries the clinic clearly — founder, services, academy, partners — but the digital surface is template brochure: dense stacks, builder chrome, and little regulation-first hierarchy for a HIW/CQC doctor-led brand.",
+        pt: "O site Squarespace vivo apresenta a clínica com clareza — fundador, serviços, academia, parceiros — mas a superfície digital é brochura de template: stacks densos, chrome de builder, e pouca hierarquia regulation-first para uma marca HIW/CQC liderada por médico.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites neo-museum chassis remapped to regulated medical aesthetics. Opening is an HIW | CQC twin-badge pathway (session once; skip on hash or reduced motion), then Medical · Surgical · Cosmetic tiles into the clinic hero. Soft frost nav only; matte paper/stone elsewhere. Identity-preserved founder plate. Cardiff | London catchment chips. EN default with PT twin. Dark and light. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites neo-museum remapeado para estética médica regulada. A abertura é um pathway HIW | CQC (uma vez por sessão; skip em hash ou reduced motion), depois tiles Medical · Surgical · Cosmetic até ao hero. Frost suave só na nav; papel/pedra mate no resto. Placa do fundador com identidade preservada. Chips Cardiff | London. EN por omissão com gémeo PT. Escuro e claro. Footer: feito pela dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites neo-museum with an Axiom innovation pass — HIW|CQC twin-badge pathway open, Medical|Surgical|Cosmetic trifecta dock, Cardiff|London catchment chips. Restrained frost (no tacky liquid-glass sameness).",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites neo-museum com passe de inovação Axiom — abertura HIW|CQC, dock Medical|Surgical|Cosmetic, chips Cardiff|London. Frost contido (sem liquid-glass excessivo).",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Cardiff doctor-led clinic pitch site live at city-skin-doctor.vercel.app.",
+        pt: "Um site de pitch para a clínica liderada por médico em Cardiff — live em city-skin-doctor.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "oralvide-cascais",
     name: "Oralvide",
     line: {
