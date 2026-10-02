@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "axis-salon-studio",
+    name: "Axis Salon Studio",
+    line: {
+      en: "Website redesign for a Des Moines extensions & hair-loss salon collective — Motionsites vortex-studio-hero, Growth Practice stamp open, bilingual.",
+      pt: "Redesign do site de um coletivo de salão em Des Moines (extensões e queda de cabelo) — Motionsites vortex-studio-hero, abertura Growth Practice, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://axis-salon-studio.vercel.app/",
+    original: "https://www.axishair.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Axis Salon Studio. Keep Jenay as owner and extension specialist, the Visit the Salon | Regrow at Home dual pathways, Growth Practice, Vagaro booker, Des Moines 31st Street / Ingersoll cues, and published collective bookers. Matte paper and ink — soft frost sticky nav only.",
+        pt: "Estudo de design independente. Sem afiliação com a Axis Salon Studio. Manter Jenay como dona e especialista em extensões, os percursos Visit the Salon | Regrow at Home, Growth Practice, booking Vagaro, Des Moines 31st Street / Ingersoll, e os bookers publicados do coletivo. Papel e tinta mate — frost suave só na nav sticky.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live Weebly site carries the collective clearly — dual pathways, Growth Practice, lookbook — but the digital surface is builder brochure: stacked pages, thin hierarchy, and little practice-first craft for an extensions and hair-loss brand.",
+        pt: "O site Weebly vivo apresenta o coletivo com clareza — percursos duplos, Growth Practice, lookbook — mas a superfície digital é brochura de builder: páginas empilhadas, hierarquia fina, e pouco ofício practice-first para uma marca de extensões e queda de cabelo.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites vortex-studio-hero chassis remapped to a luxury salon collective. Opening is a Growth Practice stamp (session once; skip on hash or reduced motion), then Visit the Salon | Regrow at Home into the Axis wordmark hero. Soft frost nav only; matte paper/ink elsewhere. Lookbook marquee from published plates. Collective booker chips. EN default with PT twin. Dark and light. Footer: built by dglxss.",
+        pt: "Um chassis Motionsites vortex-studio-hero remapeado para um coletivo de salão de luxo. A abertura é um selo Growth Practice (uma vez por sessão; skip em hash ou reduced motion), depois Visit the Salon | Regrow at Home até ao hero com wordmark Axis. Frost suave só na nav; papel/tinta mate no resto. Marquee de lookbook com placas publicadas. Chips de bookers do coletivo. EN por omissão com gémeo PT. Escuro e claro. Footer: feito pela dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from Motionsites vortex-studio-hero with an Axiom innovation pass — Growth Practice stamp open, Visit|Regrow dual pathway dock, collective booker chips. Restrained frost (no tacky liquid-glass sameness).",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício Motionsites vortex-studio-hero com passe de inovação Axiom — abertura Growth Practice, dock Visit|Regrow, chips de bookers. Frost contido (sem liquid-glass excessivo).",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Des Moines salon-collective pitch site live at axis-salon-studio.vercel.app.",
+        pt: "Um site de pitch para o coletivo de salão em Des Moines — live em axis-salon-studio.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "city-skin-doctor",
     name: "City Skin Doctor",
     line: {
