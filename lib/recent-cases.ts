@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "ciocenter",
+    name: "Central Indiana Orthopedics",
+    line: {
+      en: "Website redesign for a multi-location orthopedic practice in Central Indiana — Motionsites Modern Dental Clinic, Reach clinic atlas, bilingual.",
+      pt: "Redesign do site de uma prática ortopédica com várias clínicas em Central Indiana — Motionsites Modern Dental Clinic, atlas Reach, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://ciocenter.vercel.app/",
+    original: "https://ciocenter.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Central Indiana Orthopedics. Keep the practice since 1950 — specialists in personalized orthopedic care, walk-in clinics as an alternative to the ER, joint replacement — and the published pages: home, 22 physicians with published portraits, services, six clinics, why CIO, walk-in, joint replacement, contact, plus blog, careers, referring physicians, privacy, and accessibility. Phone 800-622-6575. Elwood clinic phone 765-608-3668.",
+        pt: "Estudo de design independente. Sem afiliação com a Central Indiana Orthopedics. Manter a prática desde 1950 — especialistas em cuidados ortopédicos personalizados, clínicas walk-in como alternativa às urgências, substituição articular — e as páginas publicadas: home, 22 médicos com retratos publicados, serviços, seis clínicas, why CIO, walk-in, joint replacement, contacto, mais o blog, carreiras, médicos referenciadores, privacidade e acessibilidade. Telefone 800-622-6575. Telefone da clínica de Elwood 765-608-3668.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site carries the practice clearly — since 1950, personalized orthopedic care, six clinics, walk-in as an alternative to the ER, and joint replacement. Each office is its own page. The services that page lists, and the printed hours, are not one place to read.",
+        pt: "O site vivo apresenta a prática com clareza — desde 1950, cuidados ortopédicos personalizados, seis clínicas, walk-in como alternativa às urgências, e substituição articular. Cada consultório é a sua página. Os serviços que essa página lista, e o horário impresso, não se leem num só lugar.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A free Motionsites seed, Modern Dental Clinic, remapped to a multi-location orthopedic practice. Reach is a clinic atlas that filters the six offices by the services each location page lists and shows the printed hours. EN default with a real Portuguese twin. Dark and light, and the choice is kept. Footer: built by dglxss.",
+        pt: "Uma semente gratuita Motionsites, Modern Dental Clinic, remapeada para uma prática ortopédica com várias localizações. O Reach é um atlas das clínicas que filtra os seis consultórios pelos serviços que cada página de localização lista e mostra o horário impresso. EN por omissão com um gémeo em português real. Escuro e claro, e a escolha fica guardada. Footer: feito pela dglxss.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Craft from the free Motionsites seed Modern Dental Clinic, remapped to a multi-location orthopedic practice. Reach filters the six offices by the services each location page lists and shows the printed hours.",
+        pt: "Ofício a partir da semente gratuita Motionsites Modern Dental Clinic, remapeada para uma prática ortopédica com várias localizações. O Reach filtra os seis consultórios pelos serviços que cada página de localização lista e mostra o horário impresso.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Central Indiana orthopedic pitch site live at ciocenter.vercel.app.",
+        pt: "Um site de pitch para a prática ortopédica em Central Indiana — live em ciocenter.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "axis-salon-studio",
     name: "Axis Salon Studio",
     line: {
