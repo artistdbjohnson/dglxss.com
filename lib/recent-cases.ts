@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "lane-portugal",
+    name: "Lane Exclusive Real Estate",
+    line: {
+      en: "Website redesign for a Cascais luxury real estate brokerage — Motionsites skyelite-hero, Axiom key-aperture, bilingual.",
+      pt: "Redesign do site de uma mediação imobiliária de luxo em Cascais — Motionsites skyelite-hero, abertura Axiom key-aperture, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://lane-portugal.vercel.app/",
+    original: "https://www.laneportugal.pt/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Lane Exclusive Real Estate. Keep the brokerage since 2008 — founders Martin Lawrenz and Manuel Neto, named on the live site, with no portraits published — AMI 8486, Cascais at Rua Afonso Sanches, 25B, (+351) 210 170 425, info@laneportugal.com, luxury sale and lease, off-market, the six Guia do Comprador steps, Golden Visa, and RNH. Limestone and brass.",
+        pt: "Estudo de design independente. Sem afiliação com a Lane Exclusive Real Estate. Manter a mediação desde 2008 — fundadores Martin Lawrenz e Manuel Neto, nomeados no site vivo, sem retratos publicados — AMI 8486, Cascais na Rua Afonso Sanches, 25B, (+351) 210 170 425, info@laneportugal.com, compra e arrendamento de luxo, off-market, os seis passos do Guia do Comprador, Golden Visa e RNH. Calcário e latão.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site runs on eGO Real Estate chrome — A chave para o seu refúgio exclusivo, buy or lease search, luxury and off-market tiles, a property of the week, and a newsletter. The brokerage is clear; the digital surface is a CRM template. The Guia do Comprador is six long steps, and Golden Visa and RNH sit apart from it. The phone and the form are there — the path is builder chrome.",
+        pt: "O site vivo corre em chrome eGO Real Estate — A chave para o seu refúgio exclusivo, pesquisa de comprar ou arrendar, mosaicos de luxo e off-market, uma propriedade da semana, e uma newsletter. A mediação é clara; a superfície digital é um template de CRM. O Guia do Comprador são seis passos longos, e o Golden Visa e o RNH ficam à parte. O telefone e o formulário estão lá — o caminho é chrome de builder.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites skyelite-hero seed remapped to Cascais luxury real estate. Opening is an Axiom key-aperture: a limestone keyhole on the Lane mark widens ~1.4s once per session (skip on hash or reduced motion). Twelve real listings harvested from the live site; each card links out. An off-market brief dock — mailto info@laneportugal.com. A buyer's ledger: the six Guia do Comprador steps as nested collapsibles — Obtaining the Tax Identification Number (NIF), Legal Documents, The Promissory Contract of Purchase and Sale, Costs and taxes before and after the purchase, The definitive purchase and sale agreement (Deed), Insurances — plus Golden Visa and RNH, with the legal line kept verbatim: THE AVAILABLE INFORMATION DOESN´T EXEMPT FROM CONSULTATION OF THE APPLICABLE LAW. Founders named. No invented portraits. Limestone #F4F1EC, brass #9A7B4F, navy #002844, greige #B4ADA3, taupe #857B6C, dark #0B1620. PT default with EN twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites skyelite-hero remapeada para mediação de luxo em Cascais. A abertura é um Axiom key-aperture: um buraco de fechadura em calcário sobre a marca Lane alarga ~1.4s, uma vez por sessão (skip em hash ou reduced motion). Doze imóveis reais colhidos do site vivo; cada card liga para fora. Um dock de brief off-market — mailto info@laneportugal.com. Um ledger do comprador: os seis passos do Guia do Comprador em collapsibles aninhados — Obtenção do Número de Identificação Fiscal (NIF), Documentação Legal, O Contrato Promessa de Compra e Venda, Custos e Impostos antes e após a compra, O Contrato Definitivo de Compra e Venda (Escritura), Seguros — mais Golden Visa e RNH, com a linha legal verbatim: A INFORMAÇÃO DISPONIBILIZADA NÃO DISPENSA A CONSULTA DA LEGISLAÇÃO APLICÁVEL. Fundadores nomeados. Sem retratos inventados. Calcário #F4F1EC, latão #9A7B4F, navy #002844, greige #B4ADA3, taupe #857B6C, dark #0B1620. PT por omissão com gémeo EN. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from the Motionsites seed skyelite-hero with an Axiom innovation pass — key-aperture open, twelve listing cards that link out, off-market brief dock, and a buyer's ledger of nested Guia do Comprador steps plus Golden Visa and RNH. Limestone and brass.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício a partir da semente Motionsites skyelite-hero com passe de inovação Axiom — abertura key-aperture, doze cards de imóveis que ligam para fora, dock de brief off-market, e um ledger do comprador com os passos do Guia do Comprador em collapsibles aninhados, mais Golden Visa e RNH. Calcário e latão.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Cascais luxury real estate pitch site live at lane-portugal.vercel.app.",
+        pt: "Um site de pitch para mediação de luxo em Cascais — live em lane-portugal.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "ciocenter",
     name: "Central Indiana Orthopedics",
     line: {

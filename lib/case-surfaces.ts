@@ -12,6 +12,12 @@ export type CaseSurface = {
 };
 
 const SURFACES: Record<string, CaseSurface> = {
+  "lane-portugal": {
+    ink: "#9A7B4F",
+    paper: "#0B1620",
+    mist: "#F4F1EC",
+    motif: "bronze",
+  },
   "axis-salon-studio": {
     ink: "#a0607c",
     paper: "#141414",
