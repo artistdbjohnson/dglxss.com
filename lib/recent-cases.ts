@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "espacio-clinic",
+    name: "Espacio Clinic",
+    line: {
+      en: "Website redesign for a doctor-led healthy-ageing medical aesthetics clinic in Edinburgh — Motionsites aethera-hero, Axiom lexicon open, bilingual.",
+      pt: "Redesign do site de uma clínica de estética médica de envelhecimento saudável liderada por médico em Edimburgo — Motionsites aethera-hero, abertura Axiom lexicon, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://espacio-clinic.vercel.app/",
+    original: "https://www.espacioclinic.co.uk/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Espacio Clinic. Keep Dr Liliana, healthy ageing, HIS · BCAM, 12a Castle Terrace, Edinburgh EH1 2DP, 07782802002, enquiries@espacioclinic.com, Pabau booking, and the published line WELCOME to your SPACE. Linen paper and olive velvet — soft frost sticky nav only.",
+        pt: "Estudo de design independente. Sem afiliação com a Espacio Clinic. Manter a Dr. Liliana, o envelhecimento saudável, HIS · BCAM, 12a Castle Terrace, Edimburgo EH1 2DP, 07782802002, enquiries@espacioclinic.com, o booking Pabau, e a linha publicada WELCOME to your SPACE. Papel de linho e veludo verde-oliva — frost suave só na nav sticky.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live Wix site carries the clinic clearly — Dr Liliana, healthy ageing, the treatments, Castle Terrace — but the digital surface is template brochure: wave dividers, a circle-crop team, and a product-store grid. HIS and BCAM sit in the footer. BOOK NOW is there — the path is builder chrome.",
+        pt: "O site Wix vivo apresenta a clínica com clareza — Dr Liliana, envelhecimento saudável, os tratamentos, Castle Terrace — mas a superfície digital é brochura de template: divisores em onda, uma equipa em recorte circular, e uma grelha de loja. HIS e BCAM ficam no footer. BOOK NOW está lá — o caminho é chrome de builder.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites aethera-hero seed remapped to doctor-led healthy-ageing medical aesthetics. Opening is an Axiom lexicon: the word espacio tracks apart and hands into the nav, once per session (skip on hash or reduced motion), then WELCOME to your SPACE. Exact published copy — At Espacio Clinic our primary focus is healthy ageing. Our team of medical experts will empower you and support you in your personal journey. Whether you're looking to address a specific concern or the proactive steps towards better health, we provide a friendly, science-led approach to help you thrive. A concern index over 25 treatments. A Castle Terrace ledger with today hours in Europe/London. Linen paper and olive velvet. Soft frost nav only. EN default with PT twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites aethera-hero remapeada para estética médica de envelhecimento saudável liderada por médico. A abertura é um lexicon Axiom: a palavra espacio afasta-se e passa para a nav, uma vez por sessão (skip em hash ou reduced motion), e depois WELCOME to your SPACE. Copy publicado exacto — Na Espacio Clinic o nosso foco principal é o envelhecimento saudável. A nossa equipa de especialistas médicos irá capacitá-lo e apoiá-lo no seu percurso pessoal. Quer procure tratar uma preocupação específica ou os passos proativos para uma melhor saúde, oferecemos uma abordagem amigável, orientada pela ciência, para o ajudar a prosperar. Um índice de preocupações sobre 25 tratamentos. Um ledger de Castle Terrace com o horário de hoje em Europe/London. Papel de linho e veludo verde-oliva. Frost suave só na nav. EN por omissão com gémeo PT. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from the Motionsites seed aethera-hero with an Axiom innovation pass — lexicon open, a concern index over 25 treatments, and a Castle Terrace ledger with today hours in Europe/London. Linen paper and olive velvet.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício a partir da semente Motionsites aethera-hero com passe de inovação Axiom — abertura lexicon, um índice de preocupações sobre 25 tratamentos, e um ledger de Castle Terrace com o horário de hoje em Europe/London. Papel de linho e veludo verde-oliva.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An Edinburgh doctor-led clinic pitch site live at espacio-clinic.vercel.app.",
+        pt: "Um site de pitch para a clínica liderada por médico em Edimburgo — live em espacio-clinic.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "lane-portugal",
     name: "Lane Exclusive Real Estate",
     line: {
