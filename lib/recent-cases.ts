@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "cary-plastic-surgery",
+    name: "Cary Plastic Surgery",
+    line: {
+      en: "Website redesign for a double board-certified plastic surgery practice in Cary, NC — Motionsites prisma-landing, Axiom contour-line open, bilingual.",
+      pt: "Redesign do site de uma prática de cirurgia plástica com dupla certificação em Cary, NC — Motionsites prisma-landing, abertura Axiom contour-line, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://cary-plastic-surgery.vercel.app/",
+    original: "https://caryplasticsurgery.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Cary Plastic Surgery or Dr. Donald P. Hanna. Keep Dr. Donald P. Hanna, double board-certified plastic surgeon, 1608 Kildaire Farm Rd, Ste 100, Cary, NC 27511, 919-233-1933, and the published line Sculpting Beauty with a Personal Touch. Exact English client copy. Hand-troweled honed limestone plaster, navy ink, and one gold line. Montserrat (brand) and Newsreader italic.",
+        pt: "Estudo de design independente. Sem afiliação com a Cary Plastic Surgery ou com o Dr. Donald P. Hanna. Manter o Dr. Donald P. Hanna, cirurgião plástico com dupla certificação, 1608 Kildaire Farm Rd, Ste 100, Cary, NC 27511, 919-233-1933, e a linha publicada Sculpting Beauty with a Personal Touch. Copy inglês exacto do cliente. Gesso de calcário honed aplicado à talocha, tinta navy, e uma linha de ouro. Montserrat (marca) e Newsreader itálico.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site carries the practice clearly — Dr. Donald P. Hanna, 1608 Kildaire Farm Rd, Ste 100, 919-233-1933, Breast, Body, Face, and Cosmetic, and Sculpting Beauty with a Personal Touch. It is an Infostar Productions Bootstrap build. Book Now and the phone are there — the path is that brochure.",
+        pt: "O site vivo apresenta a prática com clareza — Dr. Donald P. Hanna, 1608 Kildaire Farm Rd, Ste 100, 919-233-1933, Mama, Corpo, Rosto e Estética, e Sculpting Beauty with a Personal Touch. É uma build Bootstrap da Infostar Productions. Book Now e o telefone estão lá — o caminho é essa brochura.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites prisma-landing seed remapped to plaster and navy atelier. Opening is an Axiom contour-line: the client's own figure mark draws itself (path order 3→1→0→gold path 2), then CARY / PLASTIC SURGERY, the tagline clips left to right, the lockup FLIPs to the nav, and the inset hero reveals. Once per session. Skip on hash, reduced motion, or any key, click, or tap. ≤2.4s. Three Axiom twists — the contour open; In his words margin notes from Dr. Hanna's first-person copy, and the home line Patients trust him not only for his surgical skill—but for how he listens. in a per-character reveal; an arrival triptych (exterior→entrance→foyer→atrium) with a live America/New_York hours chip. Hand-troweled honed limestone plaster, navy ink, and one gold line. Montserrat (brand) and Newsreader italic. A generated identity-preserving portrait was a different man and was discarded. The site uses the real upscaled portrait at 200px. No before/after hosted; gallery categories link to the live site. Exact English client copy with a European Portuguese twin. EN default with PT twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites prisma-landing remapeada para um atelier de gesso e navy. A abertura é um contour-line Axiom: a marca de figura do próprio cliente desenha-se (ordem dos paths 3→1→0→path de ouro 2), depois CARY / PLASTIC SURGERY, a tagline entra em clip da esquerda para a direita, o lockup faz FLIP para a nav, e o hero inset revela-se. Uma vez por sessão. Skip em hash, reduced motion, ou qualquer tecla, clique ou toque. ≤2.4s. Três twists Axiom — a abertura em contorno; notas de margem In his words a partir do copy na primeira pessoa do Dr. Hanna, e a linha da home Patients trust him not only for his surgical skill—but for how he listens. numa revelação carácter a carácter; um tríptico de chegada (exterior→entrada→foyer→átrio) com um chip de horário ao vivo em America/New_York. Gesso de calcário honed aplicado à talocha, tinta navy, e uma linha de ouro. Montserrat (marca) e Newsreader itálico. Um retrato gerado com preservação de identidade era outro homem e foi descartado. O site usa o retrato real ampliado a 200px. Sem antes/depois alojado; as categorias da galeria ligam ao site vivo. Copy inglês exacto do cliente com um gémeo em português europeu. EN por omissão com gémeo PT. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from the Motionsites seed prisma-landing with an Axiom innovation pass — contour-line open, In his words margin notes with a per-character reveal, and an arrival triptych with a live America/New_York hours chip. Hand-troweled honed limestone plaster, navy ink, and one gold line. Montserrat and Newsreader italic.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício a partir da semente Motionsites prisma-landing com passe de inovação Axiom — abertura contour-line, notas de margem In his words com revelação carácter a carácter, e um tríptico de chegada com um chip de horário ao vivo em America/New_York. Gesso de calcário honed aplicado à talocha, tinta navy, e uma linha de ouro. Montserrat e Newsreader itálico.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Cary, NC plastic surgery pitch site live at cary-plastic-surgery.vercel.app.",
+        pt: "Um site de pitch para cirurgia plástica em Cary, NC — live em cary-plastic-surgery.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "espacio-clinic",
     name: "Espacio Clinic",
     line: {
