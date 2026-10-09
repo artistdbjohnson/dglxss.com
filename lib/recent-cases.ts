@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "tower-house-york",
+    name: "Tower House York",
+    line: {
+      en: "Website redesign for an owner-run boutique hotel of eight individually designed rooms in York, UK — Motionsites halo-usd-landing, Axiom Ascent open, bilingual.",
+      pt: "Redesign do site de um hotel boutique gerido pelos donos, com oito quartos de design individual em York, Reino Unido — Motionsites halo-usd-landing, abertura Axiom Ascent, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://tower-house-york.vercel.app/",
+    original: "https://towerhouseyork.co.uk/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Tower House York. Keep Tower House Smart Hotel, 2 Feversham Crescent, York YO31 8HQ, 01904 655571, the published line Luxury Boutique Rooms in York, the eight rooms from Versailles Gold King to Tang Superking, The Hub, and every booking link pointing to the real booking page. Exact English client copy. Oxblood and brass from the client's own palette, Bodoni Moda and Hanken Grotesk.",
+        pt: "Estudo de design independente. Sem afiliação com a Tower House York. Manter o Tower House Smart Hotel, 2 Feversham Crescent, York YO31 8HQ, 01904 655571, a linha publicada Luxury Boutique Rooms in York, os oito quartos do Versailles Gold King ao Tang Superking, o Hub, e todas as ligações de reserva a apontar para a página de reservas real. Copy inglês exacto do cliente. Bordô e latão da paleta do próprio cliente, Bodoni Moda e Hanken Grotesk.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site carries the house clearly — eight rooms across four floors, self check-in, free parking, a short stroll to York Minster, a Hub with breakfast and coffee — but the surface is a flat template: rooms as plain cards, no sense of the staircase and floors that give Tower House its name, and the rooms listed without a thread between them. Book Now is there — the path is template chrome.",
+        pt: "O site vivo apresenta a casa com clareza — oito quartos em quatro pisos, self check-in, estacionamento gratuito, um curto passeio até à York Minster, um Hub com pequeno-almoço e café — mas a superfície é um template plano: quartos como cartões simples, nenhuma noção da escadaria e dos pisos que dão nome à Tower House, e os quartos listados sem um fio entre eles. Book Now está lá — o caminho é chrome de template.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites halo-usd-landing seed remapped to a boutique hotel: a light editorial hero with the real Versailles Gold King, a card grid of rooms, calm oxblood slabs for the facilities. Opening is an Axiom Ascent: the hotel's own staircase hall climbs in a tall frame while a hairline brass floor indicator steps G, 1, 2, Top, then the whole overlay lifts away and the hero settles. Once per session, skipped on hash, reduced motion or any key, tap or click, and pure CSS so it can never leave a blank screen. Two more Axiom twists — the house told floor by floor, with every room set on its real floor; and a printed-address card under the map so it is never blank. One grade across all the client's own photography. All eight room pages at the live slugs with a lightbox gallery, plus The Hub. Exact English client copy with a European Portuguese twin. EN default with PT twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites halo-usd-landing remapeada para um hotel boutique: um hero editorial claro com o Versailles Gold King real, uma grelha de cartões de quartos, placas bordô calmas para as comodidades. A abertura é uma Ascent Axiom: a própria escadaria do hotel sobe numa moldura alta enquanto um indicador de piso em latão, fino como um fio, passa por G, 1, 2, Top; depois toda a sobreposição levanta-se e o hero assenta. Uma vez por sessão, ignorada em hash, reduced motion ou qualquer tecla, toque ou clique, e em CSS puro para nunca deixar um ecrã em branco. Mais dois twists Axiom — a casa contada piso a piso, com cada quarto no seu piso real; e um cartão com a morada impressa sob o mapa para que nunca fique em branco. Um só tratamento de cor em toda a fotografia do próprio cliente. Os oito quartos nos slugs do site vivo com galeria em lightbox, mais o Hub. Copy inglês exacto do cliente com um gémeo em português europeu. EN por omissão com gémeo PT. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from the Motionsites seed halo-usd-landing with an Axiom innovation pass — the Ascent open, the floor-by-floor house, and a never-blank map. Oxblood, brass and warm paper; Bodoni Moda and Hanken Grotesk.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício a partir da semente Motionsites halo-usd-landing com passe de inovação Axiom — a abertura Ascent, a casa piso a piso e um mapa que nunca fica em branco. Bordô, latão e papel quente; Bodoni Moda e Hanken Grotesk.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A York, UK boutique hotel pitch site live at tower-house-york.vercel.app.",
+        pt: "Um site de pitch para um hotel boutique em York, Reino Unido — live em tower-house-york.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "quinta-do-torneiro",
     name: "Quinta do Torneiro",
     line: {
