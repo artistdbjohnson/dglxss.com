@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "quinta-do-torneiro",
+    name: "Quinta do Torneiro",
+    line: {
+      en: "Website redesign for an 18th-century wedding and events quinta in Oeiras, Lisbon — Motionsites blog-showcase, Axiom azulejo tile-lay open, bilingual PT default with EN twin.",
+      pt: "Redesign do site de uma quinta setecentista para casamentos e eventos em Oeiras, Lisboa — Motionsites blog-showcase, abertura Axiom em azulejo assentado, bilingue com PT por omissão e gémeo EN.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://quinta-do-torneiro.vercel.app/",
+    original: "https://www.quintadotorneiro-eventos.com/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Quinta do Torneiro. Path A. Transplant of quintadotorneiro-eventos.com. Keep Espaço para Eventos e Casamentos em Portugal, the Casa Senhorial built in the 18th century, the azulejo cartouche and friezes, every space — Jardim do Pátio, Jardim Francês, Jardim da Entrada, Capela, Salão Nobre, Sala do Brasão, Sala das Caravelas, Sala da Lareira, Terraço Coberto, Suíte Principal, Quartos — the 2026 and 2027 wedding packages with their exact prices, the 21 FAQs, and the Paço d'Arcos contacts: +351 938 903 880 and events@lisbonweddingplanner.com.",
+        pt: "Estudo de design independente. Sem afiliação com a Quinta do Torneiro. Path A. Transplante de quintadotorneiro-eventos.com. Manter Espaço para Eventos e Casamentos em Portugal, a Casa Senhorial edificada no século XVIII, a cartela e as frisas de azulejo, todos os espaços — Jardim do Pátio, Jardim Francês, Jardim da Entrada, Capela, Salão Nobre, Sala do Brasão, Sala das Caravelas, Sala da Lareira, Terraço Coberto, Suíte Principal, Quartos — os pacotes de casamento 2026 e 2027 com os preços exactos, as 21 FAQs, e os contactos de Paço d'Arcos: +351 938 903 880 e events@lisbonweddingplanner.com.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site is a large Wix build — 148 pages, a 13-group menu, and the house's own photography of every room. The quinta is all there; the hierarchy is thin, a few typos slip through, and the 2027 package button opens the 2026 page.",
+        pt: "O site vivo é uma build Wix extensa — 148 páginas, um menu de 13 grupos, e a fotografia da própria casa em cada sala. A quinta está toda lá; a hierarquia é fina, escapam algumas gralhas, e o botão dos pacotes 2027 abre a página de 2026.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites blog-showcase seed remapped to a tin-glazed azulejo and limewash atelier. Opening is an Axiom azulejo tile-lay: on a tin-glaze field the client's own cartouche is laid tile by tile like a tiler setting a panel, one beat, then the whole viewport, cut into square tiles, flips in a diagonal wave and each tile's back face is the hero plate. The hero is revealed by shape, not by fade. Once per session. Skip on hash, reduced motion, or any key, click, or tap. ≤2.4s. Three Axiom twists — the tile-lay open; the enfilade, os salões podem tornar-se um só, where Salão Nobre, Sala do Brasão, Sala das Caravelas, Sala da Lareira, and Terraço Coberto run as one horizontal sequence seen through doorframe masks (swipe on phone); and a packages ledger with the exact 2026 and 2027 prices and a computed Oeiras sunset chip on the Jardim Francês. Home is a chaptered deck, 01 — A Quinta to 09 — Contatos, with one idea per chapter. Tin-glazed azulejo, limewash plaster, and one gilded line. Playfair Display, Enriqueta, and Jost. The live site publishes no staff portraits, so there is no identity remap and no invented faces; generated plates are faceless still lifes captioned ESTUDO EDITORIAL. All 148 pages rebuilt at their live slugs. Portuguese default with an English twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites blog-showcase remapeada para um atelier de azulejo vidrado e cal. A abertura é um tile-lay Axiom em azulejo: sobre um campo de vidrado, a cartela do próprio cliente é assentada azulejo a azulejo como um ladrilhador a montar um painel, uma pausa, e depois o viewport inteiro, cortado em azulejos quadrados, vira numa onda diagonal e a face de trás de cada azulejo é a placa do hero. O hero revela-se por forma, não por fade. Uma vez por sessão. Skip em hash, reduced motion, ou qualquer tecla, clique ou toque. ≤2.4s. Três twists Axiom — a abertura em azulejo assentado; a enfilada, os salões podem tornar-se um só, onde o Salão Nobre, a Sala do Brasão, a Sala das Caravelas, a Sala da Lareira e o Terraço Coberto correm como uma só sequência horizontal vista através de máscaras de portal (swipe no telemóvel); e um livro de pacotes com os preços exactos de 2026 e 2027 e um chip de pôr do sol calculado em Oeiras no Jardim Francês. A home é um deck em capítulos, 01 — A Quinta a 09 — Contatos, com uma ideia por capítulo. Azulejo vidrado, cal, e uma linha dourada. Playfair Display, Enriqueta e Jost. O site vivo não publica retratos de equipa, por isso não há remapeamento de identidade nem rostos inventados; as placas geradas são naturezas-mortas sem rostos legendadas ESTUDO EDITORIAL. As 148 páginas reconstruídas nos slugs do site vivo. Português por omissão com gémeo em inglês. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "Next.js App Router, React, Tailwind on GitHub (artistdbjohnson/quinta-do-torneiro) and Vercel. Craft from the Motionsites seed blog-showcase with an Axiom innovation pass — azulejo tile-lay open, the salões enfilade, and a packages ledger with a live Oeiras sunset chip. Tin-glazed azulejo, limewash plaster, and one gilded line. Playfair Display, Enriqueta, and Jost.",
+        pt: "Next.js App Router, React, Tailwind no GitHub (artistdbjohnson/quinta-do-torneiro) e na Vercel. Ofício a partir da semente Motionsites blog-showcase com passe de inovação Axiom — abertura em azulejo assentado, a enfilada dos salões, e um livro de pacotes com um chip de pôr do sol ao vivo em Oeiras. Azulejo vidrado, cal, e uma linha dourada. Playfair Display, Enriqueta e Jost.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "An Oeiras wedding quinta pitch site live at quinta-do-torneiro.vercel.app.",
+        pt: "Um site de pitch para a quinta de casamentos em Oeiras — live em quinta-do-torneiro.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "cary-plastic-surgery",
     name: "Cary Plastic Surgery",
     line: {
