@@ -2,6 +2,42 @@ import type { PortfolioProject } from "./portfolio";
 
 export const RECENT_CASES: PortfolioProject[] = [
   {
+    id: "mogdad-alrawi-plastic-surgery",
+    name: "Mogdad Alrawi Plastic Surgery",
+    line: {
+      en: "Website redesign for an independent consultant plastic, reconstructive and cosmetic surgeon in Newcastle upon Tyne, UK — Motionsites max-reed-portfolio, Axiom Gallery-label open, bilingual.",
+      pt: "Redesign do site de um cirurgião consultor independente de cirurgia plástica, reconstrutiva e estética em Newcastle upon Tyne, Reino Unido — Motionsites max-reed-portfolio, abertura Axiom em etiqueta de galeria, bilingue.",
+    },
+    kind: ["web"],
+    year: "2026",
+    status: "shipped",
+    external: "https://mogdad-alrawi-plastic-surgery.vercel.app/",
+    original: "https://www.mogdadalrawiplasticsurgery.co.uk/",
+    sections: [
+      { id: "brief", title: { en: "Brief", pt: "Brief" }, body: {
+        en: "Independent design study. Not affiliated with Mogdad Alrawi Plastic Surgery. Keep the five live pages, every procedure from Breast to Reconstructive Surgery, the three hospitals — Royal Victoria Infirmary, Cobalt Hospital (Ramsay Health) and TSS Independent House — the full biography, qualifications and memberships, the six patient quotes, the consultation hours, 07380 741080 and info@alrawiplasticsurgery.com. Exact English client copy. Marble and the Tyne at night, Cormorant Garamond and Manrope.",
+        pt: "Estudo de design independente. Sem afiliação com Mogdad Alrawi Plastic Surgery. Manter as cinco páginas do site vivo, todos os procedimentos da Mama à Cirurgia reconstrutiva, os três hospitais — Royal Victoria Infirmary, Cobalt Hospital (Ramsay Health) e TSS Independent House — a biografia completa, qualificações e filiações, as seis citações de pacientes, os horários de consulta, 07380 741080 e info@alrawiplasticsurgery.com. Copy inglês exacto do cliente. Mármore e o Tyne à noite, Cormorant Garamond e Manrope.",
+      }},
+      { id: "before", title: { en: "Before", pt: "Antes" }, body: {
+        en: "The live site is a minimal Squarespace build. The surgeon's credentials are deep — FRCS(Plast), consultant at the RVI since 2012, BAPRAS and BAAPS — but they sit in one long About page, and the procedures are a plain dashed list.",
+        pt: "O site vivo é uma build Squarespace mínima. As credenciais do cirurgião são profundas — FRCS(Plast), consultor no RVI desde 2012, BAPRAS e BAAPS — mas estão numa única página Sobre longa, e os procedimentos são uma simples lista com traços.",
+      }},
+      { id: "elevation", title: { en: "What I built", pt: "O que construí" }, body: {
+        en: "A Motionsites max-reed-portfolio seed remapped to a surgeon: a statement row, then a bento of four cards — the dated credentials from 1999 to 2022 as a timeline over the Tyne Bridge at night, the patients' own words one at a time, his real portrait, and the three hospitals with the free consultation hours. Opening is an Axiom Gallery label: the client's own marble torso on black with a museum wall label — name, role, Newcastle since 2012, post-nominals — then the label clears upward. Once per session, skipped on hash, reduced motion or any key or tap, and pure CSS so it can never leave a blank screen. Services as a numbered index with every procedure. Only the client's own photography. EN default with PT twin. Dark and light, and the choice is kept. Footer: built by dglxss. Design study. Not affiliated.",
+        pt: "Uma semente Motionsites max-reed-portfolio remapeada para um cirurgião: uma linha de declaração e depois um bento de quatro cartões — as credenciais datadas de 1999 a 2022 como linha do tempo sobre a Tyne Bridge à noite, as palavras dos próprios pacientes uma de cada vez, o seu retrato real, e os três hospitais com os horários da consulta gratuita. A abertura é uma etiqueta de galeria Axiom: o torso de mármore do próprio cliente sobre negro com uma etiqueta de museu — nome, função, Newcastle desde 2012, títulos — e depois a etiqueta sobe e desaparece. Uma vez por sessão, ignorada em hash, reduced motion ou qualquer tecla ou toque, e em CSS puro para nunca deixar um ecrã em branco. Serviços como um índice numerado com todos os procedimentos. Só a fotografia do próprio cliente. EN por omissão com gémeo PT. Escuro e claro, e a escolha fica guardada. Footer: feito por dglxss. Estudo de design. Sem afiliação.",
+      }},
+      { id: "stack", title: { en: "Stack", pt: "Stack" }, body: {
+        en: "React, Tailwind, Next.js on GitHub and Vercel. Craft from the Motionsites seed max-reed-portfolio with an Axiom innovation pass — the Gallery-label open, credentials as a timeline, services as an index. Marble, stone and Tyne night; Cormorant Garamond and Manrope.",
+        pt: "React, Tailwind, Next.js no GitHub e na Vercel. Ofício a partir da semente Motionsites max-reed-portfolio com passe de inovação Axiom — a abertura em etiqueta de galeria, as credenciais como linha do tempo, os serviços como índice. Mármore, pedra e o Tyne à noite; Cormorant Garamond e Manrope.",
+      }},
+      { id: "outcome", title: { en: "Outcome", pt: "Resultado" }, body: {
+        en: "A Newcastle, UK plastic surgery pitch site live at mogdad-alrawi-plastic-surgery.vercel.app.",
+        pt: "Um site de pitch para cirurgia plástica em Newcastle, Reino Unido — live em mogdad-alrawi-plastic-surgery.vercel.app.",
+      }},
+    ],
+  },
+
+  {
     id: "tower-house-york",
     name: "Tower House York",
     line: {
